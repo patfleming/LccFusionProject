@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 
 gem "just-the-docs"        # always download the latest release
 
-gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+# Windows-specific gem for file system watching
+gem 'wdm', '>= 0.1.0', platforms: [:mswin, :mingw, :x64_mingw]
 
 gem "jekyll-default-layout"
 
