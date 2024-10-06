@@ -1,0 +1,12 @@
+@startuml
+title LCC Fusion Project
+start
+:Education;
+:Ordering Parts;
+:PCB Assembly;
+:LCC Node Cluster Assembly;
+#LightBlue:Configuration;
+:Testing;
+stop
+@enduml
+

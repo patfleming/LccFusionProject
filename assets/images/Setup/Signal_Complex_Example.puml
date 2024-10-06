@@ -1,0 +1,50 @@
+@startuml
+' set formatting of Titles and background
+skinparam defaultFontSize 24
+skinparam BackgroundColor #LightBrown
+skinparam titleBorderRoundCorner 15
+skinparam titleBorderThickness 2
+skinparam titleBorderColor blue
+skinparam titleBackgroundColor #LightBlue
+skinparam TitleFontSize 32
+
+title Complex Signaling Example
+caption Figure 1
+scale 1.5
+
+start
+#LightBlue:Check Mast 1 Aspect;
+
+if (Mast 1 is 'Stop') then (True)
+  #LightCyan:Set Current Mast to 'Approach';
+  #LightSalmon:Exit Logic Group;
+else (False)
+  if (Mast 1 is 'Approach') then (True)
+    #LightBlue:Check Mast 2 Aspect;
+    if (Mast 2 is 'Clear') then (True)
+      #LightCyan:Set Current Mast to 'Approach Medium';
+      #LightSalmon:Exit Logic Group;
+    else (False)
+      #LightCyan:Set Current Mast to 'Approach';
+      #LightSalmon:Exit Logic Group;
+    endif
+  else (False)
+    #LightBlue:Check Mast 2 Aspect;
+    if (Mast 2 is 'Stop') then (True)
+      #LightCyan:Set Current Mast to 'Approach Medium';
+      #LightSalmon:Exit Logic Group;
+    else (False)
+      if (Mast 2 is 'Approach') then (True)
+        #LightCyan:Set Current Mast to 'Approach Medium';
+        #LightSalmon:Exit Logic Group;
+      else (False)
+        #LightCyan:Set Current Mast to 'Clear';
+        #LightSalmon:Exit Logic Group;
+      endif
+    endif
+  endif
+endif
+
+#LightGreen:Process Next Logic Group;
+stop
+@enduml

@@ -1,8 +1,111 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: LCC Fusion Project
+description: LCC Fusion Project is a DIY project providing hardware and software for Model Train Layout Automation using NMRA Layout Command Control (LCC)
 theme: just-the-docs
 
-url: https://just-the-docs.github.io
+logo: /assets/images/LCCFusionLogo.png
+
+search_enabled: true
+
+plugins:
+  - jekyll-default-layout
+  - jekyll-sitemap
+  - jekyll-last-modified-at
+
+url: https://patfleming.github.io
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  "LCC Fusion on GitHub": https://patfleming.github.io
+  "Sitemap": /sitemap/
+aux_links_new_tab: true
+
+# Custom variables
+docPath: resources
+docTopics: resources/Topics
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+  parse_block_html: true
+
+# default tags based on location of the .md file
+defaults:
+  - scope:
+      path: "_builder/Cards" # tags for this directory
+    values:
+      tags: ["PCB Build", "Hardware", "Cards"]
+  - scope:
+      path: "_builder/Breakout_Boards" # tags for this directory
+    values:
+      tags: ["PCB Build", "Hardware", "Breakout Boards"]
+  - scope:
+      path: "_builder/Tips" # tags for this directory
+    values:
+      tags: ["Builder Tips"]
+  - scope:
+      path: "_planning"
+    values:
+      tags: ["Planning for LCC", "Layout Architect"]
+  - scope:
+      path: "_quickstart"
+    values:
+      tags: ["Quick Start Guides"]
+  - scope:
+      path: "_setup"
+    values:
+      tags: ["Layout Deployment"]
+
+
+#variables
+gerber_dir: /builder/GerberFiles/  # don't use leading '/' since this need to reference a file from the root. don't use trailing slash after the .zip name since we're working with a file.
+
+# Reading Files
+
+collections:
+  planning:
+    output: true
+    permalink: "/planning/:path/"
+  builder:
+    output: true
+    permalink: "/builder/:path/"
+  setup:
+    output: true
+    permalink: "/setup/:path/"
+  quickstart:
+    output: true
+    permalink: "/quickstart/:path/"
+
+color_scheme: dark
+nav_scheme: wider
+
+remote_theme: just-the-docs/just-the-docs@latest
+
+just_the_docs:
+  custom_css: "assets/css/custom.css"
+  collections:
+    builder:
+      name: Builder's Bench
+      nav_fold: true
+    setup:
+      name: Setup & Configuration
+      nav_fold: true
+    quickstart:
+      name: Quickstart Guides
+      nav_fold: true
+    planning:
+      name: Planning For LCC
+      nav_fold: true

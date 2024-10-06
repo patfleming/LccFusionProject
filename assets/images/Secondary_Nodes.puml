@@ -1,0 +1,95 @@
+@startuml
+' set formatting of Titles and background
+skinparam defaultFontSize 24
+skinparam BackgroundColor #LightBrown
+skinparam titleBorderRoundCorner 15
+skinparam titleBorderThickness 2
+skinparam titleBorderColor blue
+skinparam titleBackgroundColor #LightBlue
+skinparam TitleFontSize 32
+
+title Multi-Node Cluster
+caption Figure 1
+allowmixing
+scale 0.5
+
+node "LCC Node Bus Hub" as Bus #LightBlue {
+  component "power\n(3.3V, 5V, 12+V)" as p #LightSkyBlue
+  component "CAN comm" as CAN
+  component "Serial comm" as Serial
+  component "connector 1" as C1
+  component "connector 2" as C2
+  component "connector 3" as C3
+  component "connector 4" as C4
+}
+
+object "Node Card" as pNode #LightYellow {
+  Name: Node 1
+  Type: Primary
+  Power Supply: Yes
+  Firmware: Drive I/O Devices
+  Serial Monitor: No
+}
+object "Node Card" as sNode.1 #LightCyan {
+  Name: Node 2
+  Type: Secondary
+  Power Supply: No
+  Firmware: Drive Signals
+  Serial Monitor: No
+}
+object "Node Card" as sNode.2 #LightPink {
+  Node: Node 3
+  Type: Secondary
+  Power Supply: No
+  Firmware: Logics for Signaling
+  Serial Monitor: No
+}
+object "Node Card" as sNode.3 #LightCoral {
+  Node: Node 4
+  Type: Secondary
+  Power Supply: No
+  Firmware: Test Cards
+  Serial Monitor: Yes
+}
+collections "I/O Cards" as ioCards
+collections "Signal Cards" as sCards
+collections "Signal Lamps" as lamps
+collections "Layout Devices" as devices #LightSeaGreen
+person "Computer / Phone Serial Monitor" as monitor #LightSteelBlue
+rectangle "Power Supply" as powerSupply #LightSkyBlue
+cloud "CAN Network" as canNetwork #LightSkyBlue
+
+' Position the nodes
+pNode .[hidden]> sNode.1
+sNode.1 .[hidden]> sNode.2
+sNode.2 .[hidden]> sNode.3
+' Position objects next to the nodes
+powerSupply -[hidden]down-> canNetwork
+canNetwork <-right-> pNode
+powerSupply -right-> pNode
+sNode.3 <-right-> monitor : messages &\n commands
+' Position the bus components
+C1 .[hidden]down-> CAN
+C1 .[hidden]down-> Serial
+C1 .[hidden]right-> C2
+C2 .[hidden]right-> C3
+C3 .[hidden]right-> C4
+C1 .[hidden]down-> p
+powerSupply .[hidden]left-> CAN
+CAN .[hidden]right-> Serial
+' Position the nodes to the bus
+pNode <-down-> C1
+sNode.1 <-down-> C2
+sNode.2 <-down-> C3
+sNode.3 <-down-> C4
+' Position cards
+sCards .[hidden]down-> ioCards
+ioCards .[hidden]->sCards
+' Connect cards to devices
+sCards -right-> lamps
+ioCards <-right-> devices
+' Connect bus components to cards
+Bus -right-> sCards
+Bus <-right-> ioCards
+
+@enduml

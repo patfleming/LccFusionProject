@@ -1,0 +1,14 @@
+{
+  "name": "LCC Fusion Serial Monitor Firmware v1.0.0 for ESP32",
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        {
+          "path": "/manifests/esp32/serial-monitor/v1.0.0/node.bin",
+          "offset": 0x10000
+        }
+      ]
+    }
+  ]
+}

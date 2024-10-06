@@ -1,0 +1,72 @@
+@media print {
+
+  /* Other print styles */
+  .breadcrumb-nav,
+  .subjects-section,
+  .usecases-section,
+  .markdown-toc-terminology,
+  #terminology,
+  .compressed-list,
+  .print-link-container,
+  #markdown-toc,
+  details[open],
+  .sidebar,
+  .header-wrapper,
+  .header,
+  .footer-wrapper,
+  .footer {
+    display: none !important;
+  }
+
+  /* Ensure main content takes full width when these elements are hidden */
+  .main-content-wrap,
+  .main-content {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* General reset for print */
+  * {
+    border: none !important;
+    margin: 0 !important;
+  }
+
+  /* Restore spacing before headings */
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 20px !important; /* Force the margin to apply */
+    padding-top: 0 !important;   /* Ensure no padding on top */
+  }
+
+  /* Styles specifically for printing */
+  table {
+    background-color: white !important;
+    /* White background for printing */
+    color: black !important;
+    /* Black text for printing */
+    border: 3px solid black !important;
+    /* Thick black border for entire table */
+  }
+
+  th,
+  td {
+    padding: 8px !important;
+    /* Force padding for print */
+    border: 2px solid black !important;
+    /* Black borders for printing */
+    background-color: white !important;
+    /* White background for cells */
+    color: black !important;
+    /* Black text for cells */
+    page-break-inside: avoid;
+    /* Prevent cell content from being split */
+  }
+
+  /* Ensuring all borders are black */
+  table,
+  th,
+  td {
+    border-color: black !important;
+    /* Apply black color to all borders */
+  }
+
+}

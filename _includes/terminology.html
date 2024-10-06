@@ -1,0 +1,16 @@
+{% if page.terms %}
+## Terminology
+
+<ul class="compressed-list">
+  {% assign sorted_terms = page.terms | sort %}
+  {% for term in sorted_terms %}
+    {% if site.data.terms[term] %}
+      <li>{{ site.data.terms[term] | markdownify }}</li>
+    {% else %}
+      <li>{{ term }} - not defined</li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<p>For other terms, please refer to the full <a href="/terminology/">Terminology Guide</a>.</p>
+{% endif %}

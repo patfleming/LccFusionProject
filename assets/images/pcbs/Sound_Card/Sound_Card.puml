@@ -1,0 +1,19 @@
+@startuml .//..//assets/images//Sound_Card_Flow
+title Assembly and Testing
+start
+:Obtain PCB and Stencil;
+:Obtain Components and tools;
+:Clean PCB;
+:Solder SMD Components;
+:Solder PTH Components;
+:Install ESP32 and MP3 player(s)
+:Install with Node Card;
+:Test Power and I2C;
+if (I2C Works?) then (yes)
+    :Test playing sounds;
+else (no)
+    :trouble shoot I2C issues;
+endif
+:Done;
+stop
+@enduml

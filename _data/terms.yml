@@ -1,0 +1,70 @@
+  # must restart server after changing this file: bundle exec jekyll serve
+  # links to the terminology page and header tags
+
+  # LCC Fusion Project Terms
+  lcc_fusion_cards: "[LCC Fusion Cards](/terminology/#cards)"
+  lcc_fusion_project: "[LCC Fusion Project](/terminology/#lcc-fusion-project)"
+  lcc_fusion_node_bus: "[LCC Fusion Node Bus](/terminology/#node-bus)"
+  lcc_fusion_node_cluster: "[LCC Fusion Node Cluster](/terminology/#node-cluster)"
+  lcc_fusion_breakout_boards: "[LCC Fusion Breakout Boards](/terminology/#breakout-board)"
+  lcc_fusion_virtual_node_cluster: "[LCC Fusion Virtual Node Cluster](/terminology/#virtual-node-cluster)"
+
+  # LCC Fusion Connect Terms
+  # lcc_fusion_connect: "[LCC Fusion Connect](/terminology/#lcc-fusion-connect)"
+  lcc_fusion_node_card: "[LCC Fusion Node Card](/terminology/#node-card)"
+  lcc_fusion_io_cards: "[LCC Fusion I/O Cards](/terminology/#io-cards)"
+  lcc_fusion_node_bus_hub: "[LCC Fusion Node Bus Hub](/terminology/#node-bus-hub)"
+  output_cards: "[Output Cards](/terminology/#output-cards)"
+  hw_communications_address: "[HW Communications Address](/terminology/#hw-communications-address)"
+  hw_communications_bus: "[HW Communications Bus](/terminology/#hw-communications-bus)"
+
+  # NMRA LCC Network Terms
+  lcc_event_monitoring_tool: "[Event Monitoring Tool](/terminology/#lcc-event-monitoring-tool)"
+  lcc_configuration_tool: "[LCC Configuration Tool](/terminology/#lcc-configuration-tool)"
+  lcc_event_id: "[LCC Event ID](/terminology/#event-id)"
+  lcc_node: "[LCC Node](/terminology/#lcc-node)"
+
+  # Model Railroad Automation Terms
+  accessory_bus: "[Accessory Bus](/terminology/#accessory-bus)"
+  dcc_signal: "[DCC Signal](/terminology/#dcc-signal)"
+  track_block: "[Track Block](/terminology/#track-block)"
+  track_bus: "[Track Bus](/terminology/#track-bus)"
+
+  # Hardware and Software Terms
+  adapter: "[Adapter](/terminology/#adapter)"
+  amplifier: "[Amplifier](/terminology/#amplifier)"
+  audio_signal: "[Audio Signal](/terminology/#audio-signal)"
+  bridge_rectifier: "[Bridge Rectifier](/terminology/#bridge-rectifier)"
+  bus: "[Bus](/terminology/#bus)"
+  can_network: "[CAN Network](/terminology/#can-network)"
+  can_termination: "[CAN Network](/terminology/#can-termination)"
+  canable: "[CANable](/terminology/#canable)"
+  charging_circuit: "[Charging Circuit](/terminology/#charging-circuit)"
+  cleaning_pcb: "[Cleaning PCB](/terminology/#cleaning-pcb)"
+  component: "[Component](/terminology/#component)"
+  current_limiting_resistor: "[Current Limiting Resistor](/terminology/#current-limiting-resistor)"
+  decoupling_capacitor: "[Decoupling Capacitor](/terminology/#decoupling-capacitor)"
+  edge_card_connector: "[Edge Card Connector](/terminology/#edge-card-connector)"
+  esd_protection_diode: "[ESD Protection Diode](/terminology/#esd-protection-diode)"
+  ferrite_bead: "[Ferrite Bead](/terminology/#ferrite-bead)"
+  flyback_diode: "[Flyback Diode](/#flyback-diode/)"
+  gpio_expander: "[GPIO Expander](/terminology/#gpio-expander)"
+  ground_plane: "[Ground Plane](/terminology/#ground-plane)"
+  i2c: "[I2C (Inter-Integrated Circuit)](/terminology/#i2c)"
+  i2c_bus: "[I2C Bus](/terminology/#i2c-bus)"
+  i2s: "[I2S (Inter-IC Sound)](/terminology/#i2s)"
+  jumper_caps: "[Jumper](/terminology/#jumper)"
+  li_po_battery: "[Li-Po Battery](/terminology/#li-po-battery)"
+  low_voltage_detection: "[Low Voltage Detection](/terminology/#low-voltage-detection)"
+  mcp23017: "[MCP23017](/terminology/#mcp23017)"
+  network_cable: "[Network Cable](/terminology/#network-cable)"
+  optocoupler: "[Optocoupler](/terminology/#optocoupler)"
+  polyfuse: "[Polyfuse](/terminology/#polyfuse)"
+  pull_up_resistor: "[Pull-up Resistor](/terminology/#pull-up-resistor)"
+  pwm: "[PWM (Pulse Width Modulation)](/terminology/#pwm)"
+  shield: "[Shield](/terminology/#shield)"
+  stencil: "[Stencil](/terminology/#stencil)"
+  supermini_esp32_s3: "[SuperMini ESP32-S3](/terminology/#supermini-esp32-s3)"
+  tvs_diode: "[TVS Diode](/terminology/#tvs-diode)"
+  # Troubleshooting and Support Terms
+  

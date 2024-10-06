@@ -1,0 +1,96 @@
+/* Custom styles for tables - default for screen (HTML) */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #000000;
+  /* Black background for the entire table */
+  color: #ffffff;
+  /* White text color for the entire table */
+}
+
+table th,
+table td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ffffff;
+  /* White border for all table cells */
+}
+
+table th {
+  background-color: #000000;
+  /* Black background for headers */
+  color: #ffffff;
+  /* White text color for headers */
+}
+
+/* Thicken the outside border */
+table {
+  border: 3px solid #ffffff;
+  /* Thicker outside border */
+}
+
+/* Custom sidebar width */
+.sidebar {
+  z-index: 0;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f8f8f8; /* Adjust to match your theme or preference */
+
+  /* For medium screens and above */
+  @media (min-width: 768px) {
+    flex-flow: column nowrap;
+    position: fixed;
+    width: fit-content; /* Custom width for the sidebar */
+    height: 100%;
+    border-right: 1px solid #ddd; /* Adjust border color if needed */
+    align-items: flex-end;
+  }
+
+  /* For large screens */
+  @media (min-width: 1024px) {
+    width: fit-content; /* Maintain consistent width for larger screens */
+    min-width: 10%; /* Ensures sidebar doesn’t shrink below this width */
+  }
+}
+
+
+.main {
+  margin: auto;
+  width: calc(100% - $nav-width-md); /* Adjust width based on the sidebar width */
+  max-width: 100%; /* Ensure it can expand fully */
+
+  @include mq(md) {
+    position: relative;
+    margin-left: $nav-width-md; /* Match the sidebar width */
+    max-width: calc(100% - $nav-width-md); /* Expand fully, accounting for the sidebar */
+  }
+
+  @include mq(lg) {
+    margin-left: calc((100% - #{$nav-width + $content-width}) / 2 + #{$nav-width});
+    max-width: 100%; /* Ensure it can expand fully on large screens */
+  }
+
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  /* Ensure text wraps correctly within the main content area */
+}
+
+.main-content-wrap {
+  padding: $gutter-spacing-sm; /* Default padding */
+  
+  @include container;
+  
+  @include mq(md) {
+    padding-top: $gutter-spacing;
+    padding-bottom: $gutter-spacing;
+    padding-left: $gutter-spacing; /* Added padding for better spacing */
+    padding-right: $gutter-spacing;
+  }
+
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  /* Ensure text wraps correctly inside the content area */
+}
+
+
+

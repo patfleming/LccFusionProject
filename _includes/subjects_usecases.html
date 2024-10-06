@@ -1,0 +1,21 @@
+<!-- Your custom subject tagging display snippet -->
+{% if page.subjects %}
+<p class="subjects-section"><b>Subjects:</b>
+  {% for subject in page.subjects %}
+    <a href="/subjects/#{{ subject | slugify }}">{{ subject }}</a>
+    {% unless forloop.last %}, {% endunless %}
+  {% endfor %}
+</p>
+{% endif %}
+<!-- End of custom subject tagging display snippet -->
+
+<!-- Your custom use cases tagging display snippet -->
+{% if page.use_cases %}
+  <p class="usecases-section"><b>Use Cases:</b>
+    {% for use_case in page.use_cases %}
+      <a href="/use-cases/#{{ use_case | slugify }}">{{ use_case }}</a>
+      {% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+  </p>  
+{% endif %}
+<!-- End of custom use cases display snippet -->

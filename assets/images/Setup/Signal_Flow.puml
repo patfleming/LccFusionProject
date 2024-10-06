@@ -1,0 +1,60 @@
+@startuml
+' set formatting of Titles and background
+skinparam defaultFontSize 24
+skinparam BackgroundColor #LightBrown
+skinparam titleBorderRoundCorner 15
+skinparam titleBorderThickness 2
+skinparam titleBorderColor blue
+skinparam titleBackgroundColor #LightBlue
+skinparam TitleFontSize 32
+
+title Signaling Flow Example
+caption Figure 1
+scale .5
+'scale 1.5 | scale 200 width | scale 100 height | scale [max] 200x100
+
+' Define Components
+node "I/O Cards Configurations" as Cards #LightGoldenRodYellow {
+collections "Track Block Detectors" as BlockDetection #LightCoral
+collections "Turnouts" as Turnouts #LightCoral
+collections "Track Circuits" as TrackCircuit #LightCoral
+}
+node "Logic Statements Configuration" as LogicStatement #LightSkyBlue{
+  node "Conditional Configuration" as Conditionals #LightGoldenRodYellow {
+    component "Condition 1" as Condition1
+    component "Logic Operation \n (AND, OR, etc.)" as Operation
+    component "Condition 2" as Condition2
+  }
+  node "Actions Configuration" as Actions #LightGoldenRodYellow{
+    component "Action when True" as ActionTrue
+    component "Action when False" as ActionFalse
+  }
+}
+node "Signal Mast Configuration(s)" as Masts #LightGoldenRodYellow {
+  component "Rules to Aspect" as Rules
+  collections "Aspects" as Aspects
+}
+node "Wired I/O Devices" as Devices #LightGreen {
+  collections "Signal Lamps" as Lamps
+}
+
+'Position objects
+Cards -[hidden]down- LogicStatement
+BlockDetection -[hidden]right--- Turnouts
+ActionTrue .[hidden]right. ActionFalse
+
+'Arrows
+BlockDetection ..[#ff0000,thickness=5]down.> Condition1 : Detection Event IDs \n (Occupied,UnOccupied)
+TrackCircuit ..[#ff0000,thickness=5]down.> Condition2 : Speed Event IDs \n (Stop, Approach, Clear,...)
+Turnouts ..[#ff0000,thickness=5]down.> Condition1 : Position Event IDs \n (Open,Thrown/Closed)
+
+Operation -[#008000,thickness=5]down-> ActionTrue : True
+Operation -[#FF0000,thickness=5]down-> ActionFalse : False
+
+Condition1 -[#ff00ff,bold]right--> Operation
+Operation <--[#ff00ff,bold]right- Condition2
+ActionTrue .[#ff0000,thickness=5]down-> Aspects : True \n Event ID
+ActionFalse .[#ff0000,thickness=5]down-> Aspects : False \n Event ID
+
+Aspects -[#ff00ff,thickness=5]right--> Lamps: Lamp \n Effects
+@enduml
