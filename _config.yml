@@ -93,7 +93,7 @@ collections:
 color_scheme: dark
 nav_scheme: wider
 
-remote_theme: just-the-docs/just-the-docs@latest
+remote_theme: "just-the-docs/just-the-docs"
 
 just_the_docs:
   custom_css: "assets/css/custom.css"
