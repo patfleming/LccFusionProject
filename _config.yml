@@ -95,6 +95,9 @@ nav_scheme: wider
 
 remote_theme: "just-the-docs/just-the-docs"
 
+exclude:
+  - assets/downloads/LccFusion-ESP32-3.0.5.zip
+
 just_the_docs:
   custom_css: "assets/css/custom.css"
   collections:

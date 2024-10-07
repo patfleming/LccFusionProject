@@ -10,7 +10,16 @@ use_cases:
 
 # Firmware Planning Guide {#firmware-planning-guide}
 
-Below is a list of available firmware files, categorized by their use case (solution), version, and download links. You can flash the firmware directly to your ESP device by clicking the desired firmware version.
+Below is a list of available firmware files, categorized by their use case (solution), version, and download links. You can download the firmware directly to your ESP device by clicking the desired firmware version.
+
+To update the firmware on your ESP32, follow these simple steps:
+
+1. **Click one of the blue "Connect" buttons from the table below** to begin.
+2. **Select the serial port** where your ESP32 is connected from the list, then click the "Connect" button at the bottom.
+3. Choose the **"Install..." option** to start the firmware update process.
+4. **Click the "Install" button** to begin installing the new firmware.
+5. Watch the progress as the current firmware is erased, and the new firmware is copied to your ESP32.
+6. Once it's done, click **"Next"**, and you can optionally review the installation log if you'd like.
 
 | Solution       | Version |                           Install                            | Description                                                  |
 | -------------- | ------- | :----------------------------------------------------------: | ------------------------------------------------------------ |
