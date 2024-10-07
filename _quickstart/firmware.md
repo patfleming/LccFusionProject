@@ -14,7 +14,7 @@ Below is a list of available firmware files, categorized by their use case (solu
 
 | Solution       | Version |                           Install                            | Description                                                  |
 | -------------- | ------- | :----------------------------------------------------------: | ------------------------------------------------------------ |
-| Serial Monitor | v1.0.0  | [](#) <esp-web-install-button manifest="https://patfleming.github.io/LccFusionProject/manifests/esp32/serial-monitor/v1.0.0/manifest.json"></esp-web-install-button> | Provides a serial monitor for monitoring LCC Fusion Node messages, including Bluetooth Serial Monitor (phone) app |
+| Serial Monitor | v1.0.0  | [](#) <esp-web-install-button manifest="/manifests/esp32/serial-monitor/v1.0.0/manifest.json"></esp-web-install-button> | Provides a serial monitor for monitoring LCC Fusion Node messages, including Bluetooth Serial Monitor (phone) app |
 
 ## Notes:
 - *Browser Support**: Ensure you're using a browser like Chrome or Edge that supports the Web Serial API for flashing ESP devices via USB.
