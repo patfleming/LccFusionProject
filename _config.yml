@@ -1,8 +1,16 @@
 title: LCC Fusion Project
-description: LCC Fusion Project is a DIY project providing hardware and software for Model Train Layout Automation using NMRA Layout Command Control (LCC)
-theme: just-the-docs
 baseurl: "/LccFusionProject"
+description: LCC Fusion Project is a DIY project providing hardware and software for Model Train Layout Automation using NMRA Layout Command Control (LCC)
+url: https://patfleming.github.io
+theme: just-the-docs
+remote_theme: "just-the-docs/just-the-docs"
 
+exclude:
+  - assets/downloads/LccFusion-ESP32-3.0.5.zip
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - README.md
 
 logo: /assets/images/LCCFusionLogo.png
 
@@ -14,11 +22,10 @@ plugins:
   - jekyll-last-modified-at
   - jekyll-remote-theme
 
-url: https://patfleming.github.io
 
 aux_links:
   "LCC Fusion on GitHub": https://patfleming.github.io
-  "Sitemap": /sitemap/
+  "Sitemap": "/LccFusionProject/sitemap/"
 aux_links_new_tab: true
 
 # Custom variables
@@ -95,10 +102,6 @@ collections:
 color_scheme: dark
 nav_scheme: wider
 
-remote_theme: "just-the-docs/just-the-docs"
-
-exclude:
-  - assets/downloads/LccFusion-ESP32-3.0.5.zip
 
 just_the_docs:
   custom_css: "assets/css/custom.css"
