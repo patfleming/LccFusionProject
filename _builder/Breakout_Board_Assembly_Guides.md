@@ -30,7 +30,7 @@ For detailed information on design best practices and considerations, please see
 
 ## LCC Fusion Breakout Boards: From Start to Finish
 
-<img src="/assets/images/pcbs/Sound_Card/Sound_Card_Flow.png" style="zoom:50%;float:right" />Below, you'll find links to specific guides for PCB **LCC Fusion Breakout Boards** included in the LCC Fusion Project. These guides are tailored to the unique aspects of assembling each type of PCB, yet they all follow the same fundamental principles outlined in our sequence diagram. This consistency ensures that, no matter which PCB you're working on, the process remains familiar and straightforward.
+<img src="{{ site.baseurl }}/assets/images/pcbs/Sound_Card/Sound_Card_Flow.png" style="zoom:50%;float:right" />Below, you'll find links to specific guides for PCB **LCC Fusion Breakout Boards** included in the LCC Fusion Project. These guides are tailored to the unique aspects of assembling each type of PCB, yet they all follow the same fundamental principles outlined in our sequence diagram. This consistency ensures that, no matter which PCB you're working on, the process remains familiar and straightforward.
 
 **Sequence of Activities:**
 

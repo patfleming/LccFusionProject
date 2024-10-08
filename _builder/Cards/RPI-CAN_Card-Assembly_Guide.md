@@ -45,9 +45,9 @@ terms:
 
 This document provides a detailed guide the assembly of the RPI-CAN Card used to configure a Raspberry PI (RPI) running the Java Model Railroad Interface (JMRI) with the Controller Area Network (CAN) interface.  JRMI provides a GUI for both controlling a layout and for configuring LCC Nodes.    The card provides all of the wiring connections for between an RPI, a CAN Module, and the LCC Fusion Project. 
 
-<img src="/assets/images/pcbs/RPI-CAN_Card/RPI.png" style="zoom:25%; float:right" />To facilitate CAN communication with LCC Nodes, a Raspberry Pi can be configured to run JMRI and function as a CAN end-node. This integration is streamlined through the use of a specialized Raspberry Pi (RPI) CAN card that incorporates the MCP2515 module (CAN Receiver). This card, which slots directly into the LCC Fusion Node Bus Hub, simplifies connectivity by negating the need for additional wiring.
+<img src="{{ site.baseurl }}/assets/images/pcbs/RPI-CAN_Card/RPI.png" style="zoom:25%; float:right" />To facilitate CAN communication with LCC Nodes, a Raspberry Pi can be configured to run JMRI and function as a CAN end-node. This integration is streamlined through the use of a specialized Raspberry Pi (RPI) CAN card that incorporates the MCP2515 module (CAN Receiver). This card, which slots directly into the LCC Fusion Node Bus Hub, simplifies connectivity by negating the need for additional wiring.
 
-<img src="/assets/images/parts/MCP2515_Module.png" style="zoom:25%;float:right" />In essence, connecting a Raspberry Pi to the LCC Node network is made straightforward with the Raspberry Pi CAN Card. The design of the card does away with the necessity of 10 separate connections:
+<img src="{{ site.baseurl }}/assets/images/parts/MCP2515_Module.png" style="zoom:25%;float:right" />In essence, connecting a Raspberry Pi to the LCC Node network is made straightforward with the Raspberry Pi CAN Card. The design of the card does away with the necessity of 10 separate connections:
 
 1. It eliminates the need for eight connections typically used for SPI, 3.3V, and GND between the Raspberry Pi and the MCP2515.
 2. It also removes the requirement for two CAN wires that would normally link the MCP2515 Module to the LCC Node.
@@ -95,7 +95,7 @@ The card only requires soldering three sets of PTH female pin headers.  Required
 
 ## Assembly Instructions
 
-<img src="/assets/images/pcbs/RPI-CAN_Card/rpi-can_card_pcb.png" style="zoom: 33%; float: right;" />Here are the step-by-step instructions for assembling the card:
+<img src="{{ site.baseurl }}/assets/images/pcbs/RPI-CAN_Card/rpi-can_card_pcb.png" style="zoom: 33%; float: right;" />Here are the step-by-step instructions for assembling the card:
 
 > See also: [Soldering Tips](/pcb-soldering/)
 
@@ -105,7 +105,7 @@ The card only requires soldering three sets of PTH female pin headers.  Required
 
    2. Attach the 2x20P female header (J3) to the **BOTTOM** of the **PCB**. This will be used for attaching the RPI underneath the PCB using its male pins later.
 
-   3. <img src="/assets/images/pcbs/RPI-CAN_Card/RPI-CAN_Card_headers.png" style="zoom: 9%; float: right;" />Solder the 2p stackable long legged header (J1) to the **TOP** of the **PCB** (long legs down thru the 2 holes).  The 2 long legs provide a connection in the MCP2515 Module’s 2P male header connector (CAN-H and CAN-L communications).
+   3. <img src="{{ site.baseurl }}/assets/images/pcbs/RPI-CAN_Card/RPI-CAN_Card_headers.png" style="zoom: 9%; float: right;" />Solder the 2p stackable long legged header (J1) to the **TOP** of the **PCB** (long legs down thru the 2 holes).  The 2 long legs provide a connection in the MCP2515 Module’s 2P male header connector (CAN-H and CAN-L communications).
 
    4. Solder the 8p header (J2) to the **TOP** of the **PCB** (legs down thru the 8 holes).  This header provides a connection to the MCP2515 Modules power and SPI communications connector.
 
@@ -113,7 +113,7 @@ The card only requires soldering three sets of PTH female pin headers.  Required
 
       > Utilize tacky putty to secure each header during the soldering process.
 
-   5. <img src="/assets/images/pcbs/RPI-CAN_Card/RPI-CAN_Card_solder.png" style="zoom: 8%; float: right;" />Ensure each header is aligned straight and fits snugly against the PCB. 
+   5. <img src="{{ site.baseurl }}/assets/images/pcbs/RPI-CAN_Card/RPI-CAN_Card_solder.png" style="zoom: 8%; float: right;" />Ensure each header is aligned straight and fits snugly against the PCB. 
 
       > Tip: After soldering the first pin of a header, remove the putty, press down on the header, and reheat the soldered pin to set the header flush and straight against the PCB.
 
@@ -121,7 +121,7 @@ The card only requires soldering three sets of PTH female pin headers.  Required
 
    7. Follow this process for all headers.
 
-2. <img src="/assets/images/pcbs/RPI-CAN_Card/RPI-CAN_Card_MCP2515.png" style="zoom: 8%; float: right;" />Install the MCP2515 Module on PCB 
+2. <img src="{{ site.baseurl }}/assets/images/pcbs/RPI-CAN_Card/RPI-CAN_Card_MCP2515.png" style="zoom: 8%; float: right;" />Install the MCP2515 Module on PCB 
 
    1. Configure for CAN termination
       - If the MCP2515 Module is at the end of a CAN network, the module be configured with a CAN terminator.  This is performed by removing the MPC2515 Module from the PCB and installing a Jumper Cap on the 2 male pins (on the side of the module’s PCB marked J1)
@@ -129,7 +129,7 @@ The card only requires soldering three sets of PTH female pin headers.  Required
    2. Insert the MCP2515 Module on the PCB **top**, making sure both sets of male pins are inserted into PCB’s female headers correctly.
    3. Attach four 10mm PCB standoffs on the PCB **top** to secure the MCP2515 to the board.
 
-3. <img src="/assets/images/pcbs/RPI-CAN_Card/RPI-CAN_Card_finished.png" style="zoom: 15%; float: right;" />Install the RPI
+3. <img src="{{ site.baseurl }}/assets/images/pcbs/RPI-CAN_Card/RPI-CAN_Card_finished.png" style="zoom: 15%; float: right;" />Install the RPI
 
    1. Insert the RPI into the 2x20P headers on the PCB **bottom**
    2. Install (4) sets of 2x11mm PCB standoffs on the PCB **bottom** to mount the RPI, using the provided holes in the card.

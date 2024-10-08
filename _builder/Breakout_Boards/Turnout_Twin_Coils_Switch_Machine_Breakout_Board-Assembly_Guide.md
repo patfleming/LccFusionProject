@@ -194,7 +194,7 @@ Below is a list of the PCB components used for this card (see diagram before ref
 
 ## Assembly Instructions
 
-<img src="/assets/images/pcbs/Breakout_Boards/turnout_twin_coils_switch_machine_breakout_board_pcb.png/" style="zoom:50%; float:right" />Below are the high level steps for assembly of the [Turnout Twin Coils Switch Machine Breakout Board](/turnout-twin-coils-switch-machine-breakout-board-assembly-guide/):
+<img src="{{ site.baseurl }}/assets/images/pcbs/Breakout_Boards/turnout_twin_coils_switch_machine_breakout_board_pcb.png/" style="zoom:50%; float:right" />Below are the high level steps for assembly of the [Turnout Twin Coils Switch Machine Breakout Board](/turnout-twin-coils-switch-machine-breakout-board-assembly-guide/):
 
 Clean PCB with alcohol to remove residue.  See [Cleaning_PCB](/pcb-prep/) for details.
 

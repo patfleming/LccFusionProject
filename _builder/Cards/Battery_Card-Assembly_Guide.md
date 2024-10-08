@@ -211,7 +211,7 @@ Below is a list of the PCB components used for this card (see diagram on right f
 
 ## Assembly Instructions
 
- <img src="/assets/images/pcbs/Battery_Card/Battery_Card_pcb.png" style="zoom:50%; float:right" />Below are the high level steps for assembly of the Audio Card:
+ <img src="{{ site.baseurl }}/assets/images/pcbs/Battery_Card/Battery_Card_pcb.png" style="zoom:50%; float:right" />Below are the high level steps for assembly of the Audio Card:
 
 >  See also: [Soldering Tips](/pcb-soldering/)
 

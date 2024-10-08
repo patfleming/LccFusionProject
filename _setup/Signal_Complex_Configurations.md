@@ -123,4 +123,4 @@ The flow diagram is structured to mirror the sequential processing of the logic 
 
 This diagram not only aids in visualizing the operational logic behind signal aspect setting but also serves as a practical reference for those configuring or troubleshooting signal systems. By aligning the visual flow with the logic statements covered earlier, we aim to provide a dual-perspective understanding—both textual and visual—of the intricate decision-making process involved in railway signaling."
 
-<img src="/assets/images/Setup/Signal_Complex_Example.png" style="zoom: 100%; border: 2px solid #000000;" />
+<img src="{{ site.baseurl }}/assets/images/Setup/Signal_Complex_Example.png" style="zoom: 100%; border: 2px solid #000000;" />

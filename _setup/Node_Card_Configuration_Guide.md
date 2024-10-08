@@ -32,9 +32,9 @@ use_cases:
 
 ## LCC Fusion Node Card firmware Configuration for LCC Events
 
-This part will detail the process for configuring the firmware to handle LCC events related to the **LCC Fusion Project LCC Fusion Node Card**. Using the  LCC Configuration Tool, it will outline steps to integrate the card with the LCC Fusion firmware, setting up LCC Event IDs to drive output devices. <img src="/_setup/assets/images/BOD_Card_CDI.png" style="zoom:50%;float:right" />
+This part will detail the process for configuring the firmware to handle LCC events related to the **LCC Fusion Project LCC Fusion Node Card**. Using the  LCC Configuration Tool, it will outline steps to integrate the card with the LCC Fusion firmware, setting up LCC Event IDs to drive output devices. <img src="/_setup{{ site.baseurl }}/assets/images/BOD_Card_CDI.png" style="zoom:50%;float:right" />
 
-1. Using the [LCC Configuration Tool](/assets/images/howto/CDI_VIewer_Open/) find the LCC Node and open the configuration.
+1. Using the [LCC Configuration Tool]({{ site.baseurl }}/assets/images/howto/CDI_VIewer_Open/) find the LCC Node and open the configuration.
 2. Scroll down to the LCC Fusion Node Card segment and click on the twistie to open the configuration dialog box for the card
 3. Select the tab for the specific line to be configured.  Note that unconnected lines can be configured for future use.
 4. Make changes and click **Write** to save the change.

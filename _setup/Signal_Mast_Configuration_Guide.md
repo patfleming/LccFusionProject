@@ -73,7 +73,7 @@ Refer to the PWM Card and the Signal Masts Breakout Board for details on configu
 
 ### Rules to Aspect Configuration
 
-<img src="/assets/images/setup/Signal_Masts_CDI.png" style="zoom:0%;float:right" />Rules configuration panel used for setting up rules related to signal masts within the LCC Fusion Project. The summary of the dialog fields is as follows:
+<img src="{{ site.baseurl }}/assets/images/setup/Signal_Masts_CDI.png" style="zoom:0%;float:right" />Rules configuration panel used for setting up rules related to signal masts within the LCC Fusion Project. The summary of the dialog fields is as follows:
 
 1. **Card** (tab): Select the tab for the PWM Card connected to the mast to be configured using a Signal Masts Breakout Board connected to signal lamps (LEDs).
 2. **Card Information Configuration**:
@@ -113,7 +113,7 @@ The following outlines the steps:
 
 > Since the Track Circuit to Mast linkage is performed using an LCC Event ID, the mast can be defined and managed from **different LCC Node.**
 
-<img src="/assets/images/setup/Track_Circuits_CDI.png" style="zoom:75%; float:right;" />Below is a summary of the Track Circuits Configuration CDI fields (shown in the dialog on the right):
+<img src="{{ site.baseurl }}/assets/images/setup/Track_Circuits_CDI.png" style="zoom:75%; float:right;" />Below is a summary of the Track Circuits Configuration CDI fields (shown in the dialog on the right):
 
 - **Track Circuit (tab)**: There are tabs for up to six circuits, allowing individual configuration for each track circuit.
 - **Description**: A field to optionally enter descriptive information about the track circuit or mast.

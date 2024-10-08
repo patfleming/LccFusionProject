@@ -26,13 +26,13 @@ has_children: True
 
 ## Introduction
 
-<img src="/assets/images/pcbs/Card.png/" style="zoom:20%; float:right" />The **LCC Fusion Project** refers to some of the PCB (boards) as **Cards**, which provide specific functions for adding layout automation. **LCC Fusion Cards** are connected using a **Node Bus Hub** to form the project's **LCC Fusion Node Cluster.** Each cluster requires one **LCC Fusion Node Card** to run the firmware for the **LCC Fusion Node Card.**
+<img src="{{ site.baseurl }}/assets/images/pcbs/Card.png/" style="zoom:20%; float:right" />The **LCC Fusion Project** refers to some of the PCB (boards) as **Cards**, which provide specific functions for adding layout automation. **LCC Fusion Cards** are connected using a **Node Bus Hub** to form the project's **LCC Fusion Node Cluster.** Each cluster requires one **LCC Fusion Node Card** to run the firmware for the **LCC Fusion Node Card.**
 
 For detailed information on design best practices and considerations, please see the [PCB Design Guidelines](/pcb-design-guidelines/) section in our documentation.
 
 ## LCC Fusion Cards Assembly Guide: From Start to Finish
 
-<img src="/assets/images/pcbs/Sound_Card/Sound_Card_Flow.png" style="zoom:50%;float:right" />Below, you'll find links to specific guides for each **LCC Fusion Cards** (PCBs) included in the **LCC Fusion Project**. These guides are tailored to the unique aspects of assembling each type of LCC Fusion Cards, yet they all follow the same fundamental principles outlined in our sequence diagram. This consistency ensures that, no matter which LCC Fusion Cards you're working on, the process remains familiar and straightforward.
+<img src="{{ site.baseurl }}/assets/images/pcbs/Sound_Card/Sound_Card_Flow.png" style="zoom:50%;float:right" />Below, you'll find links to specific guides for each **LCC Fusion Cards** (PCBs) included in the **LCC Fusion Project**. These guides are tailored to the unique aspects of assembling each type of LCC Fusion Cards, yet they all follow the same fundamental principles outlined in our sequence diagram. This consistency ensures that, no matter which LCC Fusion Cards you're working on, the process remains familiar and straightforward.
 
 ### Sequence of Activities
 

@@ -140,7 +140,7 @@ Below is a list of the PCB components used for this card (see diagram before ref
 
 ## Assembly Instructions
 
-<img src="/assets/images/pcbs/Breakout_Boards/Turnout_Stall_Motor_Switch_Machine_Breakout_Board_pcb.png/" style="zoom:70%; float:right" />Below are the high level steps for assembly of the breakout board:
+<img src="{{ site.baseurl }}/assets/images/pcbs/Breakout_Boards/Turnout_Stall_Motor_Switch_Machine_Breakout_Board_pcb.png/" style="zoom:70%; float:right" />Below are the high level steps for assembly of the breakout board:
 
 Clean PCB with alcohol to remove residue.  See [Cleaning_PCB](/pcb-prep/) for details.
 

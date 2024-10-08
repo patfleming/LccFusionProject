@@ -208,7 +208,7 @@ For a list of recommended tools, refer to [List of recommended tools](/pcb-tools
 
 ## Assembly Instructions
 
-<img src="/assets/images/pcbs/BLVD_Card/BLVD_Card_pcb.png" style="zoom:50%; float:right" />Below are the high level steps for assembly of the BOD Card:
+<img src="{{ site.baseurl }}/assets/images/pcbs/BLVD_Card/BLVD_Card_pcb.png" style="zoom:50%; float:right" />Below are the high level steps for assembly of the BOD Card:
 
 1.  Below are the high level steps for assembly of the Audio Card:
 2.  Position the card with the edge connector tabs facing down (see image on right).

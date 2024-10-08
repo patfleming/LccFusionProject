@@ -40,7 +40,7 @@ The **LCC Fusion Project** is a comprehensive system designed for automating and
 
 ### LCC Fusion Cards {#cards}
 
-<img src="/assets/images/pcbs/Card.png" style="zoom:15%;float:right" />Each card is design to a standard form of width, height, holes for mounting, positioning key, and 12 card edge pads (see pic on right).  This design enables the cards to be installed in card edge connectors mount on the [Node Bus Hub](/node-bus-hub-assembly-guide/), ensuring power and communication connects with the [Node Card](/node-card-assembly-guide/) (also installed in the same [Node Bus Hub](/node-bus-hub-assembly-guide/)).  A positioning key at the bottom of the card insures the card is inserted into the [Node Bus Hub](/node-bus-hub-assembly-guide/) with the correct orientation. 
+<img src="{{ site.baseurl }}/assets/images/pcbs/Card.png" style="zoom:15%;float:right" />Each card is design to a standard form of width, height, holes for mounting, positioning key, and 12 card edge pads (see pic on right).  This design enables the cards to be installed in card edge connectors mount on the [Node Bus Hub](/node-bus-hub-assembly-guide/), ensuring power and communication connects with the [Node Card](/node-card-assembly-guide/) (also installed in the same [Node Bus Hub](/node-bus-hub-assembly-guide/)).  A positioning key at the bottom of the card insures the card is inserted into the [Node Bus Hub](/node-bus-hub-assembly-guide/) with the correct orientation. 
 
 | **PCB Layer** | **1** | **2** | **3** | **4** | **5** | **6** |
 | ------------- | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -89,7 +89,7 @@ A Node Cluster is a physical configuration that consists of at least a [Node Car
 
 ### Virtual LCC Fusion Node Cluster {#virtual-node-cluster}
 
-<img src="/assets/images/Virtual_LCC_Node_Cluster.png" style="zoom:20%;float:right;" />A Virtual LCC Node Cluster is a configuration utilizing a virtual connection between its [Node Card](/node-card-assembly-guide/) and other LCC Fusion Connect cards.  A Virtual LCC Node Cluster is an alternative to creating multi-Node clusters by allowing a single LCC Node to wirelessly perform I/O communications with multiple I/O cards dispersed throughout a layout.   This allows a scale-up of I/O without the complexity of managing multiple LCC Nodes.  
+<img src="{{ site.baseurl }}/assets/images/Virtual_LCC_Node_Cluster.png" style="zoom:20%;float:right;" />A Virtual LCC Node Cluster is a configuration utilizing a virtual connection between its [Node Card](/node-card-assembly-guide/) and other LCC Fusion Connect cards.  A Virtual LCC Node Cluster is an alternative to creating multi-Node clusters by allowing a single LCC Node to wirelessly perform I/O communications with multiple I/O cards dispersed throughout a layout.   This allows a scale-up of I/O without the complexity of managing multiple LCC Nodes.  
 
 The virtual cluster consists of at least a **[Node Card](/node-card-assembly-guide/)** connecting wirelessly to an **I/O Controller Card**.   The I/O Controller Card can provide local I/O and/or thru the use a **[Node Bus Hub](/node-bus-hub-assembly-guide/)** can perform I/O to additional cards.  
 
@@ -249,7 +249,7 @@ A **Decoupling Capacitor** is used to filter out high-frequency noise and stabil
 
 ### Edge Card Connector {#edge-card-connector}
 
-<img src="/assets/images/parts/Edge_Card_Connector.png" style="zoom:25%;float:right" />The [Node Bus Hub](/node-bus-hub-assembly-guide/) is implemented on PCB containing at least one **Edge Card Connector** (see blue connector on the right).  Supported connectors are the 805 Type A, 12P (2x6), with a 3.56mm pin pitch.  The Node Bus connections are connected to the connector’s 12 pins.  Connecting multiple connectors serially provide power and communications support between multiple cards.
+<img src="{{ site.baseurl }}/assets/images/parts/Edge_Card_Connector.png" style="zoom:25%;float:right" />The [Node Bus Hub](/node-bus-hub-assembly-guide/) is implemented on PCB containing at least one **Edge Card Connector** (see blue connector on the right).  Supported connectors are the 805 Type A, 12P (2x6), with a 3.56mm pin pitch.  The Node Bus connections are connected to the connector’s 12 pins.  Connecting multiple connectors serially provide power and communications support between multiple cards.
 
 ### Ground Plane {#ground_plane}
 

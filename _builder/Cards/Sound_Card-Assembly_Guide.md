@@ -67,13 +67,13 @@ The Sound Card is used with the LCC LCC Fusion Node Card to play sounds simultan
 
 ## Specifications
 
-The card has the following:
+The card has the following: 
 
 - Maximum of 4 MP3 devices can be used.   
 - Requires a mini MP3 player.  Supported players are the [DFRobots DFPlayer Mini](https://www.dfrobot.com/product-1121.html) and compatible (MP3-TF-16P player)
 - Only 4-8 ohm speaker(s) can be attached
 - Max of 4 watts of output is provided by player device
-- LCC Fusion Node Bus Hubconnections; GND, 5V, SLA0/SDA0, and SDA1/SCL1 (optional)
+- LCC Fusion Node Bus Hub connections; GND, 5V, SLA0/SDA0, and SDA1/SCL1 (optional)
 
 In the sections below, are the steps to assemble the card.
 
@@ -84,6 +84,13 @@ In the sections below, are the steps to assemble the card.
 
 The following outlines the flow of activity for the Sound Card:
 
+```mermaid
+graph TD;
+A-->B;
+A-->C;
+B-->D;
+C-->D;
+```
 1. Activity starts with an LCC Event sound related event being received by an LCC Fusion Node Card (firmware)
 
 2. The LCC Node uses the Sound Card's CDI configuration information to determine the I2C address of the card
@@ -151,7 +158,7 @@ Below is a list of the PCB components used for this card (see diagram on right f
 
 ## Assembly Instructions
 
-<img src="/assets/images/pcbs/Sound_Card/Sound_Card_pcb.png" style="zoom:50%; float:right" />Below are the high level steps for assembly of the Sound Card:
+<img src="{{ site.baseurl }}/assets/images/pcbs/Sound_Card/Sound_Card_pcb.png" style="zoom:50%; float:right" />Below are the high level steps for assembly of the Sound Card:
 
 1. Clean PCB with alcohol to remove residue.  See [Cleaning_PCB](/pcb-prep/) for details.
 
@@ -238,4 +245,3 @@ After validating the LCC Fusion Node Card can connect with the IO card, test eac
 1.  [MP3Gain](https://sourceforge.net/projects/mp3gain/files/MP3Gain-Windows%20%28Stable%29/1.2.5/mp3gain-win-full-1_2_5.exe/download) tool for configuring the gain (sound level) of MP3 files
 1.  [Micro SD Cards (AliExpress)](https://www.aliexpress.us/w/wholesale-sd-card-2gb.html?spm=a2g0o.home.search.0) - recommend low cost 2GB-4GB cards
 1.  [ESP32 DevKitC Module](https://www.aliexpress.us/w/wholesale-esp32-devkitc.html?spm=a2g0o.detail.search.0) - 38Pin ESP32 DevKitC with ESP32-WROOM-32D
-

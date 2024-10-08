@@ -164,7 +164,7 @@ Below is a list of the PCB components used for this card (see diagram below for 
 
 ## Assembly Instructions
 
-<img src="/assets/images/pcbs/Breakout_Boards/stepper_motor_breakout_board_pcb.png/" style="zoom:50%; float:right" />Below are the high level steps for assembly of the Stepper Motor Breakout Board:
+<img src="{{ site.baseurl }}/assets/images/pcbs/Breakout_Boards/stepper_motor_breakout_board_pcb.png/" style="zoom:50%; float:right" />Below are the high level steps for assembly of the Stepper Motor Breakout Board:
 
 Clean PCB with alcohol to remove residue.  See [Cleaning_PCB](/pcb-prep/) for details.
 

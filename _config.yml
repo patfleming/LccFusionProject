@@ -2,8 +2,17 @@ title: LCC Fusion Project
 baseurl: "/LccFusionProject"
 description: LCC Fusion Project is a DIY project providing hardware and software for Model Train Layout Automation using NMRA Layout Command Control (LCC)
 url: https://patfleming.github.io
+repository: https://github.com/patfleming/LccFusionProject
+permalink: /:title/:path/
 theme: just-the-docs
 remote_theme: "just-the-docs/just-the-docs"
+logo: /assets/images/LCCFusionLogo.png
+# favicon_ico: "/assets/images/favicon.ico"
+aux_links:
+  "LCC Fusion Documentation": https://patfleming.github.io/LccFusionProject/
+  "LCC Fusion GitHub Repository": https://github.com/patfleming/LccFusionProject
+  "Sitemap": "/LccFusionProject/sitemap/"
+aux_links_new_tab: true
 
 exclude:
   - assets/downloads/LccFusion-ESP32-3.0.5.zip
@@ -12,21 +21,18 @@ exclude:
   - Gemfile.lock
   - README.md
 
-logo: /assets/images/LCCFusionLogo.png
+mermaid:
+  version: "11.3.0"
+  initialize: true
 
 search_enabled: true
+button: true
 
 plugins:
   - jekyll-default-layout
   - jekyll-sitemap
   - jekyll-last-modified-at
   - jekyll-remote-theme
-
-
-aux_links:
-  "LCC Fusion on GitHub": https://patfleming.github.io
-  "Sitemap": "/LccFusionProject/sitemap/"
-aux_links_new_tab: true
 
 # Custom variables
 docPath: resources
@@ -51,6 +57,8 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
   parse_block_html: true
+  syntax_highlighter_opts:
+    disable: true  # Disables any interfering syntax highlighting
 
 # default tags based on location of the .md file
 defaults:
@@ -101,10 +109,18 @@ collections:
 
 color_scheme: dark
 nav_scheme: wider
+nav_enabled: true
 
+# External navigation links
+nav_external_links:
+  - title: Just the Docs on GitHub
+    url: https://github.com/just-the-docs/just-the-docs
+    hide_icon: false # set to true to hide the external link icon - defaults to false
+    opens_in_new_tab: false # set to true to open this link in a new tab - defaults to false
 
 just_the_docs:
   custom_css: "assets/css/custom.css"
+  nav_footer_link: true # Set this to false to disable the footer link
   collections:
     builder:
       name: Builder's Bench

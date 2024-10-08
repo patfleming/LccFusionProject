@@ -23,7 +23,7 @@ has_children: True
 1. TOC
 {:toc}
 </details>
-<img src="/assets/images/Sequence_Steps.png" style="zoom:75%;float:right" />Each of the projects cards needs to be configured, along with other aspects of the LCC Node. 
+<img src="{{ site.baseurl }}/assets/images/Sequence_Steps.png" style="zoom:75%;float:right" />Each of the projects cards needs to be configured, along with other aspects of the LCC Node. 
 
 Included below are the configuration guides for the LCC Node and the cards:
 

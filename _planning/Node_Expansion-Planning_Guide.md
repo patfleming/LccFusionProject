@@ -59,7 +59,7 @@ The design and implementation of these network communications underpin the modul
 
 The core of the multi-node configuration is the **LCC Node Bus Hub**, a central unit that facilitates communication and power distribution among the connected nodes. The diagram (Figure 1) represents a typical setup where multiple LCC Fusion Node Cards are connected to the same Node Bus Hub, each serving a distinct purpose:
 
-<img src="/assets/images/Secondary_Nodes.png" style="zoom: 70%; float: right;" />
+<img src="{{ site.baseurl }}/assets/images/Secondary_Nodes.png" style="zoom: 70%; float: right;" />
 
 - **Node 1**: The primary node, equipped with its own power supply and firmware configured to control input/output devices across the layout. As the primary node, it is connected to:
   - a power supply and providing power to the LCC Node Bus Hub for use by secondary LCC Fusion Node Cards and I/O cards.

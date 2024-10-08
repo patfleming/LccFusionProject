@@ -74,7 +74,7 @@ ifconfig can0
 
 1. Run this command in a terminal window to confirm the CAN interface is correctly set up. Look for CAN Bus traffic.
 
-2. <img src="/assets/images/pcbs/RPI-CAN_CarRPI-CAN_Status.png" alt="CAN Bus Status" style="zoom:80%; float:right" />Here an example of the `ifconfig` output, showing active CAN communications on CAN0 with data transmission.
+2. <img src="{{ site.baseurl }}/assets/images/pcbs/RPI-CAN_CarRPI-CAN_Status.png" alt="CAN Bus Status" style="zoom:80%; float:right" />Here an example of the `ifconfig` output, showing active CAN communications on CAN0 with data transmission.
    - If encountering errors, check all connections, reboot both RPI and ESP32, and retest.
    - Persistent issues may require rechecking configuration files, settings, and connections to the MCP2515 module.
 

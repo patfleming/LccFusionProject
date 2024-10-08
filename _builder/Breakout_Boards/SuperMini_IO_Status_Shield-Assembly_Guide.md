@@ -99,7 +99,7 @@ Below is a list of the PCB components used for this PCB:
 
 ## Assembly Instructions
 
-<img src="/assets/images/pcbs/Node_Card/SuperMini_IO_Status_Shield_pcb.png" style="zoom:70%; float:right" />Below are the high level steps for assembly of the SuperMini IO Status Shield:
+<img src="{{ site.baseurl }}/assets/images/pcbs/Node_Card/SuperMini_IO_Status_Shield_pcb.png" style="zoom:70%; float:right" />Below are the high level steps for assembly of the SuperMini IO Status Shield:
 
 Clean PCB with alcohol to remove residue.  See [Cleaning_PCB](/pcb-prep/) for details.
 
@@ -154,7 +154,7 @@ Clean PCB with alcohol to remove residue.  See [Cleaning_PCB](/pcb-prep/) for de
 
 ## References
 
-- Super-Mini LED to ESP32-S3 pin assignments. <img src="/assets/images/pcbs/Node_Card/SuperMini_ESP32-S3_pinout.png" alt="image-20240813095602688" style="zoom:70%; float:right" />
+- Super-Mini LED to ESP32-S3 pin assignments. <img src="{{ site.baseurl }}/assets/images/pcbs/Node_Card/SuperMini_ESP32-S3_pinout.png" alt="image-20240813095602688" style="zoom:70%; float:right" />
 
 | SuperMini IO Status LED | **Super-Mini ESP32-S3 Pin** |
 | ----------------------- | --------------------------- |

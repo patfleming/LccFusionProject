@@ -1,18 +1,17 @@
----
-layout: table_wrappers
----
-
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'en-US' }}">
-{% include head.html %}
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/print.css" media="print">
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/custom.css">
+<head>
+  {% include head.html %}
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/print.css" media="print">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/custom.css">
+</head>
 
 <body>
   <!-- Print Button -->
-<div class="print-link-container" style="text-align: right; margin: 10px;">
+  <div class="print-link-container" style="text-align: right; margin: 10px;">
     <a href="javascript:window.print()" class="print-link">🖨️ Print Page</a>
-</div>
+  </div>
+
   <a class="skip-to-main" href="#main-content">Skip to main content</a>
   {% include icons/icons.html %}
   {% include components/sidebar.html %}
@@ -22,33 +21,39 @@ layout: table_wrappers
     <div class="main-content-wrap">
       {% include components/breadcrumbs.html %}
       {% include subjects_usecases.html %}
+
       <div id="main-content" class="main-content">
         <main>
           {% if site.heading_anchors != false %}
-          {% include vendor/anchor_headings.html html=content beforeHeading="true" anchorBody="<svg viewBox=\"0 0 16
-            16\" aria-hidden=\"true\">
-            <use xlink:href=\"#svg-link\"></use>
-          </svg>" anchorClass="anchor-heading" anchorAttrs="aria-labelledby=\"%html_id%\"" %}
+            {% include vendor/anchor_headings.html html=content beforeHeading="true" anchorBody="<svg viewBox=\"0 0 16 16\" aria-hidden=\"true\">
+              <use xlink:href=\"#svg-link\"></use>
+            </svg>" anchorClass="anchor-heading" anchorAttrs="aria-labelledby=\"%html_id%\"" %}
           {% else %}
-          {{ content }}
+            {{ content }}
           {% endif %}
 
           {% if page.has_children == true and page.has_toc != false %}
-          {% include components/children_nav.html %}
+            {% include components/children_nav.html %}
           {% endif %}
         </main>
+
         {% include components/footer.html %}
       </div>
     </div>
+
     {% if site.search_enabled != false %}
-    {% include components/search_footer.html %}
+      {% include components/search_footer.html %}
     {% endif %}
   </div>
 
-  {% if site.mermaid %}
-  {% include components/mermaid.html %}
-  {% endif %}
-
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.3.0/+esm'
+    document.addEventListener("DOMContentLoaded", function() {
+      mermaid.initialize({ startOnLoad: true });
+      // Force Mermaid to re-render any unprocessed elements
+      mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+    });
+  </script>
+  
 </body>
-
 </html>

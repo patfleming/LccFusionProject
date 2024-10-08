@@ -120,7 +120,7 @@ Below is a list of the PCB components used for this card (see diagram on right f
 
 ## Assembly Instructions
 
-<img src="/assets/images/pcbs/Breakout_Boards/Signal_Masts_Breakout_Board_pcb.png" style="zoom:50%; float:right" />Below are the high level steps for assembly of the Signal Masts Breakout Board:
+<img src="{{ site.baseurl }}/assets/images/pcbs/Breakout_Boards/Signal_Masts_Breakout_Board_pcb.png" style="zoom:50%; float:right" />Below are the high level steps for assembly of the Signal Masts Breakout Board:
 
 1. Clean PCB with alcohol to remove residue.  See [Cleaning_PCB](/pcb-prep/) for details.
 

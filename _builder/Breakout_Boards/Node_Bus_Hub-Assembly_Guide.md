@@ -42,7 +42,7 @@ The **Node Bus Hub** is a PCB whose primary function is to serve as a backbone f
 
 ### Hub Connectors
 
-<img src="/assets/images/connectors/Edge_Card_Connector.png" style="zoom:25%;float:right" />All Node Bus Hub PCBs contain one or more **Edge Card Connectors** used to hold the cards in place and provide connectivity to the **LCC Fusion Node Bus Hub**, a set of 12 contacts providing power (GND, 3V3, 5V, 12+V) and communications ( I2C, CAN, and DCC).  Below is the layout of the LCC Fusion Node Bus Hubconnection pabs (left to right, refer to picture on the right):
+<img src="{{ site.baseurl }}/assets/images/connectors/Edge_Card_Connector.png" style="zoom:25%;float:right" />All Node Bus Hub PCBs contain one or more **Edge Card Connectors** used to hold the cards in place and provide connectivity to the **LCC Fusion Node Bus Hub**, a set of 12 contacts providing power (GND, 3V3, 5V, 12+V) and communications ( I2C, CAN, and DCC).  Below is the layout of the LCC Fusion Node Bus Hubconnection pabs (left to right, refer to picture on the right):
 
 | **PCB Layer**  | **1** | **2** | **3** | **4** | **5** | **6** |
 | ---------- | ----- | ----- | ----- | ----- | ----- | ----- |
@@ -229,7 +229,7 @@ Here are the step-by-step instructions for assembling the card:
 
 ### 6x-Hub
 
-<img src="/assets/images/pcbs/Node_Bus_Hub/6x-Node_Bus_Hub_pcb.png" style="zoom: 40%; float: right;" >Use of a SMD soldering stencil is optional since a minimal number of SMD component are installed and can easily be soldered with a soldering iron or soldering air pencil.
+<img src="{{ site.baseurl }}/assets/images/pcbs/Node_Bus_Hub/6x-Node_Bus_Hub_pcb.png" style="zoom: 40%; float: right;" >Use of a SMD soldering stencil is optional since a minimal number of SMD component are installed and can easily be soldered with a soldering iron or soldering air pencil.
 
 Depending on requirements, 1 to 6 connectors can be installed on either side.
 
@@ -260,7 +260,7 @@ Depending on requirements, 1 to 6 connectors can be installed on either side.
 
 #### Solder PTH Components
 
-<img src="/assets/images/pcbs/Node_Bus_Hub/6x_Node_Bus_Hub_Placing_Parts.gif" style="zoom: 25%; float: right;" />Solder each card edge connector individually.
+<img src="{{ site.baseurl }}/assets/images/pcbs/Node_Bus_Hub/6x_Node_Bus_Hub_Placing_Parts.gif" style="zoom: 25%; float: right;" />Solder each card edge connector individually.
 
 > Make sure to seat each connector firmly against the PCB while soldering 1st pin, then heat and reseat the connector.  Finally solder the rest of the connector pins.
 

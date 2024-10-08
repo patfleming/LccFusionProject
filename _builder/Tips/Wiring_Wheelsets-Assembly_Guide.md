@@ -18,7 +18,7 @@ Wiring a resistor to a model train wheelset for use with current detection is a 
 
 ## Advantages of This Technique:
 
-- <img src="/assets/images/howto/Wired_Wheelset.png" style="zoom:100%;float:right;" />**Invisibility**: The use of a 10k 1206 SMD resistor is almost invisible when installed, maintaining the aesthetic integrity of the model.
+- <img src="{{ site.baseurl }}/assets/images/howto/Wired_Wheelset.png" style="zoom:100%;float:right;" />**Invisibility**: The use of a 10k 1206 SMD resistor is almost invisible when installed, maintaining the aesthetic integrity of the model.
 - **No Soldering Required**: This technique eliminates the need for soldering, making it accessible for hobbyists of all skill levels and reducing the risk of heat damage to delicate model components.
 - **Quick and Easy**: The method is fast and straightforward, allowing for efficient modification of multiple wheelsets.
 - **Improved Detection**: Enhances the reliability of track occupancy detection without intrusive modifications to the rolling stock.
@@ -30,7 +30,7 @@ This solder-free method of attaching a resistor to a model train wheelset presen
 | Item                              | Propose                                                      |
 | --------------------------------- | ------------------------------------------------------------ |
 | 10k ohm, 1206 SMD Resistor        | 10K is required for detection by the BOD Card.<br>SMD is required for gluing<br>1206 size is the largest SMD and is used for other aspects of the LCC Fusion Project. |
-| Electrically Conductive Wire Glue | <img src="/assets/images/tools/Wire_Glue.png" style="zoom:25%;float:right;" />Note that not all types work well.  This specific brand has great adhesion and conductivity (after a day of drying).  [Glue on Amazon](https://www.amazon.com/gp/product/B000Z9H7ZW/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) |
+| Electrically Conductive Wire Glue | <img src="{{ site.baseurl }}/assets/images/tools/Wire_Glue.png" style="zoom:25%;float:right;" />Note that not all types work well.  This specific brand has great adhesion and conductivity (after a day of drying).  [Glue on Amazon](https://www.amazon.com/gp/product/B000Z9H7ZW/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) |
 | Toothpick or other pointed device | For applying (small) drops of glue.                          |
 | Precision tweezers                | For placing the resistor on the axle.                        |
 | Cleaning alcohol and a soft cloth | For preparing the axle and hub for gluing.                   |

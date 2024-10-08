@@ -146,7 +146,7 @@ Below is a list of the PCB components used for this card (see diagram on right f
 
 ## Assembly Instructions
 
-<img src="/assets/images/pcbs/Node_Card/Power_Module_pcb.png" style="zoom:70%; float:right" />Below are the high level steps for assembly of the Output Card:
+<img src="{{ site.baseurl }}/assets/images/pcbs/Node_Card/Power_Module_pcb.png" style="zoom:70%; float:right" />Below are the high level steps for assembly of the Output Card:
 
 1. Determine component orientation:
    - Female headers and (ceramic) capacitor components are not polarized and can be installed in either direction.

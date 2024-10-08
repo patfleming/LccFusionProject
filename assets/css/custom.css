@@ -1,3 +1,20 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  color: white; /* Text color */
+  font-size: 10px; /* Adjust the font size */
+  width: 100%; /* Ensure footer spans the full width */
+}
+
+.footer-left {
+flex: 1; /* Take available space on the left */
+}
+
+.footer-right {
+margin-left: auto; /* Push this span to the far right */
+white-space: nowrap; /* Prevent line breaks inside the span */
+}
+
 /* Custom styles for tables - default for screen (HTML) */
 table {
   border-collapse: collapse;

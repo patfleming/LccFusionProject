@@ -127,7 +127,7 @@ Refer to the PWM Card and the Signal Masts Breakout Board for details on configu
 
 ### Rules to Aspect Configuration
 
-<img src="/assets/images/setup/Signal_Masts_CDI.png" style="zoom:50%;float:right" />Rules configuration panel used for setting up rules related to signal masts within the LCC Fusion Project. The summary of the dialog fields is as follows:
+<img src="{{ site.baseurl }}/assets/images/setup/Signal_Masts_CDI.png" style="zoom:50%;float:right" />Rules configuration panel used for setting up rules related to signal masts within the LCC Fusion Project. The summary of the dialog fields is as follows:
 
 1. **Card** (tab): Slect the tab for the PWM Card connect to the mast to be configured using a Signal Masts Breakout Board connected to signal lamps (LEDs).
 2. **Card Information Configuration**:
@@ -166,7 +166,7 @@ The following outlines the steps:
 
 > Since the Track Circuit to Mast linkage is performed using an LCC Event ID, the mast can be defined and managed from **different LCC Node.**
 
-<img src="/assets/images/setup/Track_Circuits_CDI.png" style="zoom:75%; float:right;" />Below is a summary of the Track Circuits Configuration CDI fields (shown in the dialog on the right):
+<img src="{{ site.baseurl }}/assets/images/setup/Track_Circuits_CDI.png" style="zoom:75%; float:right;" />Below is a summary of the Track Circuits Configuration CDI fields (shown in the dialog on the right):
 
 - **Track Circuit (tab)**: There are tabs for up to six circuits, allowing individual configuration for each track circuit.
 - **Description**: A field to optionally enter descriptive information about the track circuit or mast.
@@ -200,7 +200,7 @@ This linkage technique ensures that signals are not only aware of local track co
 
 ### BOD Card Configuration
 
-1. <img src="/assets/images/setup/BOD_Card_Line_CDI.png" style="zoom:50%; float:right;" />Using a CDI configuration tool, open the BOD Card(s) segment and update as follows:
+1. <img src="{{ site.baseurl }}/assets/images/setup/BOD_Card_Line_CDI.png" style="zoom:50%; float:right;" />Using a CDI configuration tool, open the BOD Card(s) segment and update as follows:
 2. Configure the card’s information  section and the communications  `COMM BUS`and `COMM ADDR` fields to match the corresponding selections on the BOD Card (PCB).
 3. Refer to the `Line` tab for the line connected to the track block.  The default value for the `ON Event ID` will be used for setting up the signal masts aspect.  If available  in the configuration tool, use the `Copy` button to copy the Event ID to the clipboard for use later.
 
@@ -216,7 +216,7 @@ This linkage technique ensures that signals are not only aware of local track co
 
 4. Update the `Rule to Aspect Mapping Configuraton` as follows:
 
-   <img src="/assets/images/Setup/Mast_Rule_Def_CDI.png" style="zoom:70%;" />
+   <img src="{{ site.baseurl }}/assets/images/Setup/Mast_Rule_Def_CDI.png" style="zoom:70%;" />
 
 | Field                       | Value         | Description                                                  |
 | --------------------------- | ------------- | ------------------------------------------------------------ |
@@ -229,7 +229,7 @@ This linkage technique ensures that signals are not only aware of local track co
 
 5. Configure the ‘Stop’ rule by configurating the `Rule 1`tab’s fields as shown to the right and detailed below:
 
-<img src="/assets/images/Setup/Mast_Rule_Stop_CDI.png" style="zoom:70%;" />
+<img src="{{ site.baseurl }}/assets/images/Setup/Mast_Rule_Stop_CDI.png" style="zoom:70%;" />
 
 
 
@@ -254,7 +254,7 @@ This linkage technique ensures that signals are not only aware of local track co
 
 6. Configure the ‘Clear’ rule by configurating the `Rule 2`tab’s fields as shown to the right and detailed below:
 
-<img src="/assets/images/Setup/Mast_Rule_Clear_CDI.png" style="zoom:50%; float:left;" />
+<img src="{{ site.baseurl }}/assets/images/Setup/Mast_Rule_Clear_CDI.png" style="zoom:50%; float:left;" />
 
 | Field                     | Value                       | Description                                                  |
 | ------------------------- | --------------------------- | ------------------------------------------------------------ |
@@ -289,7 +289,7 @@ Below are the detailed steps for configuring this example:
 2. Click on the `Logic 1` tab.
 3. Set the group processing information and define the conditional as follow:
 
-<img src="/assets/images/Setup/Logics_Example.1_Condition_1_CDI.png" style="zoom:70%;" />
+<img src="{{ site.baseurl }}/assets/images/Setup/Logics_Example.1_Condition_1_CDI.png" style="zoom:70%;" />
 
 | Field                           | Value                                        | Description                                                  |
 | ------------------------------- | -------------------------------------------- | ------------------------------------------------------------ |
@@ -307,7 +307,7 @@ Below are the detailed steps for configuring this example:
 
 4. Configure how the Logic is too be processed when the conditional is true and when it is false.  In both case, since there is only one logic in the group the processing should exit the group and that both actions should be processed immediately.
 
-   <img src="/assets/images/Setup/Logics_Example.1_Action_CDI.png" style="zoom:50%; float:left;" />
+   <img src="{{ site.baseurl }}/assets/images/Setup/Logics_Example.1_Action_CDI.png" style="zoom:50%; float:left;" />
 
 | Field                   | Value                  | Description                                                  |
 | ----------------------- | ---------------------- | ------------------------------------------------------------ |
@@ -319,7 +319,7 @@ Below are the detailed steps for configuring this example:
 
 6. Configure two actions, one for when the conditional is true (track block is occupied) and one when the conditional is false.  In both cases, Event IDs are sent to set the appropriate aspect for the mast.
 
-   <img src="/assets/images/Setup/Logics_Example.1_Action.1_CDI.png" style="zoom:70%; float:left;" />
+   <img src="{{ site.baseurl }}/assets/images/Setup/Logics_Example.1_Action.1_CDI.png" style="zoom:70%; float:left;" />
 
 | Field                   | Value                     | Description                                                  |
 | ----------------------- | ------------------------- | ------------------------------------------------------------ |

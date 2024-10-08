@@ -12,7 +12,7 @@ use_cases:
 {:toc}
 ## SMD Soldering
 
-<img src="/assets/images/howto/SMD_Pads.jpg" style="zoom:15%;float:right" />SMD Soldering involves soldering SMD component's pads to the corresponding pad on the PCB.  As with all component placement, refer to the component designator found near the pad for information.  In the picture on the right, the R3 has 2 pads for a 2.7k&Omega; resistor (1206 SMD).  Some PCBs have a large number of similar components leading to difficulty in matching component pads to designators.  this is especially true for the resistors, capacitors, and LEDs that use the same package (SMD 1206) and therefore the pads are the same. 
+<img src="{{ site.baseurl }}/assets/images/howto/SMD_Pads.jpg" style="zoom:15%;float:right" />SMD Soldering involves soldering SMD component's pads to the corresponding pad on the PCB.  As with all component placement, refer to the component designator found near the pad for information.  In the picture on the right, the R3 has 2 pads for a 2.7k&Omega; resistor (1206 SMD).  Some PCBs have a large number of similar components leading to difficulty in matching component pads to designators.  this is especially true for the resistors, capacitors, and LEDs that use the same package (SMD 1206) and therefore the pads are the same. 
 
 ## Recommendations:``
 
@@ -26,7 +26,7 @@ use_cases:
   
 - **Solder Paste Applicator:**
 
-  - <img src="/assets/images/howto/SMD_Pad_Soldering.gif" style="zoom:25%; float:right" />When soldering a  PCB such as the Node Bus Hub with a small number of SMD components and no SMD IC, consider using a solder paste applicator.  Use of the syringe version with a small tip provides easy placement of the solder directly on the pad.  Optionally use a extruder to control the flow from the syringe.  See [PCB Tools](pcb_tools)
+  - <img src="{{ site.baseurl }}/assets/images/howto/SMD_Pad_Soldering.gif" style="zoom:25%; float:right" />When soldering a  PCB such as the Node Bus Hub with a small number of SMD components and no SMD IC, consider using a solder paste applicator.  Use of the syringe version with a small tip provides easy placement of the solder directly on the pad.  Optionally use a extruder to control the flow from the syringe.  See [PCB Tools](pcb_tools)
 
 - **Stencil Usage**:
 
@@ -52,9 +52,9 @@ use_cases:
 - **Placing SMD Components**:
   - It's recommended to use small containers for holding and labeling each component. Look for small screw-top containers typically used in hobby stores for bead organization.
   - Employ fine-tipped, non-magnetic tweezers for picking up and positioning components onto the paste.
-  - <img src="/assets/images/howto/SMD_Pen_Placement.jpg" style="zoom:5%; float:right" />For smaller components, consider using [Diamond Art Pens](https://www.amazon.com/s?k=diamond+art+pens&crid=3CGOCIAJB57SE&sprefix=diamond+art+pens%2Caps%2C141&ref=nb_sb_noss_1). Their sticky tips provide a comfortable, efficient alternative to tweezers for picking up and placing components.
-  - <img src="/assets/images/howto/IC_Orientation.jpg" style="zoom:5%; float:right" />Both the MCP23017 and M54562FP integrated circuits are marked with a small dimple at one corner, signifying pin 1. When positioning these ICs on their respective PCB symbols, ensure that pin 1 aligns with the end of the symbol that also features a dimple representation. Refer to the provided example on the right, where the IC displays a dimple in its upper left corner. This corner should be aligned with the corresponding dimple-end on the silkscreen.
-  - <img src="/assets/images/howto/IC_Place_In_Solder_Paste.jpg" style="zoom:5%; float:right" />After placing an IC in the solder paste, insure that the IC pins are aligned exactly on top of the pad.  If the IC pins are very closely centered, later during the reflowing the IC will float into it's final position, centered on top of the pads.
+  - <img src="{{ site.baseurl }}/assets/images/howto/SMD_Pen_Placement.jpg" style="zoom:5%; float:right" />For smaller components, consider using [Diamond Art Pens](https://www.amazon.com/s?k=diamond+art+pens&crid=3CGOCIAJB57SE&sprefix=diamond+art+pens%2Caps%2C141&ref=nb_sb_noss_1). Their sticky tips provide a comfortable, efficient alternative to tweezers for picking up and placing components.
+  - <img src="{{ site.baseurl }}/assets/images/howto/IC_Orientation.jpg" style="zoom:5%; float:right" />Both the MCP23017 and M54562FP integrated circuits are marked with a small dimple at one corner, signifying pin 1. When positioning these ICs on their respective PCB symbols, ensure that pin 1 aligns with the end of the symbol that also features a dimple representation. Refer to the provided example on the right, where the IC displays a dimple in its upper left corner. This corner should be aligned with the corresponding dimple-end on the silkscreen.
+  - <img src="{{ site.baseurl }}/assets/images/howto/IC_Place_In_Solder_Paste.jpg" style="zoom:5%; float:right" />After placing an IC in the solder paste, insure that the IC pins are aligned exactly on top of the pad.  If the IC pins are very closely centered, later during the reflowing the IC will float into it's final position, centered on top of the pads.
 
   > When handling small SMD components, it is recommended to use a hobby pen with a sticky tip for ease of placement.
 
@@ -71,7 +71,7 @@ use_cases:
 
 - **Soldering Through-Hole Technology (PTH)**
   - For optimal results, employ a solder with a low melting point, approximately 360°F, and use a soldering iron with an oblique tip.
-  - <img src="/assets/images/howto/PTH_Putty.jpg" style="zoom:5%; float:right" />Securely position and maintain the component in its place. Tip: Tacky putty can be effective in holding the component steady on the top side of the PCB while you solder from the underside.
+  - <img src="{{ site.baseurl }}/assets/images/howto/PTH_Putty.jpg" style="zoom:5%; float:right" />Securely position and maintain the component in its place. Tip: Tacky putty can be effective in holding the component steady on the top side of the PCB while you solder from the underside.
   - Initiate soldering at the pin's base, moving the iron upwards to draw the solder along the pin's length.
   - To ensure the component is fully seated on the PCB, begin by soldering just one pin of the PTH component. While reheating this pin, adjust the component to its final position. Once in place, proceed to solder the remaining pins.
   - Use a solder tip cleaner (brass sponge is best) to frequently to clean the soldering tip.  Regular cleaning, before and after soldering sessions, prevents oxidation build-up and extends the tip's life, making soldering more effective and producing cleaner, more reliable connections.

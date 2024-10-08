@@ -221,7 +221,7 @@ Below are the high level steps for assembly of the Output Card:
 3. Use the Power Supply PCB stencil to apply the paste, align the stencil over the PCB using the 2 very small **Tooling Holes** located at the top and bottom of the card.  Use a thick straight pin or wire for the alignment, pushing down into a soft foam surface to hold the pin/wire in place.
 
    <div style="text-align: center;">
-     <img src="/assets/images/pcbs/Power-CAN_Card/Power-CAN_Card_pcb.png" style="zoom:50%;" />
+     <img src="{{ site.baseurl }}/assets/images/pcbs/Power-CAN_Card/Power-CAN_Card_pcb.png" style="zoom:50%;" />
    </div>
 
 

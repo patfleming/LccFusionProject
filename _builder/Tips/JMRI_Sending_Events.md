@@ -23,14 +23,14 @@ The JMRI software suite, including DecoderPro and PanelPro, offers a powerful se
 
 The process begins in either the JMRI DecoderPro or PanelPro application. Here's a step-by-step guide to accessing the Send Frame Tool:
 
-1. <img src="/assets/images/howto/JMRI_Send_Frame_Launch.png" style="zoom:75%;float:right" />**Access OpenLCB Options**: Navigate to the top menu bar and locate the "OpenLCB" option. This menu is your gateway to features specifically designed for LCC operations, including the Send Frame tool.
+1. <img src="{{ site.baseurl }}/assets/images/howto/JMRI_Send_Frame_Launch.png" style="zoom:75%;float:right" />**Access OpenLCB Options**: Navigate to the top menu bar and locate the "OpenLCB" option. This menu is your gateway to features specifically designed for LCC operations, including the Send Frame tool.
 2. **Select Send Frame**: From the dropdown menu, select "Send Frame" to open the tool. This action brings up a separate window dedicated to event generation and management.
 
 ### Generating and Sending an LCC Event
 
 Once the Send Frame Tool is open, you can generate an LCC event: 
 
-1. <img src="/assets/images/howto/JMRI_Send_Frame_Send.png" style="zoom:50%;float:right" />**Enter Event ID**: In the tool's interface, you'll find an "Event ID" field. Here, you can manually enter or paste the specific Event ID you wish to generate. The format and structure of Event IDs should adhere to LCC standards, ensuring they are recognized and processed correctly by your layout's devices.
+1. <img src="{{ site.baseurl }}/assets/images/howto/JMRI_Send_Frame_Send.png" style="zoom:50%;float:right" />**Enter Event ID**: In the tool's interface, you'll find an "Event ID" field. Here, you can manually enter or paste the specific Event ID you wish to generate. The format and structure of Event IDs should adhere to LCC standards, ensuring they are recognized and processed correctly by your layout's devices.
 2. **Send the Event**: With the Event ID in place, click on the "Send Event Produced" button. This action sends the event onto the CAN bus, where it can be received by LCC-enabled devices configured to respond to that specific ID.
 
 ## Expanding the Use of JMRI for LCC Event Testing

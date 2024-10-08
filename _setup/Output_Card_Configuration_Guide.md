@@ -89,7 +89,7 @@ This section will cover the specifics of setting up the physical jumpers and con
 
 This part will detail the process for configuring the firmware to handle LCC events related to the I/O card. Using the  LCC Configuration Tool, it will outline steps to integrate the card with the LCC Fusion firmware, setting up LCC Event IDs to drive output devices.
 
-1. <img src="/assets/images/pcbs/Output_Card/CDI_Output_Card.png" style="zoom:80%;float:right" />Using the LCC Configuration Tool find the LCC Node and open the configuration.
+1. <img src="{{ site.baseurl }}/assets/images/pcbs/Output_Card/CDI_Output_Card.png" style="zoom:80%;float:right" />Using the LCC Configuration Tool find the LCC Node and open the configuration.
 2. Scroll down to the card’s segment and click on the twistie to open the configuration dialog box for the card
 3. Select the tab for the specific card to be configured.  Note that  uninstalled cards can be configured for future use.
 4. Select the tab for the specific line to be configured.  Note that unconnected lines can be configured for future use.

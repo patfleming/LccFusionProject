@@ -108,7 +108,7 @@ To ensure the correct operation of cards utilizing I2C communication after assem
 
 4. Power up the Node.
 
-<img src="/assets/images/pcbs/Serial_Menu_Display_Devices.png" style="zoom:70%; float:right" />For verification that the LCC Fusion Node Card can communicate via the LCC Fusion Node Bus Hubto the I/O cards via the I2C network, use the Arduino IDE's Serial Monitor or a Bluetooth Serial Terminal app on your phone to connect to the LCC Fusion Node Card's ESP32 serial menu. 
+<img src="{{ site.baseurl }}/assets/images/pcbs/Serial_Menu_Display_Devices.png" style="zoom:70%; float:right" />For verification that the LCC Fusion Node Card can communicate via the LCC Fusion Node Bus Hubto the I/O cards via the I2C network, use the Arduino IDE's Serial Monitor or a Bluetooth Serial Terminal app on your phone to connect to the LCC Fusion Node Card's ESP32 serial menu. 
 
 1. A visual guide for navigating these settings can be found to the right, illustrating the Serial Menu Interface. This interface outlines various system configuration procedures, including node setup and address configuration, accessible through a serial connection. This diagram serves as a guide for navigating and understanding system settings.
 2. Verify the detection of I2C card(s)  displaying all attached I/O cards and their network bus settings as follows:

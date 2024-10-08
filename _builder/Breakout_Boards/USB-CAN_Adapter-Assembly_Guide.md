@@ -89,9 +89,9 @@ Establish a connection between the computer's USB port and the LCC Node using a 
 
 1. Remove the RJ45 plug from one end of the cable to reveal the 8 internal wires.
 
-2. <img src="/assets/images/pcbs/Breakout_Boards/CANable/JMRI_CANable_Plug.png" style="zoom:100%;float:right" />On the opposite end, identify the first three wires by looking at the RJ45 plug's back with the tab facing downwards.
+2. <img src="{{ site.baseurl }}/assets/images/pcbs/Breakout_Boards/CANable/JMRI_CANable_Plug.png" style="zoom:100%;float:right" />On the opposite end, identify the first three wires by looking at the RJ45 plug's back with the tab facing downwards.
 
-3. <img src="/assets/images/pcbs/Breakout_Boards/CANable/JMRI_CANable_Connector.png" style="zoom:100%;float:right" />Connect these three wires to the USB to CAN device's screw terminals as follows:
+3. <img src="{{ site.baseurl }}/assets/images/pcbs/Breakout_Boards/CANable/JMRI_CANable_Connector.png" style="zoom:100%;float:right" />Connect these three wires to the USB to CAN device's screw terminals as follows:
 
    | Network Cable Wire                    | [USB-CAN Adapter](/usb-can-adapter-assembly-guide/)  Screw Terminal |
    | ------------------------------------- | ------------------------------------------------------------ |
@@ -104,7 +104,7 @@ Establish a connection between the computer's USB port and the LCC Node using a 
 Complete the setup by connecting the modified network cable to the USB to CAN device's screw terminals and establishing the connection to the LCC Node as follows:
 
 1. Activate the CAN termination switch to the ON position for this adapter since it is located at one end of the CAN network. It's crucial to also configure a CAN termination at the network's other end, which is most likely to be on an LCC Node, to ensure proper network functionality.
-2. <img src="/assets/images/howto/CANable_Windows_Device_Manager.png" alt="image-20240504062958691" style="zoom:80%;float:right" />Plug the USB to CAN device into a USB port on the computer.
+2. <img src="{{ site.baseurl }}/assets/images/howto/CANable_Windows_Device_Manager.png" alt="image-20240504062958691" style="zoom:80%;float:right" />Plug the USB to CAN device into a USB port on the computer.
 3. Insert the cable’s RJ45 connector into one of the two CAN network ports on the LCC Node.
 4. To determine the Windows COM port used by the adapter open the **Windows Device Manager** and view the COM ports.  The device **CANtact USB/CAN Device (COMx)** should be shown, along with the COM port.  Use this COM port below when configuring JMRI.
 5. > Note that ‘modern’ versions Windows will automatically find/install the device driver required to support the USB to CAN device.  For older versions of Windows, following the information found at https://canable.io/getting-started.html#drivers
@@ -117,7 +117,7 @@ To integrate JMRI with the CAN network through a USB to CAN adapter, execute the
 
 2. Navigate to `Edit` -> `Preferences` from the main menu of DecoderPro.
 
-3. <img src="/assets/images/pcbs/Breakout_Boards/CANable/JMRI_CANable_Adapter.png" style="zoom:75%;float:right" />Configure a new connection by applying the following parameters:
+3. <img src="{{ site.baseurl }}/assets/images/pcbs/Breakout_Boards/CANable/JMRI_CANable_Adapter.png" style="zoom:75%;float:right" />Configure a new connection by applying the following parameters:
 
    - [ ] `System Manufacturer: OpenLCB`
 

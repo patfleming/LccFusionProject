@@ -103,7 +103,7 @@ Specifications for the card include:
 
 The following outlines the flow of activity for the Output Card:
 
-<img src="/assets/images/pcbs/Output_Card/Output_Card_How_It_Works_sequence.png" style="zoom:60%;float:right" />The firmware of the LCC Fusion Node Card interfaces with the Output Card's port expander (MCP23017), leveraging the bus and address details specified in the card's CDI I2C section.  
+<img src="{{ site.baseurl }}/assets/images/pcbs/Output_Card/Output_Card_How_It_Works_sequence.png" style="zoom:60%;float:right" />The firmware of the LCC Fusion Node Card interfaces with the Output Card's port expander (MCP23017), leveraging the bus and address details specified in the card's CDI I2C section.  
 
 Output is performed on a line as follows:
 
@@ -168,7 +168,7 @@ Below is a list of the PCB components used for this card (see diagram on right f
 
 ## Assembly Instructions
 
-<img src="/assets/images/pcbs/Output_Card/Output_Card_pcb.png" style="zoom:50%; float:right" />Below are the high level steps for assembly of the Output Card:
+<img src="{{ site.baseurl }}/assets/images/pcbs/Output_Card/Output_Card_pcb.png" style="zoom:50%; float:right" />Below are the high level steps for assembly of the Output Card:
 
 1. Clean PCB with alcohol to remove residue.  See [Cleaning_PCB](/pcb-prep/) for details.
 

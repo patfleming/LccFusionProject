@@ -76,7 +76,7 @@ The table below lists the **LCC Fusion Cards** and **LCC Fusion Breakout Boards*
 
 Below, you'll find links to specific guides for each **LCC Fusion Cards**. included in the **LCC Fusion Project**. These guides are tailored to the unique aspects of assembling each type of **PCB**, yet they all follow the same fundamental principles outlined in our sequence diagram. This consistency ensures that, no matter which **PCB** you're working on, the process remains familiar and straightforward.
 
-<img src="/assets/images/pcbs/Sound_Card/Sound_Card_Flow.png" style="zoom:70%;float:right" />Sequence of Activities:
+<img src="{{ site.baseurl }}/assets/images/pcbs/Sound_Card/Sound_Card_Flow.png" style="zoom:70%;float:right" />Sequence of Activities:
 
 1. **Preparation**: Gathering the necessary tools and components.
 2. **Soldering**: Step-by-step instructions for soldering components onto the **PCB**.

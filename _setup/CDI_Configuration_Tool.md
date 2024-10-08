@@ -33,7 +33,7 @@ There are several options for CDI Configuration Tools:
 
 Open JRMI's CDI Configuration Tool
 
-1. <img src="/assets/images/howto/CDI_VIewer_Open.gif/" style="zoom: 30%; float: right;" />Open **DecoderPro**
+1. <img src="{{ site.baseurl }}/assets/images/howto/CDI_VIewer_Open.gif/" style="zoom: 30%; float: right;" />Open **DecoderPro**
 2. Click on **OpenLCB_CAN** in the top toolbar
 3. Select **Configure Nodes**
 4. ***OpenLCB Network Tree*** dialog window opens

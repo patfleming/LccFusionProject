@@ -193,7 +193,7 @@ Here's the updated table with the count, type, and package columns added:
 
 ## Assembly Instructions
 
-<img src="/assets/images/pcbs/Node_Card/NODE_Card_pcb.png" style="zoom:50%; float:right" />Below are the high level steps for assembly of the LCC Fusion Node Card:
+<img src="{{ site.baseurl }}/assets/images/pcbs/Node_Card/NODE_Card_pcb.png" style="zoom:50%; float:right" />Below are the high level steps for assembly of the LCC Fusion Node Card:
 
 1. Clean PCB with alcohol to remove residue.  See [Cleaning_PCB](/pcb-prep/) for details.
 2. When using a PCB stencil to apply the paste, align the stencil over the PCB using the 2 Tooling Holes located at the top and bottom of the card.  There are very small holes with no labels or markings.  Use a thick straight pin or wire for the alignment, pushing down into a soft foam surface to hold the pin/wire in place.
@@ -266,7 +266,7 @@ Here's the updated table with the count, type, and package columns added:
 
 ### Functional Testing
 
-1. <img src="/assets/images/pcbs/Node_Card/Serial_Menu_Display_CAN_Status.png" style="zoom:70%; float:right" />Using a USB cable, connect the DevKit-C module to a computer.
+1. <img src="{{ site.baseurl }}/assets/images/pcbs/Node_Card/Serial_Menu_Display_CAN_Status.png" style="zoom:70%; float:right" />Using a USB cable, connect the DevKit-C module to a computer.
 1. Install LCC Fusion Project firmware.
 1. Using a serial monitor, verify the firmware starts correctly.
 1. Check the LCC Fusion Node Card’s CAN Network connectivity using the Node’s serial monitor menu.

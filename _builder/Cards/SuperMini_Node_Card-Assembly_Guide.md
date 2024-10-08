@@ -209,7 +209,7 @@ Below is a list of the PCB components used for this card (see diagram on right f
 
 ## Assembly Instructions
 
-<img src="/assets/images/pcbs/Node_Card/supermini-node_Card_pcb.png" style="zoom:40%; float:right" />Below are the high level steps for assembly of the Output Card:
+<img src="{{ site.baseurl }}/assets/images/pcbs/Node_Card/supermini-node_Card_pcb.png" style="zoom:40%; float:right" />Below are the high level steps for assembly of the Output Card:
 
 1. Clean PCB with alcohol to remove residue.  See [Cleaning_PCB](/pcb-prep/) for details.
 
@@ -289,7 +289,7 @@ Below is a list of the PCB components used for this card (see diagram on right f
 
 ### Functional Testing
 
-1. <img src="/assets/images/pcbs/Node_Card/Serial_Menu_Display_CAN_Status.png" style="zoom:70%; float:right" />Using a USB cable, connect the Super-Mini ESP32-S3 module to a computer.
+1. <img src="{{ site.baseurl }}/assets/images/pcbs/Node_Card/Serial_Menu_Display_CAN_Status.png" style="zoom:70%; float:right" />Using a USB cable, connect the Super-Mini ESP32-S3 module to a computer.
 1. Install LCC Fusion Project firmware.
 1. Using a serial monitor, verify the firmware starts correctly.
 1. Check the LCC Fusion Node Card’s CAN Network connectivity using the Node’s serial monitor menu.
@@ -304,7 +304,7 @@ Below is a list of the PCB components used for this card (see diagram on right f
 
 ## References
 
-- Super-Mini ESP32-S3 pin assignments.<img src="/assets/images/pcbs/Node_Card/SuperMini_ESP32-S3_pinout.png" alt="image-20240813095602688" style="zoom:70%; float:right" />
+- Super-Mini ESP32-S3 pin assignments.<img src="{{ site.baseurl }}/assets/images/pcbs/Node_Card/SuperMini_ESP32-S3_pinout.png" alt="image-20240813095602688" style="zoom:70%; float:right" />
 
 | SuperMini Node Connection | SuperMini Node Function      | **Super-Mini ESP32-S3 Pin** |
 | ------------------------- | ---------------------------- | --------------------------- |
