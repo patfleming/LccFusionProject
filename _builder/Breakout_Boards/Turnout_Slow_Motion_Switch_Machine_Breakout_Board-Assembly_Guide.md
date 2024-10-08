@@ -140,7 +140,7 @@ Below is a list of the PCB components used for this card (see diagram before ref
 
 | Component Identifier | Count | Type               | Value                   | Package            | Required                           | Purpose                                                      |
 | -------------------- | ----- | ------------------ | ----------------------- | ------------------ | ---------------------------------- | ------------------------------------------------------------ |
-| C1, C3               | 2     | Capacitor          | 0.1uF                   | 1206 SMD           | Required                           | Used by 5V voltage regulator for output filtering.           |
+| C1, C3               | 2     | Ceramic Capacitor  | 0.1uF                   | 1206 SMD           | Required                           | Used by 5V voltage regulator for output filtering.           |
 | C2, C4               | 2     | Tantalum Capacitor | 0.33uF                  | 3216 SMD           | Required                           | Used by 5V voltage regulator for input filtering.            |
 | D1 - D6              | 6     | Diode              | SS310                   | SMD                | Optional                           | Circuit protection against flyback from motors and coils.    |
 | D7 - D10             | 2     | Diode              | SS310                   | SMD                | Required                           | Forces bidirectional motor current to flow only one way to LM7805 voltage regulator |
@@ -175,18 +175,18 @@ Clean PCB with alcohol to remove residue.  See [Cleaning_PCB](/pcb-prep/) for de
 | Designator (value) | Component                                                    | Required?                         | Orientation                                                  |
 | ------------------ | ------------------------------------------------------------ | --------------------------------- | ------------------------------------------------------------ |
 | C1, C3             | Capacitor, 0.1uF (1206 SMD)                                  | Required                          | None                                                         |
-| C2, C4             | Capacitor, 0.33uF (SMD)                                      | Required                          | Position cathode end (white line) to PCB left and right edges (alternate) |
-| D1 - D4            | SS310 (SMD)                                                  | Optional                          | Position cathode end (white line) to PCB left and right edges (alternate) |
-| D5 - D10           | SS310 (SMD)                                                  | Required                          | Position cathode end (white line) to PCB top edge            |
+| C2, C4             | Capacitor, 0.33uF (SMD)                                      | Required                          | Position cathode end (white line) to PCB **left** and right edges (alternate) |
+| D1 - D4            | SS310 (SMD)                                                  | Optional                          | Position cathode end (white line) to PCB **left** and right edges (alternate) |
+| D5 - D10           | SS310 (SMD)                                                  | Required                          | Position cathode end (white line) to PCB **top** edge            |
 | F1, F4             | Resettable Fuse, 0.2A (SMD)                                  | Required                          | None                                                         |
 | F2, F3             | Resettable Fuse, 3A (PTH)                                    | Required                          | None                                                         |
 | J1, J3, J4, J5     | JST XH Socket (2P, 2.54mm), or<br/>2-Position Spring Terminal Connector (2.54mm, PTH, vertical or horizontal) | Required                          | Position connection outward                                  |
 | J2                 | JST XH Socket (2P, 2.54mm), or<br/>2-Position Spring Terminal Connector (2.54mm, PTH, vertical or horizontal) | Optional                          | Position connection outward                                  |
 | J4                 | RJ45 Socket                                                  | Required                          | Fits only one way                                            |
 | JP1, Jp2           | 2-Pin Male Header                                            | Optional                          | None                                                         |
-| K1, K2             | Relay  TQ2-5V (PTH)                                          | Required, one per motor           | Position IC’s small dimple in corner (pin 1) towards PCB top edge |
+| K1, K2             | Relay  TQ2-5V (PTH)                                          | Required, one per motor           | Position IC’s small dimple in corner (pin 1) towards PCB **top** edge |
 | R1, R2             | 220&Omega; resistors (1206 SMD)                              | Optional (when JP1, JP2 are used) | None                                                         |
-| VR1, VR2           | Voltage Regulator LM7805CV (TO-220, PTH)                     | Required, one per motor           | Position heat sink towards PCB top edge                      |
+| VR1, VR2           | Voltage Regulator LM7805CV (TO-220, PTH)                     | Required, one per motor           | Position heat sink towards PCB **top** edge                      |
 
 ## Testing and Verification
 

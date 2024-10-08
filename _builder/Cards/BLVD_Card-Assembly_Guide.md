@@ -162,7 +162,7 @@ To ensure the reliable operation and longevity of your Block Occupancy Detection
 
 | Protected Component                                          | Protection Component              | Function                                                     | Specifications                                               | Location                                                     |
 | ------------------------------------------------------------ | --------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **Entire Circuit**                                           | **TVS Diode SMBJ5CA**             | Protects from high-voltage transients by clamping voltage spikes, preventing them from reaching sensitive components. | **Stand-off Voltage:** 5V<br>**Clamping Voltage:** 6.8-7.2V  | Across the Vcc and GND lines of the track voltage            |
+| **Entire Circuit**                                           | **TVS Diode SMAJ5CA**             | Protects from high-voltage transients by clamping voltage spikes, preventing them from reaching sensitive components. | **Stand-off Voltage:** 5V<br>**Clamping Voltage:** 6.8-7.2V  | Across the Vcc and GND lines of the track voltage            |
 | **MCP23017 GPIO**                                            | **10k ohm Resistor**              | Further limits current between the optocoupler output and the MCP23017 GPIO pin. | **Value:** 10k ohms                                          | Between the optocoupler output and MCP23017 input            |
 | **MCP23017**                                                 | **Decoupling Capacitor 0.1 µF**   | Filters out high-frequency noise and transient voltage spikes from the power supply, ensuring a stable voltage for the MCP23017. | **Value:** 0.1 µF                                            | Across Vcc and GND near the MCP23017                         |
 | **I2C Lines from LCC Fusion Node Bus Hub** | **Ferrite Bead BLM31PG121SN1L**   | Provides high-frequency noise suppression on the I2C lines.  | **Impedance:** 120 &Omega; at 100 MHz                        | In series with the SDA and SCL lines of the I2C bus          |
@@ -182,10 +182,10 @@ Below is a list of the PCB components used for this card (see diagram on right f
 | Component Identifier | Count | Type                       | Value            | Package         | Required | Purpose                                                      |
 | -------------------- | ----- | -------------------------- | ---------------- | --------------- | -------- | ------------------------------------------------------------ |
 | BR1-BR8              | 8     | Bridge Rectifier           | 4A               | PTH             | Required | Converts DCC pulsating AC-like waveform into a DC-like pulsating waveform for current detection. |
-| C1 - C8              | 8     | Capacitor                  | 220uF, 25V       | SMD             | Required | Smooths DC signal.                                           |
-| C9                   | 1     | Capacitor                  | 0.1uF (100nF)    | SMD             | Required | Conditions/filters the current for the IC (U1).              |
-| D1-D8                | 8     | Diode                      | SMBJ5CA          | SMB SMD         | Required | Protects from high-voltage transients (>6.8-7.2V).           |
-| D9                   | 1     | Diode                      | PESD1CAN         | SOT-23 SMD      | Optional | Provides I2C data bus electrostatic discharge (ESD) protection. |
+| C1 - C8              | 8     | Polymer Solid Capacitor    | 220uF, 25V       | 8x10.5mm, SMD   | Required | Smooths DC signal.                                           |
+| C9                   | 1     | Ceramic Capacitor          | 0.1uF (100nF)    | SMD             | Required | Conditions/filters the current for the IC (U1).              |
+| D1-D8                | 8     | TVS Diode                      | SMBJ5CA          | SMB SMD         | Required | Protects from high-voltage transients (>6.8-7.2V).           |
+| D9                   | 1     | ESD Diode                      | PESD1CAN         | SOT-23 SMD      | Optional | Provides I2C data bus electrostatic discharge (ESD) protection. |
 | D10                  | 1     | Zener Diode                | 12V              | 1206/DO-213 SMD | Required | Creates a reference voltage determining lower track block voltage. |
 | FB1, FB2             | 2     | Ferrite Bead               | BLM31PG121SN1L   | 1206 SMD        | Required | Suppresses noise on I2C data lines.                          |
 | J1, J2               | 2     | RJ45 Socket                | 8P8C             | PTH             | Required | Provides network cable (CAT5/6) connection to (1 or 2) Block Breakout Boards. |
@@ -219,20 +219,20 @@ For a list of recommended tools, refer to [List of recommended tools](/pcb-tools
 
 | Designator (value) | Component          | Required?                       | Orientation                                                  |
 | ------------------ | ------------------ | ------------------------------- | ------------------------------------------------------------ |
-| BR1 - BR8          | KBL406             | Required                        | Position the rectifier’s clipped corner (pin 1) toward PCB right edge |
+| BR1 - BR8          | KBL406             | Required                        | Position the rectifier’s clipped corner (pin 1) toward PCB **right** edge |
 | C1 - C8            | 220uF              | Required                        | Cathode is position to PCB’s right side                      |
 | C9                 | 0.1uF              | Required                        | None                                                         |
-| D1 - D8            | SMBJ5CA            | Optional                        | Cathode end has a white line and positioned towards PCB left side |
+| D1 - D8            | SMAJ5CA            | Optional                        | Cathode end has a white line and positioned towards PCB **left** side |
 | D9                 | PESD1CAN           | Optional                        | None                                                         |
-| D10                | 12V Zener          | Required                        | Cathode end has a white line and positioned towards PCB left side |
+| D10                | 12V Zener          | Required                        | Cathode end has a white line and positioned towards PCB **left** side |
 | FB1, FB2           | BLM31PG121SN1L     | Required                        | None                                                         |
 | J1, J2             | RJ45 socket        | Optional                        | None                                                         |
 | JP1, JP2           | 3-Pin Male Headers | Required                        | None                                                         |
-| LED1 - LED8        | Green LED          | Optional                        | Reference back of LED, position cathode towards PCB bottom<img src="/_builder/Cards/images/LED_Orientation.png" style="zoom: 15%; float: right;" /> |
+| LED1 - LED8        | Green LED          | Optional                        | Reference back of LED, position cathode towards PCB **bottom**<img src="/_builder/Cards/images/LED_Orientation.png" style="zoom: 15%; float: right;" /> |
 | R1 - R8            | 1K&Omega;          | Required when using status LEDs | None                                                         |
 | R13                | 1K&Omega;          | Required                        | None                                                         |
 | R9 - R12           | 10K&Omega;         | Required                        | None                                                         |
-| SW1                | DIP / Slide Switch | Required                        | Position ON towards PCB top.                                 |
+| SW1                | DIP / Slide Switch | Required                        | Position ON towards PCB **top**.                                 |
 | U1, U2, U3, U4     | LM393              | Required                        | Small dot (pin 1) on package is positioned to the upper left corner on the PCB |
 | U5                 | MCP23017           | Required                        | Dent on package positioned downward on the PCB               |
 

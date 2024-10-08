@@ -126,13 +126,13 @@ The card only requires soldering three sets of PTH female pin headers.  Required
    1. Configure for CAN termination
       - If the MCP2515 Module is at the end of a CAN network, the module be configured with a CAN terminator.  This is performed by removing the MPC2515 Module from the PCB and installing a Jumper Cap on the 2 male pins (on the side of the module’s PCB marked J1)
 
-   2. Insert the MCP2515 Module on the PCB top, making sure both sets of male pins are inserted into PCB’s female headers correctly.
-   3. Attach four 10mm PCB standoffs on the PCB top to secure the MCP2515 to the board.
+   2. Insert the MCP2515 Module on the PCB **top**, making sure both sets of male pins are inserted into PCB’s female headers correctly.
+   3. Attach four 10mm PCB standoffs on the PCB **top** to secure the MCP2515 to the board.
 
 3. <img src="/assets/images/pcbs/RPI-CAN_Card/RPI-CAN_Card_finished.png" style="zoom: 15%; float: right;" />Install the RPI
 
-   1. Insert the RPI into the 2x20P headers on the PCB bottom
-   2. Install (4) sets of 2x11mm PCB standoffs on the PCB bottom to mount the RPI, using the provided holes in the card.
+   1. Insert the RPI into the 2x20P headers on the PCB **bottom**
+   2. Install (4) sets of 2x11mm PCB standoffs on the PCB **bottom** to mount the RPI, using the provided holes in the card.
 
 
 ## Testing and Verification

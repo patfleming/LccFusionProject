@@ -102,6 +102,16 @@ The following outlines the flow of activity for the Sound Card:
 
 5. MP3 player device plays/pauses the MP3.  MP3 files are loaded from micro-SD card inserted in the player's SD card reader.
 
+### Protection
+
+The Sound Card is equipped with several protective components to ensure reliable operation and safeguard the board and connected devices from potential electrical issues. Below is an overview of the protection mechanisms implemented:
+
+| **Protected Component**     | **Protection Component**            | **Function**                                                 | **Specifications**            | **Location**                                 |
+| --------------------------- | ----------------------------------- | ------------------------------------------------------------ | ----------------------------- | -------------------------------------------- |
+| **I2C Communication Lines** | **PESD1CAN Diode**                  | Protects the I2C lines from **ESD (Electrostatic Discharge)** and other electrical surges. | **Clamping voltage**: 24V max | Located on I2C data (SDA, SCL) lines.        |
+| **I2C Communication Lines** | **BLM31 Diodes**                    | Provides additional protection to the I2C lines by filtering out high-frequency noise and protecting against voltage spikes. | **Bidirectional TVS diode**   | Positioned along I2C communication lines.    |
+| **I2C Address Selector**    | **10kΩ Current Limiting Resistors** | Limits the current on the I2C address configuration pins, preventing excessive current from damaging the MCP23017. | 10kΩ resistors                | On the I2C address offset selector switches. |
+
  ## Components List
 
 PCB for the card can be ordered from any PCB fabricator using these [Gerber Files]({{site.gerber_dir}}Sound Card.zip).
@@ -114,7 +124,8 @@ Below is a list of the PCB components used for this card (see diagram on right f
 
 | Component Identifier | Count        | Type               | Value/Description                                            | Package    | Required? | Purpose                                                      |
 | -------------------- | ------------ | ------------------ | ------------------------------------------------------------ | ---------- | --------- | ------------------------------------------------------------ |
-| D1, D2               | 2            | Diode              | PESD1CAN                                                     | SOT-23 SMD | Required  | CAN Network Bus and I2C data bus electrostatic discharge (ESD) protection |
+| D1, D2               | 2            | ESD Diode              | PESD1CAN                                                     | SOT-23 SMD | Required  | I2C data bus electrostatic discharge (ESD) protection |
+| FB1, FB2 | 2 | Ferrite Bead | BLM31PG121SN1L | 1206 SMD | Required | I2C Network Bus Data Line Noise Suppression |
 | J1                   | 1            | RJ45 Socket        | 8P8C                                                         | PTH        | Required  | Speaker connections                                          |
 | J2-J5                | 4            | Spring Terminal    | 8P, 2.54mm                                                   | PTH        | Optional  | Speaker connections                                          |
 | J6-J9                | 4            | Male Headers       | 2P, 0.1" spacing                                             | PTH        | Optional  | Earphone/Speaker connections for testing                     |
@@ -125,9 +136,9 @@ Below is a list of the PCB components used for this card (see diagram on right f
 | R3                   | 1            | Resistor           | 24kΩ                                                         | 1206 SMD   | Required  | Limits the current to the Tact button and MP3 player (volume- long press) |
 | R7-R9                | 3            | Resistor           | 10kΩ                                                         | 1206 SMD   | Required  | Limits the current to SW1 and ESP32 for the I2C address      |
 | SW1                  | 1            | DIP / Slide Switch | 3P, 2.54mm                                                   | PTH        | Required  | Sets I2C address offset (0-7), added to base address of ESP32 (0x10). |
-| SW2-SW6              | 5            | Tact Button        | N/A                                                          | PTH        | Optional  | Controls for play/pause, and volume + / - (player 1)         |
+| SW2-SW6              | 5            | Tact Button        | N/A                                                          | SMD     | Optional  | Controls for play/pause, and volume + / - (player 1)         |
 | U2                   | 1            | ESP32 Module       | ESP32 DevKitC                                                | DevKitC    | Required  | Processes I2C text messages from the Node Card and sends player commands via UART |
-| SH1                  | 1            | Jumper Cap         | [Jumper Cap (2.54mm)](https://www.aliexpress.us/w/wholesale-jumper-caps.html?spm=a2g0o.detail.search.0) | 2.54mm     | Required  | Used with I2C Bus selection                                  |
+| SH1, SH2             | 2           | Jumper Cap         | [Jumper Cap (2.54mm)](https://www.aliexpress.us/w/wholesale-jumper-caps.html?spm=a2g0o.detail.search.0) | 2.54mm     | Required  | Used with I2C Bus selection                                  |
 |                      | 1 per player | MicroSD Card       | N/A                                                          | N/A        | Required  | Stores MP3 files to play (one per player). Filenames must be formatted as 000nn<optional-name>.mp3, where nn is a number from 1-100. |
 
 ## Tools Required
@@ -140,36 +151,48 @@ Below is a list of the PCB components used for this card (see diagram on right f
 
 ## Assembly Instructions
 
-<img src="/assets/images/pcbs/Sound_Card/Sound_Card_pcb.png" style="zoom:50%; float:right" />Below are the high level steps for assembly of the card:
+<img src="/assets/images/pcbs/Sound_Card/Sound_Card_pcb.png" style="zoom:50%; float:right" />Below are the high level steps for assembly of the Sound Card:
 
-1. Determine component orientation:
-   - Headers and DIP switches are not polarized and can be installed in either direction.
-   - Spring connectors should be positioned so the hole for the wire is face outward from the PCB.
-   - Tact button should be positioned to align with the solder pads, either direction will work.
+1. Clean PCB with alcohol to remove residue.  See [Cleaning_PCB](/pcb-prep/) for details.
 
-2. Clean PCB with alcohol to remove residue.  See [Cleaning_PCB](@ref pcb_prep) for details.
+2. When using a PCB stencil to apply the paste, align the stencil over the PCB using the 2 Tooling Holes located at the top and bottom of the card.  There are very small holes with no labels or markings.  Use a thick straight pin or wire for the alignment, pushing down into a soft foam surface to hold the pin/wire in place.
 
-3. Apply soldering paste for all SMD components (resistors and Tact button)
+3. Apply soldering paste for all SMD components
 
-4. Apply SMD components to paste.  
+4. Place SMD components into paste.  
 
-5. Reflow the solder for the SMD component (see below for options).
+| Component Identifier | Component (Package)                                          | Required? | Orientation                                   |
+| -------------------- | ------------------------------------------------------------ | --------- | --------------------------------------------- |
+| D1, D2               | PESD1CAN (SMD)                                               | Required  | Fits only one way                             |
+| FB1, FB2             | Diode, BLM31PG121SN1L, 1206 SMD                              | Required  | None                                          |
+| J1                   | 8P8C                                                         | Required  | Fits only one way                             |
+| J2-J5                | 8P, 2.54mm                                                   | Optional  | None                                          |
+| J6-J9                | 2P, 0.1" spacing                                             | Optional  | None                                          |
+| JP1, JP2             | 3P, 0.1" spacing                                             | Required  | None                                          |
+| JP11-JP14            | DFRobots DFPlayer Mini                                       | Required  | Position SD card slot to PCB **right** edge   |
+| R2, R4-7             | 33kΩ                                                         | Required  | None                                          |
+| R1                   | 15kΩ                                                         | Required  | None                                          |
+| R3                   | 24kΩ                                                         | Required  | None                                          |
+| R7-R9                | 10kΩ                                                         | Required  | None                                          |
+| SW1                  | 3P, 2.54mm                                                   | Required  |                                               |
+| SW2-SW6              | N/A                                                          | Optional  | Fits only one way                             |
+| U2                   | ESP32 DevKitC                                                | Required  | Position USB connection to PCB **right** edge |
+| SH1, SH2             | [Jumper Cap (2.54mm)](https://www.aliexpress.us/w/wholesale-jumper-caps.html?spm=a2g0o.detail.search.0) | Required  |                                               |
 
-6. Place PTH components (MP3 player, speaker, and ESP32 headers, RJ45 socket, spring switches).
+1. Insert MP3 player devices.  Position the players using the diagram on the PCB.  The SD card slot should be facing out.
 
-7. Insert MP3 player devices.  Position the players using the diagram on the PCB.  The SD card slot should be facing out.
+2. Insert ESP32, using diagram on the PCB.  USB-C socket should face outward.  Note, firmware is loaded before inserting ESP32 into headers.
 
-8. Insert ESP32, using diagram on the PCB.  USB-C socket should face outward.  Note, firmware is loaded before inserting ESP32 into headers.
+3. Add pair of Jumper Shunts to JP10 to set the I2C communications bus (A or B).  Insure that both I2C lines are set to the same A or B value.
 
-9. Add pair of Jumper Shunts to JP10 to set the I2C communications bus (A or B).  Insure that both I2C lines are set to the same A or B value.
+4. Set I2C communications address using slide DIP switch (SW1).  Address can be set to 0 thru 7.  This value must match the card's configuration in the CDI.
 
-10. Set I2C communications address using slide DIP switch (SW1).  Address can be set to 0 thru 7.  This value must match the card's configuration in the CDI.
+5. Attached speaker wires to the spring terminal connector(s) and/or using network cable (CAT5/6) using RJ45 socket.
 
-11. Attached speaker wires to the spring terminal connector(s) and/or using network cable (CAT5/6) using RJ45 socket.
+6. Install card into Node Bus Hub, along with a LCC Fusion Node Card for testing. 
 
-12. Install card into Node Bus Hub, along with a LCC Fusion Node Card for testing. 
+   > Note that cards must be orientated in Node Bus Hub to align their **card key** with Node Bus Hub cutout.
 
-    > Note that cards must be orientated in Node Bus Hub to align their **card key** with Node Bus Hub cutout.
 >  See also: [Soldering Tips](/pcb-soldering/)
 
 ## Testing and Verification

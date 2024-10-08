@@ -130,8 +130,8 @@ Below is a list of the PCB components used for this card (see diagram on right f
 
 | Component Identifier | Count | Type               | Value            | Package    | Required? | Purpose                                                      |
 | -------------------- | :---: | ------------------ | ---------------- | ---------- | :-------- | ------------------------------------------------------------ |
-| C1                   |   1   | Capacitor          | 0.1uF            | 1206 SMD   | Required  | Decoupling capacitor for IC protection.                      |
-| D1                   |   1   | Diode              | PESD1CAN         | SOT-23 SMD | Required  | I2C data bus electrostatic discharge (ESD) protection.       |
+| C1                   |   1   | Ceramic Capacitor  | 0.1uF            | 1206 SMD   | Required  | Decoupling capacitor for IC protection.                      |
+| D1                   |   1   | ESD Diode              | PESD1CAN         | SOT-23 SMD | Required  | I2C data bus electrostatic discharge (ESD) protection.       |
 | FB1, FB2             |   2   | Ferrite Bead       | BLM31PG121SN1L   | 1206 SMD   | Required  | I2C network bus data line noise suppression.                 |
 | J1, J2               |   2   | RJ45 Socket        | 8P8C             | N/A        | Required  | Network cable (CAT5/6) connection to I/O devices.            |
 | JP1, JP2             |   2   | Male Header        | 3P, 0.1" spacing | N/A        | Required  | Used for LINES 8 & 16 selection for either GND or I/O. Set to GND when I/O devices require this card to provide the circuit's GND connection. |
@@ -169,8 +169,8 @@ Below is a list of the PCB components used for this card (see diagram on right f
 | JP1, JP2             | Male header (3P, 0.1" spacing)  | Required  | None                                                 |
 | JP3, JP4             | Male headers (3P, 0.1" spacing) | Required  | None                                                 |
 | R1 - R23             | 10kΩ resistors (1206 SMD)       | Optional  | None                                                 |
-| SW1, SW2, SW3        | DIP / Slide Switch (3P, 2.54mm) | Required  | Position so switch so **ON** is towards PCB top edge |
-| U1                   | MCP23017 IC (SSOP28)            | Required  | Position IC’s dent towards PCB right edge            |
+| SW1, SW2, SW3        | DIP / Slide Switch (3P, 2.54mm) | Required  | Position so switch so **ON** is towards PCB **top** edge |
+| U1                   | MCP23017 IC (SSOP28)            | Required  | Position IC’s dent towards PCB **right** edge            |
 
 ## Testing and Verification
 

@@ -171,10 +171,10 @@ Below is a list of the PCB components used for this card (see diagram on right f
 
 | Component Identifier | Count | Type                 | Value                | Package                | Required | Purpose                                                      |
 | -------------------- | ----- | -------------------- | -------------------- | ---------------------- | -------- | ------------------------------------------------------------ |
-| C1, C3, C5, C7, C10  | 5     | Capacitor            | 0.1uF                | 1206 SMD               | Required | Decoupling Capacitor for IC Protection                       |
-| C2, C4, C6, C8, C9   | 5     | Capacitor            | 10uF                 | 1206 SMD               | Required | Decoupling Capacitor for IC Protection                       |
+| C1, C3, C5, C7, C10  | 5     | Ceramic Capacitor    | 0.1uF                | 1206 SMD               | Required | Decoupling Capacitor for IC Protection                       |
+| C2, C4, C6, C8, C9   | 5     | Ceramic Capacitor    | 10uF                 | 1206 SMD               | Required | Decoupling Capacitor for IC Protection                       |
 | D1 - D8              | 8     | Diode                | SS310                | SMD                    | Required | Circuit protection from reverse current from speaker connections. |
-| D5                   | 1     | Diode                | PESD1CAN             | SOT-23 SMD             | Optional | I2C data bus electrostatic discharge (ESD)                   |
+| D5                   | 1     | ESD Diode                | PESD1CAN             | SOT-23 SMD             | Optional | I2C data bus electrostatic discharge (ESD)                   |
 | F1                   | 1     | PPTC Resettable Fuse | 0.2A, 3V (or higher) | 1206 SMD               | Required | Protects overload from SD Module                             |
 | F2                   | 1     | PPTC Resettable Fuse | 1A, 5V (or higher)   | 1206 SMD               | Required | Protects overload from audio speakers                        |
 | FB1, FB2             | 2     | Ferrite Bead         | BLM31PG121           | 1206 SMD               | Required | I2C Network Bus Data Line Noise Suppression                  |
@@ -211,7 +211,7 @@ Below is a list of the PCB components used for this card (see diagram on right f
 | ------------------- | ----------------------------- | ----------------------------------- | ------------------------------------------------------------ |
 | C1, C3, C5, C7, C10 | 0.1uF                         | Required                            | None                                                         |
 | C2, C4, C6, C8, C9  | 0.10uF                        | Required                            | None                                                         |
-| D1 - D8             | SS310                         | Required                            | Cathode end has a white line and positioned towards PCB left edge |
+| D1 - D8             | SS310                         | Required                            | Cathode end has a white line and positioned towards PCB **left** edge |
 | D9, D10             | PESD1CAN                      | Optional                            | None                                                         |
 | F1                  | Fuse, 0.2A                    | Required                            | None                                                         |
 | F2                  | Fuse, 1A                      | Required                            | None                                                         |
@@ -222,8 +222,8 @@ Below is a list of the PCB components used for this card (see diagram on right f
 | J8                  | 8-Pin Female Header           | Optional                            | None                                                         |
 | JP1, JP2            | 3-Pin Male Headers            | Required                            | None                                                         |
 | R1, R2, R3          | 10k&Omega;                    | Required                            | None                                                         |
-| SW1                 | DIP / Slide Switch            | Required                            | Position ON towards PCB top edge                             |
-| U1, U2, U3, U4      | MAX98357A                     | At least one audio amps<sup>1</sup> | Small dot (pin 1) on package is positioned to PCB bottom and right edges |
+| SW1                 | DIP / Slide Switch            | Required                            | Position ON towards PCB **top** edge                             |
+| U1, U2, U3, U4      | MAX98357A                     | At least one audio amps<sup>1</sup> | Small dot (pin 1) on package is positioned to PCB **bottom** and right edges |
 
 1. Each audio amp configuration consists of MAX39357A IC, 2 capacitors (0.1 uF, 10uF), 2 diodes (SS310), and speaker connections (JST XH and/or RJ45 socket).
 

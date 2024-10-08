@@ -164,10 +164,10 @@ Below is a list of the PCB components used for this card (see diagram on right f
 | Component Identifier | Count<sup>1</sup> | Type               | Value                   | Package    | Required? | Purpose                                                      |
 | -------------------- | :---------------: | ------------------ | ----------------------- | ---------- | :-------- | ------------------------------------------------------------ |
 | BR1-BR8              |         8         | Bridge Rectifier   | KBL406, 4A              | PTH        | Required  | Converts the DCC pulsating AC-like waveform into a DC-like pulsating waveform for current detection without interfering with DCC signals. |
-| C1                   |         1         | Capacitor          | 0.01uF (100nF)          | 1206 SMD   | Required  | Conditions/filters the current for IC (U1).                  |
-| C2-C9                |         8         | Capacitor          | 22uF                    | 1206 SMD   | Optional  | Smooths incoming current for better detection when using resistor-equipped wheelsets. |
-| D1-D8                |         8         | Diode              | SMBJ18A                 | SMB        | Optional  | Protects from high-voltage transients (>29V).                |
-| D9                   |         1         | Diode              | PESD1CAN                | SOT-23 SMD | Optional  | I2C data bus electrostatic discharge (ESD) protection.       |
+| C1                   |         1         | Ceramic Capacitor  | 0.01uF (100nF)          | 1206 SMD   | Required  | Conditions/filters the current for IC (U1).                  |
+| C2-C9                |         8         | Ceramic Capacitor  | 22uF                    | 1206 SMD   | Optional  | Smooths incoming current for better detection when using resistor-equipped wheelsets. |
+| D1-D8                |         8         |TVS Diode              | SMBJ18A                 | SMB        | Optional  | Protects from high-voltage transients (>29V).                |
+| D9                   |         1         | ESD Diode              | PESD1CAN                | SOT-23 SMD | Optional  | I2C data bus electrostatic discharge (ESD) protection.       |
 | FB1, FB2             |         2         | Ferrite Bead       | BLM31PG121SN1L          | 1206 SMD   | Required  | Noise suppression for I2C data lines.                        |
 | F1-F8                |         8         | PPTC Polyfuse      | JK30, 3A, 16V (or more) | PTH        | Required  | Protects from sustained overcurrent conditions.              |
 | J1, J2               |         2         | RJ45 Socket        | 8P8C                    | PTH        | Required  | Network cable (CAT5/6) connection to 1 or 2 Block Breakout Board. |
@@ -205,24 +205,24 @@ For a list of recommended tools, refer to [List of recommended tools](/pcb-tools
 
 | Component Identifier | Component (Package)              | Required?                       | Orientation                                                  |
 | -------------------- | -------------------------------- | ------------------------------- | :----------------------------------------------------------- |
-| BR1-BR8              | KBL406                           | Required                        | Position the rectifier’s clipped corner (pin 1) toward PCB right edge |
-| C1                   | 0.01                             | Required                        | None                                                         |
+| BR1-BR8              | KBL406                           | Required                        | Position the rectifier’s clipped corner (pin 1) toward PCB **right** edge |
+| C1                   | 0.01uF                           | Required                        | None                                                         |
 | C2 - C9              | 22 uF (1206, SMD)                | Optional                        | None                                                         |
-| D1 - D8              | SMBJ18A                          | Optional                        | Cathode end has a white line and positioned towards PCB left side |
+| D1 - D8              | SMBJ18A                          | Optional                        | Cathode end has a white line and positioned towards PCB **left** side |
 | D9                   | PESD1CAN                         | Optional                        | None                                                         |
-| FB1, FB2             | BLM31PG121SN1L                   | Required                        | Cathode end has a white line and positioned towards PCB left side |
+| FB1, FB2             | BLM31PG121SN1L                   | Required                        | Cathode end has a white line and positioned towards PCB **left** side |
 | F1-F8                | Polyfuse, 3A (PTH)               | Required                        | None                                                         |
 | J1, J2               | RJ45 socket                      | Required                        | None                                                         |
 | JP1, JP2             | 3-Pin Male Headers               | Required                        | None                                                         |
-| LED1 - LED8          | LED (1206 SMD, Red)              | Optional                        | Reference back of LED, position cathode towards PCB top<img src="/_builder/Cards/images/LED_Orientation.png" style="zoom: 15%; float: right;" /> |
-| LED9                 | LED (1206 SMD, Green)            | Optional                        | Reference back of LED, position cathode towards PCB top      |
+| LED1 - LED8          | LED (1206 SMD, Red)              | Optional                        | Reference back of LED, position cathode towards PCB **top**<img src="/_builder/Cards/images/LED_Orientation.png" style="zoom: 15%; float: right;" /> |
+| LED9                 | LED (1206 SMD, Green)            | Optional                        | Reference back of LED, position cathode towards PCB **top**      |
 | R1-R8                | 1.5K&Omega; resistors (1206 SMD) | Required when using status LEDs | None                                                         |
 | R9, R10, R11         | 10K&Omega; resistors (1206 SMD)  | Required                        | None                                                         |
 | R12 - R19            | 1K&Omega; resistors (1206 SMD)   | Optional                        | None                                                         |
 | R20                  | 10K&Omega; resistors (1206 SMD)  | Required                        | None                                                         |
-| SW1                  | DIP / Slide Switch (3P, 2.54mm)  | Required                        | Position ON towards PCB top.                                 |
-| U1                   | MCP23017 IC (SSOP28, SMD)        | Required                        | Position IC’s indent (pin 1) towards PCB bottom              |
-| U2-U9                | MCT6H IC (DIP-8, PTH)            | Required                        | Position IC’s indent (pin 1) towards PCB top                 |
+| SW1                  | DIP / Slide Switch (3P, 2.54mm)  | Required                        | Position ON towards PCB **top**.                                 |
+| U1                   | MCP23017 IC (SSOP28, SMD)        | Required                        | Position IC’s indent (pin 1) towards PCB **bottom**              |
+| U2-U9                | MCT6H IC (DIP-8, PTH)            | Required                        | Position IC’s indent (pin 1) towards PCB **top**                 |
 
 ## Testing and Verification
 

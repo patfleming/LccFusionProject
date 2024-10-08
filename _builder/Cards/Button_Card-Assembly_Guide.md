@@ -126,9 +126,9 @@ Below is a list of the PCB components used for this card (see diagram on right f
 
 | Component Identifier | Count | Type                    | Value            | Package    | Required?                   | Purpose                                                      |
 | -------------------- | :---: | ----------------------- | ---------------- | ---------- | :-------------------------- | ------------------------------------------------------------ |
-| C1 - C16             |  16   | Capacitor               | 10nF             | 1206 SMD   | Required                    | Low-Pass Filter to filter out noise and prevent unwanted transient signals |
-| C17                  |   1   | Capacitor               | 0.1uF            | 1206 SMD   | Required                    | Decoupling capacitor for IC protection.                      |
-| D1                   |   1   | Diode                   | PESD1CAN         | SOT-23 SMD | Required                    | I2C data bus electrostatic discharge (ESD) protection.       |
+| C1 - C16             |  16   | Ceramic Capacitor       | 10nF             | 1206 SMD   | Required                    | Low-Pass Filter to filter out noise and prevent unwanted transient signals |
+| C17                  |   1   | Ceramic Capacitor       | 0.1uF            | 1206 SMD   | Required                    | Decoupling capacitor for IC protection.                      |
+| D1                   |   1   | ESD Diode                   | PESD1CAN         | SOT-23 SMD | Required                    | I2C data bus electrostatic discharge (ESD) protection.       |
 | F1                   |   1   | Resettable Fuse         | PPTC, 0.2A       | 1206 SMD   | Required                    | Protects from sustained overcurrent conditions               |
 | FB1, FB2             |   2   | Ferrite Bead            | BLM31PG121SN1L   | 1206 SMD   | Required                    | I2C network bus data line noise suppression.                 |
 | J1, J2               |   2   | RJ45 Socket             | 8P8C             | N/A        | Required                    | Network cable (CAT5/6) connection to I/O breakout board connected to buttons. |
@@ -176,8 +176,8 @@ Below is a list of the PCB components used for this card (see diagram on right f
 | J1, J2               | 8P8C                  | Required                    | Fits only one way                                            |
 | JP1, JP2             | 3P, 0.1" spacing      | Required                    | None                                                         |
 | JP3, JP4             | 3P, 0.1" spacing      | Required                    | None                                                         |
-| LED1-LED16           | Red                   | Optional                    | Reference back of LED, position cathode towards PCB left edge<img src="/_builder/Cards/images/LED_Orientation.png" style="zoom: 15%; float: right;" /> |
-| LED17, LED18         | Green                 | Optional                    | Reference back of LED, position cathode towards PCB left edge<img src="/_builder/Cards/images/LED_Orientation.png" style="zoom: 15%; float: right;" /> |
+| LED1-LED16           | Red                   | Optional                    | Reference back of LED, position cathode towards PCB **left** edge<img src="/_builder/Cards/images/LED_Orientation.png" style="zoom: 15%; float: right;" /> |
+| LED17, LED18         | Green                 | Optional                    | Reference back of LED, position cathode towards PCB **left** edge<img src="/_builder/Cards/images/LED_Orientation.png" style="zoom: 15%; float: right;" /> |
 | Q1, Q2               | BSS138                | Optional                    | Fits only one way                                            |
 | R1 - R16             | 1kΩ                   | Required when using R17-R34 | None                                                         |
 | R17 - R32            | 10kΩ                  | Required                    | None                                                         |
@@ -185,10 +185,10 @@ Below is a list of the PCB components used for this card (see diagram on right f
 | R35 - R36            | 1kΩ                   | Required                    | None                                                         |
 | R37                  | 10kΩ                  | Required                    | None                                                         |
 | R38 - R41            | 10kΩ                  | Required                    | None                                                         |
-| SW1                  | 3P, 2.54mm            | Required                    | Position ON towards PCB top.                                 |
-| U1, U3, U5           | SN74HCT14             | Required                    | Position IC’s dimple (pin 1) towards PCB left edge           |
-| U2                   | LM393 or LM2903N      | Required                    | Position IC’s dimple (pin 1) towards PCB top edge            |
-| U4                   | MCP23017              | Required                    | Position IC’s indent (pin 1) towards PCB left edge           |
+| SW1                  | 3P, 2.54mm            | Required                    | Position ON towards PCB **top**.                                 |
+| U1, U3, U5           | SN74HCT14             | Required                    | Position IC’s dimple (pin 1) towards PCB **left** edge           |
+| U2                   | LM393 or LM2903N      | Required                    | Position IC’s dimple (pin 1) towards PCB **top** edge            |
+| U4                   | MCP23017              | Required                    | Position IC’s indent (pin 1) towards PCB **left** edge           |
 | SH1, SH2             | 2.54mm                | Required                    |                                                              |
 
 ## Testing and Verification

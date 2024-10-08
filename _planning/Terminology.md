@@ -261,7 +261,7 @@ An **ESD (Electrostatic Discharge) Protection Diode** is used to protect electro
 
 ### Ferrite Bead {#ferrite-bead}
 
-A **Ferrite Bead** is a passive electronic component used to suppress high-frequency noise in electronic circuits. In the BOD Card, it is used on the I2C lines to reduce interference and ensure reliable communication.
+A **Ferrite Bead** is a (inductive) passive electronic component used to suppress high-frequency noise in electronic circuits.  Used by many of the cards on the I2C lines to reduce interference and ensure reliable communication.
 
 ### Flyback Diode {#flyback-diode}
 

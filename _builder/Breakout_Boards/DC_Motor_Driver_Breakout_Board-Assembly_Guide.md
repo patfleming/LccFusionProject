@@ -144,7 +144,7 @@ The DC Motor Driver Breakout Board includes several key protection mechanisms to
 | ------------------------ | ------------------------ | ------------------------------------------------------------ | ----------------------------------- | ----------------------------------------------- |
 | **L298N H-Bridge**       | Internal Flyback Diodes  | Protects against inductive kickback from DC motors.          | Integrated into the L298N H-Bridge. | Within the L298N H-Bridge IC.                   |
 | **L298N H-Bridge**       | B240 Schottky Diode      | Protects against reverse voltage and reverse current.        | Reverse Voltage: 40V, Current: 2A.  | On the DC Motor Driver PCB, across power lines. |
-| **LM2596-ADJ Regulator** | **Output Capacitor**     | Filters out high-frequency noise and transient voltage spikes from the output, ensuring stable 5V regulation. | **Value:** 680 µF electrolytic      | Across the output (5V) and GND                  |
+| **LM2596-ADJ Regulator** | **Output Capacitor**     | Filters out high-frequency noise and transient voltage spikes from the output, ensuring stable 5V regulation. | **Value:** 680 µF Polymer Solid     | Across the output (5V) and GND                  |
 | **IC’s**                 | **Decoupling Capacitor** | Filters out high-frequency noise and transient voltage spikes from the power supply, ensuring stable voltage for the IC’s. | **Value:** 0.1 µF, 44uF ceramic     | Across the Vcc input and GND                    |
 
  ## Components List {#components}
@@ -157,25 +157,25 @@ PCB for the card can be ordered from any PCB fabricator using these [Gerber File
 
 Below is a list of the PCB components used for this card (see diagram below for reference): 
 
-| **Component Identifier** | **Count** | **Type**                         | **Value**            | **Package** | **Required** | **Purpose**                                      |
-| ------------------------ | --------- | -------------------------------- | -------------------- | ----------- | ------------ | ------------------------------------------------ |
-| C1                       | 1         | Capacitor                        | 47µF                 | 1206 SMD    | Required     | Decoupler for LM298N.                            |
-| C2                       | 1         | Capacitor                        | 0.1µF (100nF)        | 1206 SMD    | Required     | Decouplers for ICs.                              |
-| C3                       | 1         | Capacitor                        | 680µF, 25V           | 1206 SMD    | Required     | Input filtering for the voltage regulator.       |
-| C4                       | 1         | Capacitor                        | 220µF, 25V           | 1206 SMD    | Required     | Input filtering for the voltage regulator.       |
-| D1 - D8                  | 8         | Diode                            | SS310, B240, or B160 | SMD         | Required     | Circuit protection.                              |
-| D9                       | 1         | Diode                            | SS310, B240, or B160 | SMD         | Required     | Required by LM2574N.                             |
-| J1                       | 1         | JST XH Socket or Spring Terminal | 2P, 2.54mm           | PTH         | Required     | Connectors to layout accessory bus (V+, GND).    |
-| J2, J3                   | 2         | JST XH Socket or Spring Terminal | 2P, 2.54mm           | PTH         | Required     | Connectors to the DC motor(s).                   |
-| J4                       | 1         | RJ45 Socket                      | 8P8C                 | PTH         | Required     | Network cable (CAT5/6) connection from PWM Card. |
-| L1                       | 1         | Inductor                         | 33µH                 | PTH         | Required     | Used for 5V voltage regulation.                  |
-| R1                       | 1         | Resistor                         | 1KΩ                  | PTH         | Required     | Used with voltage regulator feed back pin        |
-| R2                       | 1         | Resistor                         | 4.7KΩ                | PTH         | Required     | Used to adjust voltage regulator to 5V           |
-| R3                       | 1         | Resistor                         | 10KΩ                 | PTH         | Required     | Used to adjust voltage regulator to 12V          |
-| R4, R5                   | 2         | Resistor                         | 0.5Ω                 | 1206 SMD    | Required     | Current limiting for L298N CS selectors to GND.  |
-| U1                       | 1         | Dual Full Bridge Driver          | L298N                | PTH         | Required     | Provides dual full-bridge motor control.         |
-| U2, U3                   | 2         | Mosfet Driver                    | TC4428               | SMD         | Required     | Provides high-speed switching.                   |
-| VR1                      | 1         | Buck Converter                   | LM2596S-ADJ          | SMD         | Required     | 5V buck converter for voltage regulation.        |
+| **Component Identifier** | **Count** | **Type**                         | **Value**            | **Package**   | **Required** | **Purpose**                                      |
+| ------------------------ | --------- | -------------------------------- | -------------------- | ------------- | ------------ | ------------------------------------------------ |
+| C1                       | 1         | Ceramic Capacitor                | 47µF                 | 1206 SMD      | Required     | Decoupler for LM298N.                            |
+| C2                       | 1         | Ceramic Capacitor                | 0.1µF (100nF)        | 1206 SMD      | Required     | Decouplers for ICs.                              |
+| C3                       | 1         | Polymer Solid Capacitor          | 680uF, 10V           | 6x12mm, PTH   | Required     | Input filtering for the voltage regulator.       |
+| C4                       | 1         | Polymer Solid Capacitor          | 220µF, 10V           | 6.3x5.8mm SMD | Required     | Input filtering for the voltage regulator.       |
+| D1 - D8                  | 8         | Diode                            | SS310, B240, or B160 | SMD           | Required     | Circuit protection.                              |
+| D9                       | 1         | Diode                            | SS310, B240, or B160 | SMD           | Required     | Required by LM2574N.                             |
+| J1                       | 1         | JST XH Socket or Spring Terminal | 2P, 2.54mm           | PTH           | Required     | Connectors to layout accessory bus (V+, GND).    |
+| J2, J3                   | 2         | JST XH Socket or Spring Terminal | 2P, 2.54mm           | PTH           | Required     | Connectors to the DC motor(s).                   |
+| J4                       | 1         | RJ45 Socket                      | 8P8C                 | PTH           | Required     | Network cable (CAT5/6) connection from PWM Card. |
+| L1                       | 1         | Inductor                         | 33µH                 | PTH           | Required     | Used for 5V voltage regulation.                  |
+| R1                       | 1         | Resistor                         | 1KΩ                  | PTH           | Required     | Used with voltage regulator feed back pin        |
+| R2                       | 1         | Resistor                         | 4.7KΩ                | PTH           | Required     | Used to adjust voltage regulator to 5V           |
+| R3                       | 1         | Resistor                         | 10KΩ                 | PTH           | Required     | Used to adjust voltage regulator to 12V          |
+| R4, R5                   | 2         | Resistor                         | 0.5Ω                 | 1206 SMD      | Required     | Current limiting for L298N CS selectors to GND.  |
+| U1                       | 1         | Dual Full Bridge Driver          | L298N                | PTH           | Required     | Provides dual full-bridge motor control.         |
+| U2, U3                   | 2         | Mosfet Driver                    | TC4428               | SMD           | Required     | Provides high-speed switching.                   |
+| VR1                      | 1         | Buck Converter                   | LM2596S-ADJ          | SMD           | Required     | 5V buck converter for voltage regulation.        |
 
 ## Tools Required
 
@@ -199,21 +199,21 @@ Clean PCB with alcohol to remove residue.  See [Cleaning_PCB](/pcb-prep/) for de
 | -------------------- | ------------------------------------------------------------ | :------- | ----------------------------------------------- |
 | C1                   | Capacitor, 47uF (1206 SMD)                                   | Required | None                                            |
 | C2                   | Capacitor, 0.1uF (100nF, 1206 SMD)                           | Required | None                                            |
-| C3                   | Capacitor, 680uF, 25V, (SMD)                                 | Required | Anode positioned toward PCB top edge            |
-| C4                   | Capacitor, 220uF, 25V, (SMD)                                 | Required | Anode positioned toward PCB top edge            |
-| D1 - D4              | Diode, SS310, B240, or B160 (SMD)                            | Required | Anode positioned toward PCB right edge          |
-| D5 - D8              | Diode, SS310, B240, or B160 (SMD)                            | Required | Anode positioned toward PCB bottom edge         |
-| D9                   | Diode, SS310, B240, or B160 (SMD)                            | Required | Anode positioned toward PCB left edge           |
-| J1, J2, J3           | JST XH Socket (2P, 2.54mm), or<br>2-Position Spring Terminal Connector (2.54mm, PTH, vertical or horizontal) | Required | Position connection toward PCB top edge         |
-| J4                   | RJ45 socket (8P8C, PTH)                                      | Required | Position connection toward PCB bottom edge      |
+| C3                   | Capacitor, 680uF, 25V, (SMD)                                 | Required | Anode positioned toward PCB **top** edge            |
+| C4                   | Capacitor, 220uF, 25V, (SMD)                                 | Required | Anode positioned toward PCB **top** edge            |
+| D1 - D4              | Diode, SS310, B240, or B160 (SMD)                            | Required | Anode positioned toward PCB **right** edge          |
+| D5 - D8              | Diode, SS310, B240, or B160 (SMD)                            | Required | Anode positioned toward PCB **bottom** edge         |
+| D9                   | Diode, SS310, B240, or B160 (SMD)                            | Required | Anode positioned toward PCB **left** edge           |
+| J1, J2, J3           | JST XH Socket (2P, 2.54mm), or<br>2-Position Spring Terminal Connector (2.54mm, PTH, vertical or horizontal) | Required | Position connection toward PCB **top** edge         |
+| J4                   | RJ45 socket (8P8C, PTH)                                      | Required | Position connection toward PCB **bottom** edge      |
 | L1                   | Inductor, 33uH (PTH)                                         | Required | None                                            |
 | R1                   | 1k&Omega; Resistor (1206 SMD)                                | Required | None                                            |
 | R2                   | 4.7k&Omega; Resistor (1206 SMD)                              | Required | None                                            |
 | R3                   | 10k&Omega; Resistor (1206 SMD)                               | Required | None                                            |
 | R4, R5               | 0.5&Omega; Resistor (1206 SMD)                               | Required | None                                            |
 | U1                   | L298N (PTH)                                                  | Required | Fits only one way                               |
-| U2, U3               | TC4428 Mosfet Driver (SMD)                                   | Required | Position indent (pin 1) towards PCB left edge   |
-| VR1                  | LM2596S-ADJ (SMD)                                            | Required | Position indent (pin 1) towards PCB bottom edge |
+| U2, U3               | TC4428 Mosfet Driver (SMD)                                   | Required | Position indent (pin 1) towards PCB **left** edge   |
+| VR1                  | LM2596S-ADJ (SMD)                                            | Required | Position indent (pin 1) towards PCB **bottom** edge |
 
 ## 
 

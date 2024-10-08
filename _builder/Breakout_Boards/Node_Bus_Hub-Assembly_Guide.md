@@ -178,12 +178,12 @@ Below is a list of the PCB components used for the 6x Node Bus Hub (see diagram 
 
 | Component Identifier         | Count | Type                      | Value            | Package                            | Required? | Purpose                                                      |
 | ---------------------------- | ----- | ------------------------- | ---------------- | ---------------------------------- | :-------: | ------------------------------------------------------------ |
-| C1, C4                       | 2     | Capacitor                 | 0.1uF            | SMD 1206                           | Required  | Conditions/filters the current for the IC (U1, U2).          |
-| C2, C3, C5, C6               | 4     | Capacitor                 | 0.1uF            | SMD 1206                           | Required  | Low Pass Filter for low signal detection                     |
+| C1, C4                       | 2     | Ceramic Capacitor         | 0.1uF            | SMD 1206                           | Required  | Conditions/filters the current for the IC (U1, U2).          |
+| C2, C3, C5, C6               | 4     | Ceramic Capacitor         | 0.1uF            | SMD 1206                           | Required  | Low Pass Filter for low signal detection                     |
 | D1-D3                        | 3     | LED                       | Red              | SMD 1206                           | Optional  | Indicators for PWR (5V) and I2C data transmission (receive (RX) line) |
 | D4                           | 1     | Diode                     | SS310            | SMA                                | Optional  | Prevents accidental input V+ from damaging circuits, since USB-C is output-only. |
-| D5, D6                       | 2     | Diode                     | PESD1CAN         | SOT-23 SMD                         | Optional  | Required only when using the I2C data bus. Provides I2C electrostatic discharge (ESD) protection. |
-| D7                           | 1     | Diode                     | PESD1CAN         | SOT-23 SMD                         | Optional  | Provides CAN Network data bus electrostatic discharge (ESD) protection. |
+| D5, D6                       | 2     | ESD Diode                     | PESD1CAN         | SOT-23 SMD                         | Optional  | Required only when using the I2C data bus. Provides I2C electrostatic discharge (ESD) protection. |
+| D7                           | 1     | ESD Diode                     | PESD1CAN         | SOT-23 SMD                         | Optional  | Provides CAN Network data bus electrostatic discharge (ESD) protection. |
 | J1-J6                        | 6     | Card Edge Connector       | 12P (2x6)        | 3.86mm, 805 Strip Connector Type A | Required  | Connector for inserting cards with card edge connector tabs. Number of connectors varies by Node Bus Hub design. |
 | J7, J8, J11, J12<sup>1</sup> | 4     | Female Right Angle Header | 8P, 2.54mm       | -                                  | Optional  | Used for connecting boards via pin headers. Provides direct connection to adjoining Node Bus Hub PCBs for I/O expansion. |
 | J9, J10                      | 2     | RJ45 Socket               | 8P8C             | -                                  | Optional  | Required only when connecting hubs together using network cables. Provides network cable (CAT5/6) connection(s) to remote Node Bus Hub PCBs. |
@@ -255,7 +255,7 @@ Depending on requirements, 1 to 6 connectors can be installed on either side.
 | R13, R14           | 1kΩ          | Required when using Comm (I2C) Data RX/TX status indicators (D2, D3) | None                                                         |
 | Q1 - Q4            | IRLML6402    | Required                                                     | Fits only one way                                            |
 | Q5, Q6             | BSS138       | Required when using Comm (I2C) Data RX/TX status indicators (D2, D3) | Fits only one way                                            |
-| U1, U2             | LM393        | Required                                                     | IC’s dimple (pin 1) positioned toward PCB top edge           |
+| U1, U2             | LM393        | Required                                                     | IC’s dimple (pin 1) positioned toward PCB **top** edge           |
 | ZD1                | Zener 2.4v   | Required                                                     | None                                                         |
 
 #### Solder PTH Components

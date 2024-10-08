@@ -116,10 +116,10 @@ Below is a list of the PCB components used for this card (see diagram on right f
 
 | Component Identifier | Component (Package)                                          | Required?                                             | Purpose                                                      |
 | --------------- | ------------------------------------------------------------ | :----------------------------------------------------------- | --------------- |
-| C1 | Capacitor, 680uF, 25V, SMD | Required | Used by 5V voltage regulator for input filtering. |
-| C2 | Capacitor, 220uF, 25V, SMD | Required | Used by 5V voltage regulator for input filtering. |
-| C3 | Capacitor, 0.1uF, 1206 SMD | Required | Used by voltage regulators for output filtering. |
-| C4 | Capacitor, 33 uF, 1206 SMD | Optional | Used by 12V voltage regulator for input filtering. <br>Required when using 12 voltage regulator (Q1). |
+| C1 | Polymer Solid, 680uF, 25V, SMD | Required | Used by 5V voltage regulator for input filtering. |
+| C2 | Polymer Solid, 220uF, 25V, SMD | Required | Used by 5V voltage regulator for input filtering. |
+| C3 | Ceramic Capacitor, 0.1uF, 1206 SMD | Required | Used by voltage regulators for output filtering. |
+| C4 | Ceramic Capacitor, 33 uF, 1206 SMD | Optional | Used by 12V voltage regulator for input filtering. <br>Required when using 12 voltage regulator (Q1). |
 | D1, D4, D5, D6 | SS310 Diode, SMD | Required | Circuit protection from reverse current from the |
 | D2, D3 | SS310 Diodes, SMD | Optional | Circuit protection.<br>Required when providing power output (J3, J4, or J5). |
 | D7 | SMBJ18A (SMB SMD) | Optional | Protects from high-voltage transients (>29V) |

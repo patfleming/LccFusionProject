@@ -177,11 +177,11 @@ Below is a list of the PCB components used for this card (see diagram on right f
 | Component Identifier | Count | Type                      | Value             | Package                | Required | Purpose                                                  |
 | -------------------- | ----- | ------------------------- | ----------------- | ---------------------- | -------- | -------------------------------------------------------- |
 | BATT1, BATT2, BATT3  | 3     | Li-Po Battery             | 500mAh, 1000mAh   | 502535, 802540         | Required | Batteries for powering Node Bus Hub                      |
-| C1, C2               | 2     | Capacitor                 | 1uF               | 1206 SMD               | Required | Filtering for the charging IC                            |
+| C1, C2               | 2     | Ceramic Capacitor         | 1uF               | 1206 SMD               | Required | Filtering for the charging IC                            |
 | D1                   | 1     | Zener Diode               | 9.1V              | 1206 SMD               | Required | Creates a reference voltage determining low battery      |
 | D2, D4, D5           | 3     | Diode                     | B240              | SMA, SMD               | Required | Prevents reverse voltage                                 |
-| D3                   | 1     | Diode                     | SMAJ5A            | SMB SMD                | Optional | Protects from high-voltage transients (>5V)              |
-| D5                   | 1     | Diode                     | PESD1CAN          | SOT-23 SMD             | Optional | I2C data bus electrostatic discharge (ESD)               |
+| D3                   | 1     | TVS Diode                     | SMAJ5A            | SMB SMD                | Optional | Protects from high-voltage transients (>5V)              |
+| D5                   | 1     | ESD Diode                     | PESD1CAN          | SOT-23 SMD             | Optional | I2C data bus electrostatic discharge (ESD)               |
 | F1                   | 1     | SK30 PPTC Resettable Fuse | 3A, 12V (or more) | PTH                    | Required | Protects from sustained overcurrent conditions           |
 | J1, J2, J3, J4       | 4     | JST XH Socket             | 2P, 2.54mm        | PTH or Spring Terminal | Required | Battery Connections                                      |
 | J5                   | 1     | USB-C Socket              | 4-Pin             | SMD                    | Optional | Power output connector used to power other 12V+ devices. |

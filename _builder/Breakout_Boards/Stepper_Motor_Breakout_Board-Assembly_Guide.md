@@ -143,16 +143,16 @@ PCB for the card can be ordered from any PCB fabricator using these [Gerber File
 
 Below is a list of the PCB components used for this card (see diagram below for reference): 
 
-| Component Identifier | Count | Type                                                  | Value                     | Package  | Required | Purpose                                                      |
-| -------------------- | ----- | ----------------------------------------------------- | ------------------------- | -------- | :------- | ------------------------------------------------------------ |
-| C1, C2               | 2     | Tantalum Capacitor                                    | 0.33uF                    | 3216 SMD | Required | Capacitors for filtering and stabilizing input/output current |
-| C3, D4               | 2     | Capacitor                                             | 220uF, 25V                | SMD      | Required | Used by 12V voltage regulator for input/output filtering.    |
-| F1, F2               | 2     | Resettable Fuse                                       | JK30, 1.5A, 12V (or more) | PTH      | Required | Protection from current overload from 12V motor              |
-| J1, J2               | 2     | JST XH Socket                                         | 5P, 2.54mm                | -        | Required | Connectors to motor                                          |
-| J3                   | 1     | JST XH Socket or 2-Position Spring Terminal Connector | 2P, 2.54mm                | PTH      | Required | Connectors to layout accessory bus                           |
-| J4                   | 1     | RJ45 Socket                                           | k8P8C                     | PTH      | Required | Network cable (CAT5/6) connection from I/O Card.             |
-| U1                   | 1     | IC                                                    | M54562FP                  | SOP20    | Required | Darlington transistor array to amplify low-current signals for stepper motor control |
-| VR1                  | 1     | Voltage Regulator                                     | L7812CV                   | PTH      | Optional | 12V voltage regulator for driving stepper motor(s)           |
+| Component Identifier | Count | Type                                                  | Value                     | Package       | Required | Purpose                                                      |
+| -------------------- | ----- | ----------------------------------------------------- | ------------------------- | ------------- | :------- | ------------------------------------------------------------ |
+| C1, C2               | 2     | Tantalum Capacitor                                    | 0.33uF                    | 3216 SMD      | Required | Capacitors for filtering and stabilizing input/output current |
+| C3, C4               | 2     | Polymer Solid Capacitor                               | 220µF, 10V                | 6.3x5.8mm SMD | Required | Used by 12V voltage regulator for input/output filtering.    |
+| F1, F2               | 2     | Resettable Fuse                                       | JK30, 1.5A, 12V (or more) | PTH           | Required | Protection from current overload from 12V motor              |
+| J1, J2               | 2     | JST XH Socket                                         | 5P, 2.54mm                | -             | Required | Connectors to motor                                          |
+| J3                   | 1     | JST XH Socket or 2-Position Spring Terminal Connector | 2P, 2.54mm                | PTH           | Required | Connectors to layout accessory bus                           |
+| J4                   | 1     | RJ45 Socket                                           | k8P8C                     | PTH           | Required | Network cable (CAT5/6) connection from I/O Card.             |
+| U1                   | 1     | IC                                                    | M54562FP                  | SOP20         | Required | Darlington transistor array to amplify low-current signals for stepper motor control |
+| VR1                  | 1     | Voltage Regulator                                     | L7812CV                   | PTH           | Optional | 12V voltage regulator for driving stepper motor(s)           |
 
 ## Tools Required
 
@@ -172,13 +172,13 @@ Clean PCB with alcohol to remove residue.  See [Cleaning_PCB](/pcb-prep/) for de
 
 | Component Identifier | Component (Package)                                          | Required | Orientation                                                  |
 | -------------------- | ------------------------------------------------------------ | :------- | ------------------------------------------------------------ |
-| C1, C2               | 0.33uF Tantalum Capacitor (3216 SMD)                         | Required | Cathode end has a brown line and positioned towards PCB bottom edge |
-| C3, C4               | Capacitor, 220uF, 25V, (SMD)                                 | Required | Anode is position towards PCB top edge                       |
+| C1, C2               | 0.33uF Tantalum Capacitor (3216 SMD)                         | Required | Cathode end has a brown line and positioned towards PCB **bottom** edge |
+| C3, C4               | Capacitor, 220uF, 25V, (SMD)                                 | Required | Anode is position towards PCB **top** edge                       |
 | F1, F2               | Resettable Fuse, 1.5A (PTH)                                  | Required | None                                                         |
 | J1, J2               | JST XH Socket (5P, 2.54mm)                                   | Required | Position so stepper motor plug will align with socket labels |
-| J3                   | JST XH Socket (2P, 2.54mm) 2-Position Spring Terminal Connector (2.54mm, PTH, vertical or horizontal) | Required | Position connector to PCB top edge                           |
+| J3                   | JST XH Socket (2P, 2.54mm) 2-Position Spring Terminal Connector (2.54mm, PTH, vertical or horizontal) | Required | Position connector to PCB **top** edge                           |
 | J4                   | RJ45 socket (8P8C, PTH)                                      | Required | Fits only one way                                            |
-| U1                   | M54562FP IC (SOP20)                                          | Required | Position IC indent toward PCB left edge                      |
+| U1                   | M54562FP IC (SOP20)                                          | Required | Position IC indent toward PCB **left** edge                      |
 | VR1                  | L7812CV (PTH)                                                | Optional | Heat sink towards PC top edge                                |
 
 ## Testing and Verification

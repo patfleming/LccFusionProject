@@ -159,12 +159,12 @@ Below is a list of the PCB components used for this card (see diagram before ref
 
 | Component Identifier | Count | Type               | Value                    | Package                | Turnout 1           | Turnout 2           | Purpose                                                      |
 | -------------------- | ----- | ------------------ | ------------------------ | ---------------------- | :------------------ | :------------------ | ------------------------------------------------------------ |
-| C1, C14, C17         | 3     | Capacitor          | 0.1uF                    | 1206 SMD               | Required (C1, C14)  | Required (C17)      | Smooth output of voltage regulators                          |
+| C1, C14, C17         | 3     | Ceramic Capacitor  | 0.1uF                    | 1206 SMD               | Required (C1, C14)  | Required (C17)      | Smooth output of voltage regulators                          |
 | C2, C15, C16         | 3     | Tantalum Capacitor | 0.33uF                   | 3216 SMD               | Required (C2, C15)  | Required (C16)      | Smooth input for voltage regulators                          |
-| C3, C4               | 2     | Capacitor          | 2200uF, 25V              | 13mm Aluminum          | Required (C3)       | Required (C4)       | Provides current to drive twin-coil switch coils             |
-| C5, C6, C7, C8       | 4     | Capacitor          | 100uF                    | 1206 SMD               | Required (C5, C6)   | Required (C7, C8)   | Part of the 150ms pulse timing circuit for NE556 timer to control discharge rate |
-| C9, C10, C11, C12    | 4     | Capacitor          | 0.1uF                    | 1206 SMD               | Required (C9, C10)  | Required (C11, C12) | Stabilizes the internal reference voltage in the timer       |
-| C13, C18             | 2     | Capacitor          | 10nF                     | 1206 SMD               | Required (C13)      | Required (C18)      | Enables NE556 timer’s trigger to detect change in current from motor control lines |
+| C3, C4               | 2     | Aluminum Capacitor | 2200uF, 25V              | 13mm                   | Required (C3)       | Required (C4)       | Provides current to drive twin-coil switch coils             |
+| C5, C6, C7, C8       | 4     | Ceramic Capacitor  | 100uF                    | 1206 SMD               | Required (C5, C6)   | Required (C7, C8)   | Part of the 150ms pulse timing circuit for NE556 timer to control discharge rate |
+| C9, C10, C11, C12    | 4     | Ceramic Capacitor  | 0.1uF                    | 1206 SMD               | Required (C9, C10)  | Required (C11, C12) | Stabilizes the internal reference voltage in the timer       |
+| C13, C18             | 2     | Ceramic Capacitor  | 10nF                     | 1206 SMD               | Required (C13)      | Required (C18)      | Enables NE556 timer’s trigger to detect change in current from motor control lines |
 | D1                   | 2     | Diode              | SS310, B240, B160        | SMD                    | Required (D1)       | Required (D2)       | Current flow control into 2200uF capacitors                  |
 | D2, D3, D4, D5       | 4     | Diode              | SS310, B240, B160        | SMD                    | Required (D2, D3)   | Required (D4, D5)   | Flyback protection from switch machine coils                 |
 | D6, D7, D8, D9       | 4     | Diode              | SS310, B240, B160        | SMD                    | Required (D6, D7)   | Required (D8, D9)   | Current flow control from BSS138 transistors to turnout coils |
@@ -211,23 +211,23 @@ Clean PCB with alcohol to remove residue.  See [Cleaning_PCB](/pcb-prep/) for de
 | Component Identifier | Component (Package)                                          | Orientation                                                  |
 | -------------------- | ------------------------------------------------------------ | :----------------------------------------------------------- |
 | C1, C14, C17         | Capacitor, 0.1uF, 1206 SMD                                   | None                                                         |
-| C2, C15, C16         | 0.33uF Tantalum Capacitor (3216 SMD)                         | Cathode end has a brown line and positioned towards PCB top edge |
-| C3, C4               | Capacitor, 2200uF, Aluminum electrolytic, 25V, 13mm          | Position anode towards PCB right edge                        |
+| C2, C15, C16         | 0.33uF Tantalum Capacitor (3216 SMD)                         | Cathode end has a brown line and positioned towards PCB **top** edge |
+| C3, C4               | Capacitor, 2200uF, Aluminum electrolytic, 25V, 13mm          | Position anode towards PCB **right** edge                        |
 | C5, C6, C7, C8       | Capacitor, 100uF, 1206 SMD                                   | None                                                         |
 | C9, C10, C11, C12    | Capacitor, 0.1uF, 1206 SMD                                   | None                                                         |
 | C13, C18             | Capacitor, 10nF, 1206 SMD                                    | None                                                         |
-| D1                   | Diode, SS310, B240, or B160 (SMD)                            | Cathode end has a white line and positioned towards PCB bottom edge |
-| D2, D3, D4, D5       | Diode, SS310, B240, or B160 (SMD)                            | Cathode end has a white line and positioned towards PCB left edge |
-| D6 - D15             | Diode, SS310, B240, or B160 (SMD)                            | Cathode end has a white line and positioned towards PCB top edge |
+| D1                   | Diode, SS310, B240, or B160 (SMD)                            | Cathode end has a white line and positioned towards PCB **bottom** edge |
+| D2, D3, D4, D5       | Diode, SS310, B240, or B160 (SMD)                            | Cathode end has a white line and positioned towards PCB **left** edge |
+| D6 - D15             | Diode, SS310, B240, or B160 (SMD)                            | Cathode end has a white line and positioned towards PCB **top** edge |
 | F1, F2               | Resettable Fuse, 1.5A (PTH)                                  | None                                                         |
-| J1 - J5              | JST XH Socket (2P, 2.54mm), or 2-Position Spring Terminal Connector (2.54mm, PTH, vertical or horizontal) | Position connection towards PCB top edge                     |
+| J1 - J5              | JST XH Socket (2P, 2.54mm), or 2-Position Spring Terminal Connector (2.54mm, PTH, vertical or horizontal) | Position connection towards PCB **top** edge                     |
 | J6                   | RJ45 socket (8P8C, PTH)                                      | Fits only one way                                            |
-| K1, K2               | TQ2-5V (PTH)                                                 | Position IC’s small dimple in corner (pin 1) towards PCB top edge |
+| K1, K2               | TQ2-5V (PTH)                                                 | Position IC’s small dimple in corner (pin 1) towards PCB **top** edge |
 | Q1 - Q4              | BSS138 (SOT-23)                                              | Fits only one way                                            |
 | R1                   | Resistor, 470Ω  (1206 SMD)                                   | None                                                         |
 | R2, R3, R4, R5       | Resistor, 1.5kΩ  (1206 SMD)                                  | None                                                         |
-| U1, U2               | Dual Timer, NE556, DIP14                                     | Position IC’s indent towards PCB top edge                    |
-| VR1, VR2, VR3        | Voltage Regulator, LM7805CV (TO-220, SMD)                    | Position heat sink towards PCB top edge                      |
+| U1, U2               | Dual Timer, NE556, DIP14                                     | Position IC’s indent towards PCB **top** edge                    |
+| VR1, VR2, VR3        | Voltage Regulator, LM7805CV (TO-220, SMD)                    | Position heat sink towards PCB **top** edge                      |
 
 ## Testing and Verification
 
@@ -249,7 +249,7 @@ Clean PCB with alcohol to remove residue.  See [Cleaning_PCB](/pcb-prep/) for de
 
    2. Momentarily connect 12V+ (e.g. accessory bus) to RJ45 socket (J5) **pin 1** and GND to **pin 2**.  
 
-      > Access RJ45 pins from PCB bottom).  Pin 1 has a **square solder pad**.  Pin 2 is position above it, with other pins alternating between the rows.
+      > Access RJ45 pins from PCB **bottom**).  Pin 1 has a **square solder pad**.  Pin 2 is position above it, with other pins alternating between the rows.
 
    3. **Results**:
       

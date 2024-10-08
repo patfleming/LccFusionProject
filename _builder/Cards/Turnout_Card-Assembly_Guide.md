@@ -144,7 +144,7 @@ The **Turnout Card** is equipped with several protective components to ensure re
 | **Protected Component**     | **Protection Component**            | **Function**                                                 | **Specifications**              | **Location**                                    |
 | --------------------------- | ----------------------------------- | ------------------------------------------------------------ | ------------------------------- | ----------------------------------------------- |
 | **I2C Communication Lines** | **PESD1CAN Diode**                  | Protects the I2C lines from **ESD (Electrostatic Discharge)** and other electrical surges. | **Clamping voltage**: 24V max   | Located on I2C data (SDA, SCL) lines.           |
-| **I2C Communication Lines** | **FB121S Diodes**                   | Provides additional protection to the I2C lines by filtering out high-frequency noise and protecting against voltage spikes. | **Bidirectional TVS diode**     | Positioned along I2C communication lines.       |
+| **I2C Communication Lines** | **BLM31 Diodes**                   | Provides additional protection to the I2C lines by filtering out high-frequency noise and protecting against voltage spikes. | **Bidirectional TVS diode**     | Positioned along I2C communication lines.       |
 | **I/O Control Lines**       | **10kΩ Current Limiting Resistors** | Limits the current on the **motor control** and **point sensing lines**, protecting the MCP23017 and associated circuitry. | 10kΩ resistors to limit current | On the motor control and point sensing lines.   |
 | **I2C Address Selector**    | **10kΩ Current Limiting Resistors** | Limits the current on the I2C address configuration pins, preventing excessive current from damaging the MCP23017. | 10kΩ resistors                  | On the I2C address offset selector switches.    |
 | **MCP23017 Port Expander**  | **0.1µF Decoupling Capacitor**      | Reduces noise and stabilizes the power supply to the MCP23017, ensuring smooth operation. | **Capacitance**: 0.1µF          | Positioned near the MCP23017 power supply pins. |
@@ -166,10 +166,10 @@ Below is a list of the PCB components used for this card (see diagram on right f
 
 | Component Identifier | Count | Type               | Value/Description                    | Package    | Required?                        | Purpose                                                      |
 | -------------------- | ----- | ------------------ | ------------------------------------ | ---------- | -------------------------------- | ------------------------------------------------------------ |
-| C1 - C4              | 4     | Capacitor          | 0.1uF                                | 1206 SMD   | Required                         | Decoupling Capacitor for IC Protection                       |
-| C5                   | 1     | Capacitor          | 1uF                                  | 1206 SMD   | Required when using 9V regulator | Smoothing Capacitor for output from L7809 regulator          |
+| C1 - C4              | 4     | Ceramic Capacitor  | 0.1uF                                | 1206 SMD   | Required                         | Decoupling Capacitor for IC Protection                       |
+| C5                   | 1     | Ceramic Capacitor  | 1uF                                  | 1206 SMD   | Required when using 9V regulator | Smoothing Capacitor for output from L7809 regulator          |
 | C6                   | 1     | Tantalum Capacitor | 0.33uF                               | 3216 SMD   | Required when using 9V regulator | Filter Capacitor for L7809 regulator input                   |
-| D1                   | 1     | Diode              | PESD1CAN                             | SOT-23 SMD | Required                         | I2C data bus electrostatic discharge (ESD) protection        |
+| D1                   | 1     | ESD Diode              | PESD1CAN                             | SOT-23 SMD | Required                         | I2C data bus electrostatic discharge (ESD) protection        |
 | FB1, FB2             | 2     | Ferrite Bead       | BLM31PG121SN1L                       | 1206 SMD   | Required                         | I2C Network Bus Data Line Noise Suppression Ferrite Bead     |
 | J1 - J4              | 4     | RJ45 Socket        | 8P8C                                 | PTH        | Required                         | Network cable (CAT5/6) connection to a turnout breakout board |
 | JP1, JP2             | 2     | Male Header        | 3-Pin (0.1" spacing)                 | PTH        | Required                         | Used for COMM BUS selection (I2C hardware bus) for either BUS A or BUS B. |
@@ -180,7 +180,7 @@ Below is a list of the PCB components used for this card (see diagram on right f
 | U1 - U4              | 4     | IC                 | 74HCT00 Dual NAND Gate               | SOP-20 SMD | Required                         | Monitors turnout breakout board’s point position lines. Sets MCP23017 GPIO pins HIGH or LOW based on state. |
 | U5 - U12             | 8     | IC                 | TC4428 Bi-directional MOSFET Driver  | SOP-8 SMD  | Required                         | Provides 12V to turnout breakout board, controlling motor direction based on MCP23017 GPIO pin state. |
 | U13                  | 1     | IC                 | MCP23017 I/O Expander (16 GPIO pins) | SOP-14 SMD | Required                         | I/O Expander using I2C serial interface to control 16 GPIO pins |
-| VR3                  | 1     | Voltage Regulator  | L7809CTCV                            | TO-220     | Required when using 9V regulator | Provides 9V for stall motor switch machines to reduce speed and noise |
+| VR3                  | 1     | Voltage Regulator  | L7809CV                              | TO-220     | Required when using 9V regulator | Provides 9V for stall motor switch machines to reduce speed and noise |
 
 ## Tools Required
 
@@ -205,17 +205,17 @@ Below is a list of the PCB components used for this card (see diagram on right f
 | -------------------- | ------------------------------------ | :------------------------------- | ------------------------------------------------------------ |
 | C1 - C4              | 0.1uF Capacitor (1206 SMD)           | Required                         | None                                                         |
 | C5                   | 1uF Capacitor (1206 SMD)             | Required when using 9V regulator | None                                                         |
-| C6                   | 0.33uF Tantalum Capacitor (3216 SMD) | Required when using 9V regulator | Cathode end has a brown line and positioned towards PCB left edge |
+| C6                   | 0.33uF Tantalum Capacitor (3216 SMD) | Required when using 9V regulator | Cathode end has a brown line and positioned towards PCB **left** edge |
 | D1                   | Diode, PESD1CAN, SOT-23 SMD          | Required                         | Fits only one way                                            |
 | FB1, FB2             | Diode, BLM31PG121SN1L, 1206 SMD      | Required                         | None                                                         |
 | J1, J2, J3, J4       | RJ45 socket (8P8C)                   | Required                         | Fits only one way                                            |
 | JP1, JP2, JP3        | Male headers (3P, 0.1" spacing)      | Required                         | None                                                         |
 | R1-R20               | 10kΩ resistors (1206 SMD)            | Required                         | None                                                         |
-| SW1                  | DIP / Slide Switch (3P, 2.54mm)      | Required                         | Position so switch so **ON** is towards PCB left edge        |
-| U1 - U4              | 74HCT00 IC (SOP20 SMD)               | Required                         | IC dimple (pin 1) is positioned towards PCB top edge         |
-| U5 - U12             | TC4428 (SOP-8 SMD)                   | Required                         | IC dimple (pin 1) is positioned towards PCB bottom edge      |
-| U13                  | MCP23017 IC (SSOP28)                 | Required                         | IC indent (pin 1) is positioned towards PCB top edge         |
-| VR3                  | L7809CTCV Voltage Regulator (TO-220) | Required when using 9V regulator | Position heatsink towards PCB left edge                      |
+| SW1                  | DIP / Slide Switch (3P, 2.54mm)      | Required                         | Position so switch so **ON** is towards PCB **left** edge        |
+| U1 - U4              | 74HCT00 IC (SOP20 SMD)               | Required                         | IC dimple (pin 1) is positioned towards PCB **top** edge         |
+| U5 - U12             | TC4428 (SOP-8 SMD)                   | Required                         | IC dimple (pin 1) is positioned towards PCB **bottom** edge      |
+| U13                  | MCP23017 IC (SSOP28)                 | Required                         | IC indent (pin 1) is positioned towards PCB **top** edge         |
+| VR3                  | L7809CTCV Voltage Regulator (TO-220) | Required when using 9V regulator | Position heatsink towards PCB **left** edge                      |
 
 ## Testing and Verification
 

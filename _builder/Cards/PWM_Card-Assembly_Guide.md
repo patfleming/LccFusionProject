@@ -127,23 +127,23 @@ PCB for the card and solder stencil can be ordered from any PCB fabricator using
 
 Below is a list of the PCB components used for this card (see diagram on right for reference): 
 
-| Component Identifier | Count | Type         | Value              | Package        | Required? | Purpose                                                      |
-| -------------------- | ----- | ------------ | ------------------ | -------------- | --------- | :----------------------------------------------------------- |
-| C1                   | 1     | Capacitor    | 0.01 uF (100nF)    | 1206 SMD       | Required  | Used to condition/filter the current for the IC (U1)         |
-| D1                   | 1     | Diode        | PESD1CAN           | SOT-23 SMD     | Required  | I2C data bus electrostatic discharge (ESD) protection        |
-| J1, J2               | 2     | Connector    | RJ45 socket (8P8C) | PTH            | Required  | Network cable (CAT5/6) connection to (1 or 2) breakout boards (e.g. Signal Masts Breakout Board) |
-| JP1, JP2             | 2     | Male Header  | 3-Pin              | 2.54mm PTH     | Required  | Use for setting line 16 to operate as ground (GND) or a power supply (V+) |
-| JP3                  | 1     | Male Header  | 3-Pin              | 2.54mm PTH     | Required  | Use for setting line 16 to be either an outline line or a common line |
-| JP4                  | 1     | Male Header  | 2-Pin              | 2.54mm PTH     | Optional  | Use to bypass line 16 resistor                               |
-| JP5                  | 1     | Male Header  | 3-Pin              | 2.54mm PTH     | Required  | Use for setting the voltage level for all output lines       |
-| JP6, JP7             | 2     | Male Header  | 3-Pin              | 2.54mm PTH     | Required  | Used for COMM BUS selection (I2C hardware bus) for either BUS A or BUS B. These are the ESP32 hardware buses used for serial comms |
-| L1, L2               | 2     | Ferrite Bead | BLM31PG121SN1L     | 1206 SMD       | Required  | I2C Data Line Noise Suppression Ferrite Bead                 |
-| R1-R16               | 16    | Resistor     | 1.5KΩ              | 1206 SMD       | Required  | Used to limit the current to SW1 and MCP23017 for the I2C address |
-| R19-21               | 3     | Resistor     | 10KΩ               | 1206 SMD       | Required  | Used to limit the current for the BUS ADDR lines             |
-| SW1                  | 1     | DIP Switch   | 3-Pin              | 2.54mm PTH     | Required  | Used for COMM ADDR selection (I2C address offset, 0-7). This offset is added to the I2C base address of the MCP23017 IC (0x20) |
-| U1                   | 1     | IC           | PCA9685            | TSSOP28 SMD    | Required  | PWM Expander using I2C serial interface to control 16 PWM pins, each connected to an output line |
-| Q1, Q2               | 2     | IC           | TBD62083           | SOIC-18/SOP-18 | Required  | Darlington Transistor Array for switching supply voltage to the output lines. Controlled by the PCA9685 IC signals |
-| SH1 - SH7            | 7     | Jumper Cap   | 2.54mm             | N/A            | Required  | Used with I2C Bus and Vcc selections. Recommend tall caps for ease of use |
+| Component Identifier | Count | Type              | Value              | Package        | Required? | Purpose                                                      |
+| -------------------- | ----- | ----------------- | ------------------ | -------------- | --------- | :----------------------------------------------------------- |
+| C1                   | 1     | Ceramic Capacitor | 0.01 uF (100nF)    | 1206 SMD       | Required  | Used to condition/filter the current for the IC (U1)         |
+| D1                   | 1     | ESD Diode             | PESD1CAN           | SOT-23 SMD     | Required  | I2C data bus electrostatic discharge (ESD) protection        |
+| FB1, FB2       | 2     | Ferrite Bead      | BLM31PG121SN1L     | 1206 SMD       | Required  | I2C Data Line Noise Suppression Ferrite Bead                 |
+| J1, J2               | 2     | Connector         | RJ45 socket (8P8C) | PTH            | Required  | Network cable (CAT5/6) connection to (1 or 2) breakout boards (e.g. Signal Masts Breakout Board) |
+| JP1, JP2             | 2     | Male Header       | 3-Pin              | 2.54mm PTH     | Required  | Use for setting line 16 to operate as ground (GND) or a power supply (V+) |
+| JP3                  | 1     | Male Header       | 3-Pin              | 2.54mm PTH     | Required  | Use for setting `LINE 16` to be either an `OUTPUT`line or a `COMMON`line |
+| JP4                 | 1     | Male Header       | 3-Pin              | 2.54mm PTH     | Required  | Use for setting the voltage level for all output lines       |
+| JP5                 | 1     | Male Header       | 2-Pin              | 2.54mm PTH     | Optional  | Use to bypass line 16 resistor                               |
+| JP6, JP7             | 2     | Male Header       | 3-Pin              | 2.54mm PTH     | Required  | Used for COMM BUS selection (I2C hardware bus) for either BUS A or BUS B. These are the ESP32 hardware buses used for serial comms |
+| R1-R16               | 16    | Resistor          | 1.5KΩ              | 1206 SMD       | Required  | Used to limit the current to SW1 and MCP23017 for the I2C address |
+| R19-21               | 3     | Resistor          | 10KΩ               | 1206 SMD       | Required  | Used to limit the current for the BUS ADDR lines             |
+| SW1                  | 1     | DIP Switch        | 3-Pin              | 2.54mm PTH     | Required  | Used for COMM ADDR selection (I2C address offset, 0-7). This offset is added to the I2C base address of the MCP23017 IC (0x20) |
+| U1                   | 1     | IC                | PCA9685            | TSSOP28 SMD    | Required  | PWM Expander using I2C serial interface to control 16 PWM pins, each connected to an output line |
+| Q1, Q2               | 2     | IC                | TBD62083           | SOIC-18/SOP-18 | Required  | Darlington Transistor Array for switching supply voltage to the output lines. Controlled by the PCA9685 IC signals |
+| SH1 - SH7          | 7     | Jumper Cap        | 2.54mm             | N/A            | Required  | Used with I2C Bus and Vcc selections. Recommend tall caps for ease of use |
 
 ## Tools Required
 
@@ -153,27 +153,27 @@ For a list of recommended tools, refer to [List of recommended tools](/pcb-tools
 
 <img src="/assets/images/pcbs/PWM_Card/PWM_Card_pcb.png" style="zoom:50%; float:right" />Below are the high level steps for assembly of the PWM Card:
 
-1. Determine component orientation:
-   - Position the card with the edge connector tabs facing down (see image on right).
-   - Male headers, DIP switches, resistors, and (ceramic) capacitor components are not polarized and can be installed in either direction.
-   - Position TBD6083 IC (Q1, Q2) end with a small  round recessed area with the end of the component’s silkscreen image with the indent.
-   - Position PCA9685 IC (U1) end with the small round recessed area with the end of the part’s silkscreen image with the `1` label (near the upper right co)
-   - Position each bridge rectifier (BR1-BR8) end with a clipped corner with the end of the part’s silkscreen image that has a small triangle in the upper right corner (located in the upper right silkscreen corner).
-   - Position each LED (D1-D8) with it’s cathode end aligned with the part’s silkscreen end with the ‘line’ (top pad)
-2. Clean PCB with alcohol to remove residue.  See [Cleaning_PCB](/pcb-prep/) for details.
-3. When using a PCB stencil to apply the paste, align the stencil over the PCB using the 2 Tooling Holes located at the top and bottom of the card.  There are very small holes with no labels or markings.  Use a thick straight pin or wire for the alignment, pushing down into a soft foam surface to hold the pin/wire in place.
-4. Apply soldering paste for all SMD components: C1, D1-D8, R1-R20, U1.
-5. Place SMD components into paste.  Note the orientation of each IC.
-6. Reflow the solder for the SMD component   (refer to  [Soldering Tips](/pcb-soldering/)).
-7. Place PTH components (, starting with the smaller components.
+1. Clean PCB with alcohol to remove residue.  See [Cleaning_PCB](/pcb-prep/) for details.
+2. When using a PCB stencil to apply the paste, align the stencil over the PCB using the 2 Tooling Holes located at the top and bottom of the card.  There are very small holes with no labels or markings.  Use a thick straight pin or wire for the alignment, pushing down into a soft foam surface to hold the pin/wire in place.
+3. Apply soldering paste for all SMD components
+4. Place SMD components into paste.  
+5. 
 
-   1. Solder (2) 3P male pin headers (JP1, JP2)
-   2. Solder (1) 3-Position DIP Slide Switch (SW1)
-   3. Solder (2) RJ45 sockets (J1, J2)
-   4. Solder (8) 4P bridge rectifiers (BR1-BR8)
-   5. Solder (8) 8P optocouplers (U2-U9)
-
-> See also: [Soldering Tips](/pcb-soldering/)
+| Component Identifier         | Component (Package) | Component (Package) | Required? | Orientation                                                  |
+| ---------------------------- | ------------------- | ------------------- | --------- | ------------------------------------------------------------ |
+| C1                           | Ceramic Capacitor   | 0.01 uF (100nF)     | Required  | None                                                         |
+| D1                           | ESD Diode           | PESD1CAN            | Required  | None                                                         |
+| FB1, FB2                     | Ferrite Bead        | BLM31PG121SN1L      | Required  | None                                                         |
+| J1, J2                       | Connector           | RJ45 socket (8P8C)  | Required  | Fits only one way                                            |
+| JP1, JP2, JP3, JP4, JP6, JP7 | Male Header         | 3-Pin               | Required  | None                                                         |
+| JP5                          | Male Header         | 2-Pin               | Optional  | None                                                         |
+| R1-R16                       | Resistor            | 1.5KΩ               | Required  | None                                                         |
+| R19-21                       | Resistor            | 10KΩ                | Required  | None                                                         |
+| SW1                          | DIP Switch          | 3-Pin               | Required  | Position so switch so **ON** is towards PCB **top** edge     |
+| U1                           | IC                  | PCA9685             | Required  | IC dimple in corner (pin 1) is positioned towards PCB **right** edge |
+| Q1                           | IC                  | TBD62083            | Required  | IC indent (pin 1) is positioned towards PCB **left** edge    |
+| Q2                           | IC                  | TBD62083            | Required  | IC indent (pin 1) is positioned towards PCB **bottom** edge  |
+| SH1 - SH7                    | Jumper Cap          | 2.54mm              | Required  |                                                              |
 
 ## Testing and Verification
 
@@ -181,7 +181,7 @@ For a list of recommended tools, refer to [List of recommended tools](/pcb-tools
 
 1. **Initial Check**: Examine the board for any obvious issues like missing components, solder bridges, or components that are misaligned or not fully seated.
 
-2. **Solder Joint Inspection**: Use a magnifying glass or a microscope to inspect solder joints. Look for cold solder joints, insufficient or excessive solder, or any shorts between pads.
+2. **Solder Join Inspection**: Use a magnifying glass or a microscope to inspect solder joints. Look for cold solder joints, insufficient or excessive solder, or any shorts between pads.
 
 3. **Component Orientation**: the IC's are correctly oriented according to the PCB silkscreen or schematic.
 

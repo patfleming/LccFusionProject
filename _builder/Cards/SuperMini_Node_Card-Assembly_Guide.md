@@ -173,15 +173,17 @@ Below is a list of the PCB components used for this card (see diagram on right f
 | Component Identifier | Count | Type                    | Value/Description                                            | Package    | Required? | Purpose                                                      |
 | -------------------- | ----- | ----------------------- | ------------------------------------------------------------ | ---------- | --------- | ------------------------------------------------------------ |
 | BZ1 - BZ4            | 4     | Piezo Active Buzzer     | 9650-5V                                                      | SMD        | Optional  | Buzzer for audio status indicator                            |
-| C1, C3, C5, C7, C9   | 5     | Capacitor               | 0.1uF                                                        | 1206 SMD   | Required  | IC protection                                                |
-| C2, C4, C6, C8       | 4     | Capacitor               | 10uF                                                         | 1206 SMD   | Required  | IC protection                                                |
-| C9                   | 1     | Capacitor               | 0.1uF                                                        | SMD 1206   | Required  | Filters high-frequency noise from CAN signals, smoothing the voltage for the comparator |
-| C10                  | 1     | Capacitor               | 47nF                                                         | SMD 1206   | Required  | Filters high-frequency noise from CAN-H and CAN-L lines      |
-| D1 - D32             | 32    | Diode                   | SMAJ5A                                                       | SMB        | Required  | GPIO pin Transient Voltage Spike (TVS) protection            |
-| D33 - D48            | 16    | Diode                   | PESD1CAN                                                     | SOT-23 SMD | Optional  | GPIO pin electrostatic discharge (ESD) protection            |
-| D49                  | 1     | Diode                   | PESD1CAN                                                     | SOT-23 SMD | Optional  | CAN Network Bus electrostatic discharge (ESD) protection     |
-| D50, D51             | 2     | Diode                   | PESD1CAN                                                     | SOT-23 SMD | Optional  | I2C data bus electrostatic discharge (ESD) protection        |
+| C1, C3, C5, C7, C9   | 5     | Ceramic Capacitor       | 0.1uF                                                        | 1206 SMD   | Required  | IC protection                                                |
+| C2, C4, C6, C8       | 4     | Ceramic Capacitor       | 10uF                                                         | 1206 SMD   | Required  | IC protection                                                |
+| C9                   | 1     | Ceramic Capacitor       | 0.1uF                                                        | SMD 1206   | Required  | Filters high-frequency noise from CAN signals, smoothing the voltage for the comparator |
+| C10                  | 1     | Ceramic Capacitor       | 47nF                                                         | SMD 1206   | Required  | Filters high-frequency noise from CAN-H and CAN-L lines      |
+| D1 - D32             | 32    | TVS Diode                   | SMAJ5A                                                       | SMB        | Required  | GPIO pin Transient Voltage Spike (TVS) protection            |
+| D33 - D48            | 16    | ESD Diode                   | PESD1CAN                                                     | SOT-23 SMD | Optional  | GPIO pin electrostatic discharge (ESD) protection            |
+| D49                  | 1     | ESD Diode                   | PESD1CAN                                                     | SOT-23 SMD | Optional  | CAN Network Bus electrostatic discharge (ESD) protection     |
+| D50, D51             | 2     | ESD Diode                   | PESD1CAN                                                     | SOT-23 SMD | Optional  | I2C data bus electrostatic discharge (ESD) protection        |
 | D52 - D55            | 4     | Diode                   | SS310                                                        | SMA        | Optional  | Required when installing Buzzer (BZ1)                        |
+| FB1, FB2             | 2     | Ferrite Bead            | BLM31PG121SN1L                                               | 1206 SMD   | Required  | CAN Network Bus Data Line Noise Suppression Ferrite Bead     |
+| FB3 - FB6            | 4     | Ferrite Bead            | BLM31PG121SN1L                                               | 1206 SMD   | Required  | I2C Data Line Noise Suppression Ferrite Bead                 |
 | J1 - J4              | 4     | RJ45 Socket             | 8P8C                                                         | PTH        | Optional  | Network cable (CAT5/6) connection to I/O devices             |
 | J5 - J8              | 4     | Female Headers          | 9-Pin                                                        | PTH        | Optional  | Socket for Super-Mini ESP32-S3 development board(s)          |
 | JP1 - JP4            | 4     | Male Pin Header         | 3-Pin                                                        | PTH        | Required  | Line 8 selection (GND or I/O line)                           |
@@ -191,13 +193,11 @@ Below is a list of the PCB components used for this card (see diagram on right f
 | R33                  | 1     | Resistor                | 1kΩ                                                          | SMD 1206   | Required  | Current limiting for reference voltage                       |
 | R34                  | 1     | Resistor                | 100Ω                                                         | SMD 1206   | Requried  | Low Pass Filter for low signal detection                     |
 | R35, R36             | 2     | Resistor                | 60Ω                                                          | 1206 SMD   | Required  | CAN network (split) termination circuit                      |
-| FB1, FB2             | 2     | Ferrite Bead            | BLM31PG121SN1L                                               | 1206 SMD   | Required  | CAN Network Bus Data Line Noise Suppression Ferrite Bead     |
-| FB3 - FB6            | 4     | Ferrite Bead            | BLM31PG121SN1L                                               | 1206 SMD   | Required  | I2C Data Line Noise Suppression Ferrite Bead                 |
 | U1 - U4              | 4     | CAN Transceiver         | SN65HVD233DR                                                 | SMD        | Required  | CAN Transceiver for use with ESP32 to provide CAN communications |
 | U5                   | 1     | IC (Voltage Comparator) | LM393 or LM2903N                                             | SO-8, SMD  | Required  | Used for detecting low voltage in the I2C lines (less than 2.4v) |
 | SH1 - SH5            | 5     | Jumper Cap              | [Jumper Cap (2.54mm)](https://www.aliexpress.us/w/wholesale-jumper-caps.html?spm=a2g0o.detail.search.0) | 2.54mm     | Required  | Used with CAN Bus Termination. Recommend tall caps for ease of use. |
 | ZD1                  | 1     | Zener-Diode             | 2.4V                                                         | BZT52      | Required  | Used for a 2.4V reference voltage                            |
-|                      | 1     | Super-Mini ESP32-S3     | 18-Pin Version                                               | SMD        | Required  | MCU (processor) for the SuperMini LCC Fusion Node Card |
+|                      | 1     | Super-Mini ESP32-S3     | 18-Pin Version                                               | SMD        | Required  | MCU (processor) for the SuperMini LCC Fusion Node Card       |
 
 ## Tools Required
 
@@ -235,7 +235,7 @@ Below is a list of the PCB components used for this card (see diagram on right f
    | C10                  | Capacitor, 47pF, 1206 SMD         | Required  | None                                                         |
    | D1-D32               | Diode, SMAJ5A, SMB                | Required  | None                                                         |
    | D33 - D51            | Diode, PESD1CAN, SOT-23 SMD       | Optional  | Fit only one way                                             |
-   | D52-D55              | Diode, SS310, SMA                 | Optional  | Cathode end has a white line and positioned towards PCB bottom edge |
+   | D52-D55              | Diode, SS310, SMA                 | Optional  | Cathode end has a white line and positioned towards PCB **bottom** edge |
    | J1, J2, J3, J4       | RJ45 socket (8P8C)                | Optional  | Fit only one way                                             |
    | J5, J6, J7, J8       | 9-Pin Female Headers              | Optional  | None                                                         |
    | JP1 - JP5            | Male Pin Headers                  | Required  | None                                                         |
@@ -244,9 +244,9 @@ Below is a list of the PCB components used for this card (see diagram on right f
    | R35, R36             | Resistor, 60Ω, 1206 SMD           | Required  | None                                                         |
    | Q1, Q2               | Transistor, BSS138, SOT-23        | Required  | Fit only one way                                             |
    | FB1 - FB6            | Diode, BLM31PG121SN1L, 1206 SMD   | Required  | None                                                         |
-   | U1, U2, U3, U4       | SN65HVD233DR IC                   | Required  | Package has small dimple in corner (pin 1) which is position to PCB top right edges |
-   |                      | Super-Mini ESP32-S3               | Required  | Position Super-Mini ESP32-S3 development board’s USB connector to PCB right edge |
-   | ZD1                  | 2.4V                              | Required  | Cathode end has a white line and positioned towards PCB right edge |
+   | U1, U2, U3, U4       | SN65HVD233DR IC                   | Required  | Package has small dimple in corner (pin 1) which is position to PCB **top** right edges |
+   |                      | Super-Mini ESP32-S3               | Required  | Position Super-Mini ESP32-S3 development board’s USB connector to PCB **right** edge |
+   | ZD1                  | 2.4V                              | Required  | Cathode end has a white line and positioned towards PCB **right** edge |
 
 5. Place SMD components into paste.  Note the orientation of each IC.
 

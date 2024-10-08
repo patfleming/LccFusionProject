@@ -137,9 +137,9 @@ Below is a list of the PCB components used for this card (see diagram on right f
 
 | Component Identifier                                         | Count | Type               | Value          | Package    | Required? | Purpose                                                      |
 | ------------------------------------------------------------ | ----- | ------------------ | -------------- | ---------- | --------- | ------------------------------------------------------------ |
-| C1 - C16                                                     | 16    | Capacitor          | 1uF            | 1206 SMD   | Optional  | Smooths signal from phototransistors for improved detection  |
-| C17                                                          | 1     | Capacitor          | 0.1uF          | 1206 SMD   | Required  | Conditions/filters the current for the IC (U1)               |
-| D9                                                           | 1     | Diode              | PESD1CAN       | SOT-23 SMD | Optional  | I2C data bus electrostatic discharge (ESD) protection        |
+| C1 - C16                                                     | 16    | Ceramic Capacitor  | 1uF            | 1206 SMD   | Optional  | Smooths signal from phototransistors for improved detection  |
+| C17                                                          | 1     | Ceramic Capacitor  | 0.1uF          | 1206 SMD   | Required  | Conditions/filters the current for the IC (U1)               |
+| D9                                                           | 1     | ESD Diode              | PESD1CAN       | SOT-23 SMD | Optional  | I2C data bus electrostatic discharge (ESD) protection        |
 | FB1, FB2                                                     | 2     | Ferrite Bead       | BLM31PG121SN1L | 1206 SMD   | Required  | I2C Data Line Noise Suppression Ferrite Beads                |
 | J1 - J4                                                      | 4     | RJ45 Socket        | 8P8C           | PTH        | Required  | Network cable (CAT5/6) connection to [POD Breakout Board](/pod-breakout-board-assembly-guide/)s |
 | JP1, JP2                                                     | 2     | Male Header        | 3P, 0.1"       | PTH        | Required  | COMM BUS selection (I2C hardware bus) for either BUS A or BUS B. Must match configuration in LCC Node CDI setup |
@@ -179,15 +179,15 @@ For a list of recommended tools, refer to [List of recommended tools](/pcb-tools
 | FB1, FB2                                                     | Diode, BLM31PG121SN1L, (1206 SMD) | Required  | None                                                         |
 | J1 - J4                                                      | RJ45 socket (8P8C)                | Required  | Fits only one way                                            |
 | JP1, JP2                                                     | Male headers (3P, 0.1" spacing)   | Required  | None                                                         |
-| LED1 - LED8                                                  | LED (1206 SMD, Red)               | Optional  | Reference back of LED, position cathode towards PCB right edge<img src="/_builder/Cards/images/LED_Orientation.png" style="zoom: 15%; float: right;" /> |
+| LED1 - LED8                                                  | LED (1206 SMD, Red)               | Optional  | Reference back of LED, position cathode towards PCB **right** edge<img src="/_builder/Cards/images/LED_Orientation.png" style="zoom: 15%; float: right;" /> |
 | R1, R3, R4, R6,  R7, R9, R10, R12, R13, R15, R16, R18, R19, R21, R22, R24 | 10KΩ resistors (1206 SMD)         | Required  | None                                                         |
 | R2, R5, R8, R11, R14, R17, R20, R23                          | 5.6KΩ resistors (1206 SMD)        | Required  | None                                                         |
 | R25                                                          | 10KΩ resistors (1206 SMD)         | Required  | None                                                         |
 | R26 - R32                                                    | 1KΩ resistors (1206 SMD)          | Optional  | None                                                         |
 | R33 - R36                                                    | 10KΩ resistors (1206 SMD)         | Required  | None                                                         |
-| SW1                                                          | DIP / Slide Switch (3P, 2.54mm)   | Required  | Position switch for ON setting to PCB top edge               |
-| U1                                                           | MCP23017 IC (SSOP28, SMD)         | Required  | Position IC’s indent towards PCB bottom edge                 |
-| U2-U9                                                        | LM2903 IC (DIP-8, PTH)            | Required  | Position IC’s corner dimple (pin 1) towards PCB bottom edge  |
+| SW1                                                          | DIP / Slide Switch (3P, 2.54mm)   | Required  | Position switch for ON setting to PCB **top** edge               |
+| U1                                                           | MCP23017 IC (SSOP28, SMD)         | Required  | Position IC’s indent towards PCB **bottom** edge                 |
+| U2-U9                                                        | LM2903 IC (DIP-8, PTH)            | Required  | Position IC’s corner dimple (pin 1) towards PCB **bottom** edge  |
 
 ## Testing and Verification
 

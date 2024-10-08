@@ -114,9 +114,11 @@ The LCC Fusion Node Card is equipped with several protection components to ensur
 | **Entire Power-CAN Card** | **Fast Blow Fuse**                | Protects from current overflow                               | **Hold Current:** 3A                                         | In series with the incoming Vcc line                         |
 | **Entire Power-CAN Card** | **Resettable Fuses**              | Protects from sustained overcurrent conditions by increasing resistance when the 3V3 or 5V current exceeds 1.5A. Resets once the fault condition is cleared. | **Hold Current:** 1.5A                                       | In series with the 5V, 3V3 output lines                      |
 | **Entire Power-CAN Card** | **TVS Diode SMBJ18A**             | Protects from high-voltage transients by clamping voltage spikes, pthem from reaching sensitive components. | **Stand-off Voltage:** 18V<br>**Clamping Voltage:** 29.2V    | Across the incoming Vcc and GND lines                        |
-| **CAN Bus (each set)**    | **Automatic Termination**         | Provides proper termination to prevent signal reflections on the CAN bus. | **Value:** 2x 60 ohms in series (120 ohms)                   | Across CANH and CANL lines, automatically applied based on CAN network voltage while using a low-pass filter to measure peak voltage. |
-| **CAN Bus (each set)**    | **ESD Protection Diode PESD1CAN** | Protects the CAN bus lines from electrostatic discharge and voltage spikes. | **Reverse Stand-off Voltage (Vr):** 24V<br>**Clamping Voltage (Vc):** 40V | Across CANH to GND and CANL to GND                           |
-| **CAN Bus (each set)**    | **BLM31PG121SN1L Ferrite Beads**  | CAN Network Bus Data Line Noise Suppression Ferrite Bead     |                                                              | In series with the CAN network lines (CAN-                   |
+| **CAN Bus**               | **Automatic Termination**         | Provides proper termination to prevent signal reflections on the CAN bus. | **Value:** 2x 60 ohms in series (120 ohms)                   | Across CANH and CANL lines, automatically applied based on CAN network voltage while using a low-pass filter to measure peak voltage. |
+| **CAN Bus**               | **ESD Protection Diode PESD1CAN** | Protects the CAN bus lines from electrostatic discharge and voltage spikes. | **Reverse Stand-off Voltage (Vr):** 24V<br>**Clamping Voltage (Vc):** 40V | Across CANH to GND and CANL to GND                           |
+| **I2C Bus (each set)**    | **ESD Protection Diode PESD1CAN** | Protects the CAN bus lines from electrostatic discharge and voltage spikes. | **Reverse Stand-off Voltage (Vr):** 24V<br>**Clamping Voltage (Vc):** 40V | Across CANH to GND and CANL to GND                           |
+| **CAN Bus**               | **BLM31PG121SN1L Ferrite Beads**  | CAN Network Bus Data Line Noise Suppression Ferrite Bead     |                                                              | In series with the CAN network lines                         |
+| **I2C Bus (each set)**    | **BLM31PG121SN1L Ferrite Beads**  | CAN Network Bus Data Line Noise Suppression Ferrite Bead     |                                                              | In series with the I2C network lines                         |
 | **ESP32 Vcc**             | **Decoupling Capacitor**          | Filters out high-frequency noise and transient voltage spikes from the power supply, ensuring stable voltage for the ESP32. | **Value:** 0.1 µF, 10uF ceramic                              | Integrated into DevKit-C Board                               |
 | **LM2596-5N Regulator**   | **Output Capacitor**              | Filters out high-frequency noise and transient voltage spikes from the output, ensuring stable 5V regulation. | **Value:** 680 µF electrolytic                               | Across the output (5V) and GND                               |
 | **L7812CV Regulator**     | **Output Capacitor**              | Filters out high-frequency noise and transient voltage spikes from the output, ensuring stable 12V regulation. | **Value:** 10 µF ceramic                                     | Across the output (12V) and GND                              |
@@ -139,46 +141,47 @@ Below is a list of the PCB components used for this card (see diagram on right f
 
 Here's the updated table with the count, type, and package columns added:
 
-| **Component Identifier** | **Count** | **Type**                | **Value**                                      | **Package** | **Required?** | **Purpose**                                                  |
-| ------------------------ | --------- | ----------------------- | ---------------------------------------------- | ----------- | ------------- | ------------------------------------------------------------ |
-| C1, C3                   | 2         | Capacitor               | 0.1uF                                          | 1206 SMD    | Required      | IC protection                                                |
-| C2                       | 1         | Tantalum Capacitor      | 0.33uF                                         | 3216 SMD    | Required      | IC protection                                                |
-| C4                       | 1         | Capacitor               | 0.1uF                                          | SMD 1206    | Required      | Filters high-frequency noise from CAN signals, smoothing the voltage for the comparator |
-| C5                       | 1         | Capacitor               | 680uF, 25V                                     | PTH         | Required      | Used by 5V voltage regulator for input filtering             |
-| C6                       | 1         | Capacitor               | 220uF, 25V                                     | SMD         | Required      | Used by 5V voltage regulator for input filtering             |
-| C7                       | 1         | Capacitor               | 47uF                                           | 1206 SMD    | Required      | CAN termination circuit                                      |
-| D1                       | 1         | Diode                   | SMBJ18A                                        | SMB SMD     | Optional      | Protects from high-voltage transients (>29V)                 |
-| D2, D4, D5               | 3         | Diode                   | SS310, B240, or B160                           | SMD         | Optional      | Circuit protection, required when providing power input (J1, J2, J3, or J4) |
-| D3                       | 1         | Diode                   | PESD1CAN                                       | SOT-23 SMD  | Required      | I2C data bus electrostatic discharge (ESD) protection        |
-| FH1                      | 1         | Fuse Holder             | 1808 with 3A                                   | n/a         | Required      | Protects from sustained overcurrent conditions               |
-| F1                       | 1         | Resettable Fuse         | 1.5A                                           | 1206 SMD    | Required      | Protects from sustained overcurrent conditions               |
-| FB1, FB2                 | 2         | Ferrite Bead            | BLM31PG121SN1L                                 | 1206 SMD    | Required      | CAN Network Bus Data Line Noise Suppression Ferrite Bead     |
-| J1                       | 1         | USB-C Socket            | 4-Pin                                          | SMD         | Optional      | Power input connector to power the LCC Fusion Node Card when power is **not** being supplied via the CAN Network Bus network cable |
-| J2                       | 1         | Connector               | 5557 ATX RA                                    | N/A         | Optional      | Power input connector to power the LCC Fusion Node Card when power is **not** being supplied via the CAN Network Bus network cable |
-| J3                       | 1         | Power Jack              | DC-005                                         | N/A         | Optional      | Power input connector to power the LCC Fusion Node Card when power is **not** being supplied via the CAN Network Bus network cable |
-| J4                       | 1         | Connector               | 5557 ATX RA                                    | N/A         | Optional      | Power input connector to power the LCC Fusion Node Card when power is **not** being supplied via the CAN Network Bus network cable |
-| J5, J6                   | 2         | RJ45 Socket             | 8P8C                                           | PTH         | Required      | Network cable (CAT5/6) connection to CAN Bus for communicating with other LCC Nodes |
-| J7                       | 1         | RJ45 Socket             | 8P8C                                           | PTH         | Optional      | Network cable (CAT5/6) connection to I/O devices             |
-| J8                       | 1         | RJ45 Socket             | 8P8C                                           | PTH         | Optional      | Network cable (CAT5/6) connection to LCC Fusion Node Bus Hubfor communicating with LCC Fusion Project |
-| J9                       | 1         | USB-C Socket            | 4-Pin                                          | SMD         | Optional      | Power output connector used to power other 12V+ devices      |
-| J10                      | 1         | Header                  | 6-Pin male/female                              | N/A         | Optional      | Used to mount Micro-SD Reader Module for copying files to/from storage |
-| J12                      | 1         | 2-Position Connector    | N/A                                            | N/A         | Optional      | Used for CAN Bus network connection, an alternative to using a CAN Bus network cable |
-| JP1                      | 1         | Header                  | 2-Pin Male                                     | N/A         | Optional      | Used to bypass the 3A fuse (FH1)                             |
-| JP2                      | 1         | Header                  | 3-Pin Male                                     | N/A         | Required      | Bypass selector for 12V output                               |
-| L1                       | 1         | Inductor                | 33uH                                           | PTH         | Required      | Used for 5V voltage regulation                               |
-| R1                       | 1         | Resistor                | 1kΩ                                            | SMD 1206    | Required      | Current limiting for reference voltage                       |
-| R2                       | 1         | Resistor                | 100Ω                                           | SMD 1206    | Requried      | Low Pass Filter for low signal detection                     |
-| R3, R4                   | 2         | Resistor                | 60Ω                                            | 1206 SMD    | Required      | CAN termination circuit                                      |
-| R5                       | 1         | Resistor                | 1.5kΩ                                          | 1206 SMD    | Optional      | Part of CDI Factory Reset circuit                            |
-| S1, S2                   | 2         | Tact Button Switch      | N/A                                            | N/A         | Optional      | Used to request a reset of the CDI to factory settings or to restart the LCC Node ESP32 processor |
-| U1                       | 1         | CAN Transceiver         | SN65HVD233DR                                   | N/A         | Required      | CAN Transceiver for use with ESP32 to provide CAN communications |
-| U2                       | 1         | MCU (processor)         | ESP32 DevKitC-V4 Module /w ESP32-WROOM-32D 4MB | 38-pin wide | Required      | MCU (processor) for the LCC Fusion Node Card                 |
-| U3                       | 1         | IC (Voltage Comparator) | LM393 or LM2903N                               | SO-8, SMD   | Required      | Used for detecting low voltage in the I2C lines (less than 2.4v) |
-| VR1                      | 1         | Voltage Regulator       | L7812CV                                        | TO-220 PTH  | Optional      | 12V voltage regulator for LCC Fusion Node Bus Hub            |
-| VR2                      | 1         | Voltage Regulator       | LM2596-5 C                                     | SMD         | Required      | 5V voltage regulator (buck) for ESP32 Development Board and Node Bus Hub |
-| VR3                      | 1         | Voltage Regulator       | LM1117-3V3 IC                                  | SMD         | Required      | 3.3V voltage regulator for Node Bus Hub                      |
-| J11, J12                 | 2         | Female Headers          | 19-Pin                                         | N/A         | Required      | Used to mount the ESP32 DevKit-C module                      |
-| ZD1                      | 1         | Zener-Diode             | 2.4V                                           | BZT52       | Required      | Used for a 2.4V reference voltage                            |
+| **Component Identifier** | **Count** | **Type**                | **Value**                                      | **Package**     | **Required?** | **Purpose**                                                  |
+| ------------------------ | --------- | ----------------------- | ---------------------------------------------- | --------------- | ------------- | ------------------------------------------------------------ |
+| C1, C3                   | 2         | Ceramic Capacitor       | 0.1uF                                          | 1206 SMD        | Required      | IC protection                                                |
+| C2                       | 1         | Tantalum Capacitor      | 0.33uF                                         | 3216 SMD        | Required      | IC protection                                                |
+| C4                       | 1         | Ceramic Capacitor       | 0.1uF                                          | SMD 1206        | Required      | Filters high-frequency noise from CAN signals, smoothing the voltage for the comparator |
+| C5                       | 1         | Polymer Solid Capacitor | 680uF, 10V                                     | 6x12mm, PTH     | Required      | Used by 5V voltage regulator for input filtering             |
+| C6                       | 1         | Polymer Solid Capacitor | 220µF, 10V                                     | 6.3x5.8mm , SMD | Required      | Used by 5V voltage regulator for input filtering             |
+| C7                       | 1         | Ceramic Capacitor       | 47uF                                           | 1206 SMD        | Required      | CAN termination circuit                                      |
+| D1                       | 1         |TVS Diode                   | SMBJ18A                                        | SMB SMD         | Optional      | Protects from high-voltage transients (>29V)                 |
+| D2, D4, D5               | 3         | Diode                   | SS310, B240, or B160                           | SMD             | Optional      | Circuit protection, required when providing power input (J1, J2, J3, or J4) |
+| D3, D6, D7               | 3         | ESD Diode                   | PESD1CAN                                       | SOT-23 SMD      | Required      | I2C data bus electrostatic discharge (ESD) protection        |
+| FH1                      | 1         | Fuse Holder             | 1808 with 3A                                   | n/a             | Required      | Protects from sustained overcurrent conditions               |
+| F1                       | 1         | Resettable Fuse         | 1.5A                                           | 1206 SMD        | Required      | Protects from sustained overcurrent conditions               |
+| FB1, FB2                 | 2         | Ferrite Bead            | BLM31PG121SN1L                                 | 1206 SMD        | Required      | CAN Network Bus Data Line Noise Suppression Ferrite Bead     |
+| FB3 - FB6 | 4 | Ferrite Bead | BLM31PG121SN1L | 1206 SMD | Required | I2C Network Bus Data Line Noise Suppression Ferrite Bead |
+| J1                       | 1         | USB-C Socket            | 4-Pin                                          | SMD             | Optional      | Power input connector to power the LCC Fusion Node Card when power is **not** being supplied via the CAN Network Bus network cable |
+| J2                       | 1         | Connector               | 5557 ATX RA                                    | N/A             | Optional      | Power input connector to power the LCC Fusion Node Card when power is **not** being supplied via the CAN Network Bus network cable |
+| J3                       | 1         | Power Jack              | DC-005                                         | N/A             | Optional      | Power input connector to power the LCC Fusion Node Card when power is **not** being supplied via the CAN Network Bus network cable |
+| J4                       | 1         | Connector               | 5557 ATX RA                                    | N/A             | Optional      | Power input connector to power the LCC Fusion Node Card when power is **not** being supplied via the CAN Network Bus network cable |
+| J5, J6                   | 2         | RJ45 Socket             | 8P8C                                           | PTH             | Required      | Network cable (CAT5/6) connection to CAN Bus for communicating with other LCC Nodes |
+| J7                       | 1         | RJ45 Socket             | 8P8C                                           | PTH             | Optional      | Network cable (CAT5/6) connection to I/O devices             |
+| J8                       | 1         | RJ45 Socket             | 8P8C                                           | PTH             | Optional      | Network cable (CAT5/6) connection to LCC Fusion Node Bus Hubfor communicating with LCC Fusion Project |
+| J9                       | 1         | USB-C Socket            | 4-Pin                                          | SMD             | Optional      | Power output connector used to power other 12V+ devices      |
+| J10                      | 1         | Header                  | 6-Pin male/female                              | N/A             | Optional      | Used to mount Micro-SD Reader Module for copying files to/from storage |
+| J12                      | 1         | 2-Position Connector    | N/A                                            | N/A             | Optional      | Used for CAN Bus network connection, an alternative to using a CAN Bus network cable |
+| JP1                      | 1         | Header                  | 2-Pin Male                                     | N/A             | Optional      | Used to bypass the 3A fuse (FH1)                             |
+| JP2                      | 1         | Header                  | 3-Pin Male                                     | N/A             | Required      | Bypass selector for 12V output                               |
+| L1                       | 1         | Inductor                | 33uH                                           | PTH             | Required      | Used for 5V voltage regulation                               |
+| R1                       | 1         | Resistor                | 1kΩ                                            | SMD 1206        | Required      | Current limiting for reference voltage                       |
+| R2                       | 1         | Resistor                | 100Ω                                           | SMD 1206        | Requried      | Low Pass Filter for low signal detection                     |
+| R3, R4                   | 2         | Resistor                | 60Ω                                            | 1206 SMD        | Required      | CAN termination circuit                                      |
+| R5                       | 1         | Resistor                | 1.5kΩ                                          | 1206 SMD        | Optional      | Part of CDI Factory Reset circuit                            |
+| S1, S2                   | 2         | Tact Button Switch      | N/A                                            | N/A             | Optional      | Used to request a reset of the CDI to factory settings or to restart the LCC Node ESP32 processor |
+| U1                       | 1         | CAN Transceiver         | SN65HVD233DR                                   | N/A             | Required      | CAN Transceiver for use with ESP32 to provide CAN communications |
+| U2                       | 1         | MCU (processor)         | ESP32 DevKitC-V4 Module /w ESP32-WROOM-32D 4MB | 38-pin wide     | Required      | MCU (processor) for the LCC Fusion Node Card                 |
+| U3                       | 1         | IC (Voltage Comparator) | LM393 or LM2903N                               | SO-8, SMD       | Required      | Used for detecting low voltage in the I2C lines (less than 2.4v) |
+| VR1                      | 1         | Voltage Regulator       | L7812CV                                        | TO-220 PTH      | Optional      | 12V voltage regulator for LCC Fusion Node Bus Hub            |
+| VR2                      | 1         | Voltage Regulator       | LM2596-5 C                                     | SMD             | Required      | 5V voltage regulator (buck) for ESP32 Development Board and Node Bus Hub |
+| VR3                      | 1         | Voltage Regulator       | LM1117-3V3 IC                                  | SMD             | Required      | 3.3V voltage regulator for Node Bus Hub                      |
+| J11, J12                 | 2         | Female Headers          | 19-Pin                                         | N/A             | Required      | Used to mount the ESP32 DevKit-C module                      |
+| ZD1                      | 1         | Zener-Diode             | 2.4V                                           | BZT52           | Required      | Used for a 2.4V reference voltage                            |
 
 ## Tools Required
 
@@ -200,16 +203,16 @@ Here's the updated table with the count, type, and package columns added:
 | Component Identifier | Value                | Required? | Orientation                                                  |
 | -------------------- | -------------------- | :-------- | ------------------------------------------------------------ |
 | C1, C3, C4           | 0.1uF                | Required  | None                                                         |
-| C2                   | 0.33uF Tantalum      | Required  | Cathode end has a brown line and positioned towards PCB bottom edge |
-| C5                   | 680uF, 25V           | Required  | Anode positioned toward PCB top edge                         |
-| C6                   | 220uF, 25V           | Required  | Anode positioned toward PCB top edge                         |
+| C2                   | 0.33uF Tantalum      | Required  | Cathode end has a brown line and positioned towards PCB **bottom** edge |
+| C5                   | 680uF, 25V           | Required  | Anode positioned toward PCB **top** edge                     |
+| C6                   | 220uF, 25V           | Required  | Anode positioned toward PCB **top** edge                     |
 | C7                   | 47uF                 | Required  | None                                                         |
-| D1                   | SMBJ18A              | Optional  | Anode positioned toward PCB top edge                         |
-| D2, D4, D5           | SS310, B240, or B160 | Optional  | Cathode end has a white line and positioned towards PCB bottom edge |
-| D3                   | PESD1CAN             | Required  | Fits only one way                                            |
+| D1                   | SMBJ18A              | Optional  | Anode positioned toward PCB **top** edge                     |
+| D2, D4, D5           | SS310, B240, or B160 | Optional  | Cathode end has a white line and positioned towards PCB **bottom** edge |
+| D3, D6, D7           | PESD1CAN             | Required  | Fits only one way                                            |
 | FH1                  | Fuse Holder /w 3A    | Required  | None                                                         |
 | F1                   | 1.5A                 | Required  | None                                                         |
-| FB1, FB2             | BLM31PG121SN1L       | Required  | None                                                         |
+| FB1 - FB6            | BLM31PG121SN1L       | Required  | None                                                         |
 | J1                   | 4-Pin                | Optional  | None                                                         |
 | J2, J4               | 5557 ATX RA          | Optional  | GND pin is marked on board with square pad                   |
 | J3                   | DC-005               | Optional  | Fits only one way                                            |
@@ -225,13 +228,13 @@ Here's the updated table with the count, type, and package columns added:
 | R3, R4               | 60Ω                  | Required  | None                                                         |
 | R4                   | 1.5kΩ                | Optional  | None                                                         |
 | S1, S2               | N/A                  | Optional  | None                                                         |
-| U1                   | SN65HVD233DR         | Required  | Package has small dimple in corner (pin 1) which is position to PCB top right edges |
-| U2                   | ESP32 DevKitC-V4     | Required  | Position ESP32 development board’s USB connector to PCB right edge |
+| U1                   | SN65HVD233DR         | Required  | Package has small dimple in corner (pin 1) which is position to PCB **top** right edges |
+| U2                   | ESP32 DevKitC-V4     | Required  | Position ESP32 development board’s USB connector to PCB **right** edge |
 | VR1                  | L7812CV              | Optional  | Heat sink towards top of board                               |
 | VR2                  | LM2596-5             | Required  | Fits only one way                                            |
 | VR3                  | LM1117-3V3           | Required  | Fits only one way                                            |
 | J11, J12             | 19-Pin               | Required  | None                                                         |
-| ZD1                  | 2.4V                 | Required  | Cathode end has a white line and positioned towards PCB right edge |
+| ZD1                  | 2.4V                 | Required  | Cathode end has a white line and positioned towards PCB **right** edge |
 
 ## Testing and Verification
 
