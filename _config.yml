@@ -1,6 +1,8 @@
 title: LCC Fusion Project
 description: LCC Fusion Project is a DIY project providing hardware and software for Model Train Layout Automation using NMRA Layout Command Control (LCC)
 theme: just-the-docs
+baseurl: "/LccFusionProject"
+
 
 logo: /assets/images/LCCFusionLogo.png
 
