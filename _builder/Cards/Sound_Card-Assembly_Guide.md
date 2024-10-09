@@ -85,12 +85,25 @@ In the sections below, are the steps to assemble the card.
 The following outlines the flow of activity for the Sound Card:
 
 ```mermaid
-graph TD;
-A-->B;
-A-->C;
-B-->D;
-C-->D;
+flowchart LR
+node[[LCC Node]] --> sc([Sound Card]) 
+sc -->	sp((speakers))
 ```
+
+```mermaid
+architecture-beta
+    group api(logos:aws-lambda)[API]
+
+    service db(logos:aws-aurora)[Database] in api
+    service disk1(logos:aws-glacier)[Storage] in api
+    service disk2(logos:aws-s3)[Storage] in api
+    service server(logos:aws-ec2)[Server] in api
+
+    db:L -- R:server
+    disk1:T -- B:server
+    disk2:T -- B:db
+```
+
 1. Activity starts with an LCC Event sound related event being received by an LCC Fusion Node Card (firmware)
 
 2. The LCC Node uses the Sound Card's CDI configuration information to determine the I2C address of the card
@@ -99,7 +112,7 @@ C-->D;
 
    - **play** a specific mp3 file at the specified volume from a specific player (1-4).  MP3 files are identified by their relative file number (0001xxx.mp3, 0002yyyy.mp3, etc.)
 
-   - **loop** a specific MP3 file continously
+   - **loop** a specific MP3 file continuously
 
    - **pause** playing the current MP3 file on a specific player device
 

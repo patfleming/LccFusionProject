@@ -25,6 +25,7 @@ mermaid:
   version: "11.3.0"
   initialize: true
 
+
 search_enabled: true
 button: true
 
